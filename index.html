@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registre des échéances — Groupe Mantovani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Limelight&family=Josefin+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EFE3; --surface:#FBF8F0; --ink:#1B211E; --ink-soft:#6A6455; --line:#DCD3BD;
+  --gold:#B08D2E; --gold-soft:#D8C48A; --noir:#14181A; --emerald:#0F5147;
+  --nc:#8E3B2F; --nc-bg:#F3E4DE; --pf:#0F5147; --pf-bg:#E1EEE9;
+  --late:#A22C25; --late-bg:#F6E3E0; --soon:#A97B12; --soon-bg:#F6EDD6; --ok:#2E6B52; --ok-bg:#E3EFE6;
+  --todo:#8C8672;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulseLate{0%,100%{box-shadow:0 0 0 0 rgba(162,44,37,.35)}50%{box-shadow:0 0 0 4px rgba(162,44,37,0)}}
+@keyframes popIn{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);font-size:14px;line-height:1.45}
+header{background:var(--noir);color:#EDE6D2;padding:20px 28px 16px;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;position:relative}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;
+  background:repeating-linear-gradient(135deg,var(--gold) 0 8px,var(--noir) 8px 16px);}
+header::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold-soft),transparent)}
+header h1{font-family:'Limelight',cursive;font-weight:400;font-size:24px;letter-spacing:.14em;text-transform:uppercase;
+  background:linear-gradient(100deg,var(--gold-soft) 20%,#F4E7C0 40%,var(--gold) 60%,var(--gold-soft) 80%);
+  background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 7s linear infinite}
+header .sub{font-size:12px;color:#A79E86;font-family:'Josefin Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase}
+header .today{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold-soft)}
+nav{background:var(--surface);border-bottom:1px solid var(--gold);padding:0 28px;display:flex;gap:2px;flex-wrap:wrap}
+nav button{font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:none;border:none;border-bottom:3px solid transparent;padding:14px 16px 11px;cursor:pointer;color:var(--ink-soft);transition:color .25s,border-color .25s}
+nav button:hover{color:var(--ink)}
+nav button.active{color:var(--emerald);border-bottom-color:var(--gold)}
+nav button:focus-visible{outline:2px solid var(--emerald);outline-offset:-2px}
+main>section{animation:fadeUp .35s ease both}
+main{padding:20px 16px;max-width:none;margin:0 auto}
+.hidden{display:none!important}
+.kpis{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.kpi{background:var(--surface);border:1px solid var(--gold-soft);outline:1px solid var(--line);outline-offset:3px;border-left:5px solid var(--todo);padding:10px 18px;min-width:160px;transition:transform .25s;animation:fadeUp .4s ease both}
+.kpi:hover{transform:translateY(-2px)}
+.kpi b{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:26px;display:block;color:var(--emerald)}
+.kpi.late b{color:var(--late)} .kpi.soon b{color:var(--soon)}
+.kpi span{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-soft);font-family:'Josefin Sans',sans-serif}
+.kpi.late{border-left-color:var(--late)} .kpi.soon{border-left-color:var(--soon)} .kpi.ok{border-left-color:var(--ok)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.filters select,.filters input[type=search],.modal input,.modal select,.modal textarea{font:inherit;padding:7px 10px;border:1px solid var(--line);background:var(--surface);border-radius:0}
+.filters label{font-size:12px;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--gold-soft);box-shadow:0 1px 0 var(--line)}
+#tblEch tbody tr, #tblSoc tbody tr, #tblRules tbody tr{animation:fadeUp .3s ease both}
+th{font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;text-align:left;padding:10px;border-bottom:2px solid var(--gold);background:var(--noir);color:#E8DFC6;position:sticky;top:0}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:hover td{background:#F7F9F8}
+.mono{font-family:'IBM Plex Mono',monospace;font-size:12.5px}
+.badge{font-family:'Josefin Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:2px 7px;display:inline-block}
+.badge.nc{background:var(--nc-bg);color:var(--nc)} .badge.pf{background:var(--pf-bg);color:var(--pf)}
+.badge.q{background:#EEE;color:#777}
+.chip{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:10px;display:inline-block;white-space:nowrap}
+.chip.late{background:var(--late-bg);color:var(--late)} .chip.soon{background:var(--soon-bg);color:var(--soon)}
+.chip.ok{background:var(--ok-bg);color:var(--ok)} .chip.todo{background:#EDF0EF;color:var(--ink-soft)}
+.chip.legal{background:#E9E5F4;color:#5B4A9E}.chip.fiscal{background:#E5EFF7;color:#2C6395}.chip.interne{background:#EDF0EF;color:#5A6B74}.chip.cac{background:#F4E8F0;color:#9C3D77}
+.tcheck{width:16px;height:16px;cursor:pointer}
+.notecell{cursor:pointer;color:var(--ink-soft);max-width:260px}
+.notecell:hover{color:var(--ink);text-decoration:underline dotted}
+.warn{color:var(--nc);font-size:11.5px}
+.btn{font-family:'Josefin Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:9px 16px 7px;border:1px solid var(--gold);background:var(--noir);color:var(--gold-soft);cursor:pointer;transition:background .2s,color .2s,transform .15s}
+.btn:hover{background:var(--emerald);color:#F2EAD3;transform:translateY(-1px)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--ink)}
+.btn.sm{padding:5px 9px 3px;font-size:10px}
+.btn.danger{border-color:var(--late);background:none;color:var(--late)}
+.dcell{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;padding:2px 4px;border-radius:3px;cursor:pointer;display:inline-block;white-space:nowrap;border:1px solid transparent}
+.dcell:hover{border-color:var(--gold);transform:translateY(-1px);box-shadow:0 2px 5px rgba(20,24,26,.15)}
+.dcell{transition:transform .15s,box-shadow .15s,border-color .15s}
+.dcell.late{background:var(--late-bg);color:var(--late);animation:pulseLate 2.6s ease infinite}
+.dcell.soon{background:var(--soon-bg);color:var(--soon)}
+.dcell.todo{background:#EDF0EF;color:#42525B}
+.dcell.done{background:var(--ok-bg);color:var(--ok)}
+.dcell .yr{opacity:.55;font-size:10px}
+.cell-demo{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:2px 6px;border-radius:3px}
+.cell-demo.late{background:var(--late-bg);color:var(--late)}.cell-demo.soon{background:var(--soon-bg);color:var(--soon)}
+.cell-demo.todo{background:#EDF0EF;color:#42525B}.cell-demo.done{background:var(--ok-bg);color:var(--ok)}
+#tblEch th{white-space:nowrap;font-size:10px;padding:8px 5px}
+#tblEch td{white-space:nowrap;text-align:center;padding:5px 4px}
+#tblEch td.socname{text-align:left;position:sticky;left:0;background:var(--surface);border-right:2px solid var(--line);min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;z-index:2;font-size:12px}
+#tblEch th.socname{position:sticky;left:0;z-index:3;background:var(--noir)}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{background:#242B28;color:var(--gold-soft)}
+th.sortable.active{color:var(--gold-soft)}
+#tblEch tr:hover td.socname{background:#F7F9F8}
+.rail{display:flex;align-items:center;gap:0;height:14px;min-width:170px}
+.rail .seg{flex:1;height:3px;background:var(--line)}
+.rail .dot{width:9px;height:9px;border-radius:50%;background:var(--todo);flex:none;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);animation:popIn .35s ease both}
+.rail .dot.done{background:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.rail .dot.late{background:var(--late);box-shadow:0 0 0 1px var(--late)}
+.rail .dot.soon{background:var(--soon);box-shadow:0 0 0 1px var(--soon)}
+.notice{background:var(--surface);border:1px solid var(--gold-soft);border-left:5px solid var(--soon);padding:12px 16px;margin-bottom:18px;font-size:13px;animation:fadeUp .35s ease both}
+.notice b{font-family:'Josefin Sans',sans-serif}
+.modal-bg{position:fixed;inset:0;background:rgba(20,32,40,.45);display:flex;align-items:center;justify-content:center;z-index:50}
+.modal{background:var(--surface);padding:24px;width:min(560px,92vw);max-height:88vh;overflow:auto;border:1px solid var(--gold);border-top:6px solid var(--gold);outline:1px solid var(--line);outline-offset:4px;animation:fadeUp .25s ease both}
+.modal h3{font-family:'Josefin Sans',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:15px;margin-bottom:14px;color:var(--emerald)}
+.modal .row{display:grid;grid-template-columns:170px 1fr;gap:10px;align-items:center;margin-bottom:10px}
+.modal .row label{font-size:12px;color:var(--ink-soft)}
+.modal .actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+.legend{font-size:12px;color:var(--ink-soft);margin:10px 0 18px;display:flex;gap:16px;flex-wrap:wrap}
+h2.sec{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.05em;margin:6px 0 12px}
+.aide{background:var(--surface);border:1px solid var(--line);padding:20px 24px;max-width:900px}
+.aide h3{font-family:'Josefin Sans',sans-serif;font-weight:700;color:var(--emerald);font-size:14px;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.aide p,.aide li{font-size:13.5px;margin-bottom:6px;color:#33444D}
+.aide ul{padding-left:20px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+@media(max-width:800px){main{padding:14px}header{padding:14px}th,td{padding:6px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Registre des échéances</h1>
+  <span class="sub">Comptable &amp; juridique — Groupe Mantovani · NC / PF</span>
+  <span class="today mono" id="todayLbl"></span>
+</header>
+<nav>
+  <button data-view="echeancier" class="active">Échéancier</button>
+  <button data-view="societes">Sociétés</button>
+  <button data-view="regles">Règles de délais</button>
+  <button data-view="aide">Méthode &amp; réserves</button>
+</nav>
+<main>
+  <div class="notice" id="storageNotice" style="display:none"></div>
+
+  <!-- VUE ECHEANCIER -->
+  <section id="view-echeancier">
+    <div class="kpis" id="kpis"></div>
+    <div class="filters">
+      <label>Juridiction
+        <select id="fJur"><option value="">Toutes</option><option value="NC">Nouméa (NC)</option><option value="PF">Tahiti (PF)</option><option value="HK">Hong Kong / autre</option><option value="?">À confirmer</option></select>
+      </label>
+      <label>Cycle de clôture
+        <select id="fCl"><option value="">Tous</option><option value="03-31">31/03</option><option value="06-30">30/06</option><option value="09-30">30/09</option><option value="12-31">31/12</option><option value="none">Sans date</option></select>
+      </label>
+      <label>Tri
+        <select id="fSort"><option value="urgence">Par urgence</option><option value="alpha">Alphabétique</option><option value="cloture">Par date de clôture</option></select>
+      </label>
+      <label><input type="checkbox" id="fHideDone"> masquer les sociétés à jour</label>
+      <input type="search" id="fSearch" placeholder="Rechercher une société…">
+    </div>
+    <div class="legend">
+      <span><span class="cell-demo late">jj/mm</span> en retard</span>
+      <span><span class="cell-demo soon">jj/mm</span> ≤ 30 jours</span>
+      <span><span class="cell-demo todo">jj/mm</span> à venir</span>
+      <span><span class="cell-demo done">✓ jj/mm</span> fait</span>
+      <span style="color:var(--ink-soft)">Cliquer sur une case pour pointer l'échéance (fait / date / note). Cases avec ✎ : note saisie.</span>
+    </div>
+    <div style="overflow:auto;max-height:72vh">
+    <table id="tblEch"><thead></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- VUE SOCIETES -->
+  <section id="view-societes" class="hidden">
+    <div class="toolbar">
+      <button class="btn" id="btnAddSoc">+ Création société</button>
+      <button class="btn danger" id="btnDelSel" disabled>Supprimer la sélection (0)</button>
+      <button class="btn ghost" id="btnExport">Exporter JSON</button>
+      <button class="btn ghost" id="btnImport">Importer JSON</button>
+      <input type="file" id="fileImport" accept=".json" style="display:none">
+      <span style="font-size:12px;color:var(--ink-soft)">La réglette montre le cycle de l'exercice clos : envoi → révision → bilan → projets AG → CAC → AGO → dépôt/fiscal.</span>
+    </div>
+    <div style="overflow:auto">
+    <table id="tblSoc"><thead><tr>
+      <th style="width:34px"><input type="checkbox" id="selAll" title="Tout sélectionner"></th><th class="sortable" data-sort="name">Société ↕</th><th class="sortable" data-sort="forme">Forme ↕</th><th class="sortable" data-sort="jur">Juridiction ↕</th><th class="sortable" data-sort="cloture">Clôture ↕</th><th class="sortable" data-sort="cac">CAC ↕</th><th>Cycle exercice en cours</th><th class="sortable" data-sort="note">Notes ↕</th><th></th>
+    </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- VUE REGLES -->
+  <section id="view-regles" class="hidden">
+    <div class="toolbar">
+      <button class="btn" id="btnAddRule">+ Ajouter une règle</button>
+      <span style="font-size:12px;color:var(--ink-soft)">Délais exprimés en jours après la date de clôture. Modifiable librement — voir l'onglet « Méthode &amp; réserves » pour les fondements.</span>
+    </div>
+    <div style="overflow:auto">
+    <table id="tblRules"><thead><tr>
+      <th>Échéance</th><th>Type</th><th>Juridiction</th><th>Délai (jours après clôture)</th><th>CAC requis</th><th>Fondement / note</th><th></th>
+    </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- VUE AIDE -->
+  <section id="view-aide" class="hidden">
+    <div class="aide">
+      <h2 class="sec">Méthode &amp; réserves</h2>
+      <h3>Sources des données</h3>
+      <ul>
+        <li>Liste des sociétés : bibliothèque SharePoint <b>NC-003-JURIDIQUE / 12-JURIDIQUE SOCIETES</b> (+ PH-002-JURIDIQUE).</li>
+        <li>Dates de clôture : fichier <b>SUIVI STATUTS.xlsx</b> et <b>tableau suivi COMPTA et AG.xlsx</b> (mêmes emplacements). Les statuts PDF scannés n'ont pas pu être lus automatiquement : les sociétés marquées <span class="badge q">à confirmer</span> doivent être vérifiées dans les statuts.</li>
+        <li>Passage au crible complémentaire (juillet 2026) : statuts et formulaires CFE Papeete (M1/M2) lus pour SEFRATEX (nouvelle clôture <b>30/04</b>, AGE 15/05/2026), SCI SDE (ex SDE, transformée en SCI le 30/09/2022, clôture <b>30/09</b>), TPC (30/06), SC PUNAHERE, MOTEX, SOMODIF, TAHITIJOB, SCI MARCILLAC 1, SCI PAETOU 13, SCI AROA HITI (31/12), BRICOPF1 et BRICOPF2 (30/09, 1er exercice 30/09/2027).</li>
+        <li><b>SCI YAHOUE</b> : conflit entre sources (30/06 dans SUIVI STATUTS, cycle 30/09 dans le tableau compta) — retenu 30/09 provisoirement ; statuts scannés, non lisibles automatiquement.</li>
+        <li>Passe complémentaire via les extraits Kbis (RCS Nouméa / Papeete) : BRICONC-APOTEX (31/12), BRICONC2-NILYTEX (31/12, alerte capitaux propres), CALEDOJOB (30/09), SCI YAHOUE (30/09, conflit tranché) confirmés ; GOAL et MOST LIFE identifiés comme sociétés Hong Kong (+ ASL découverte hors dossier juridique) ; SCI NETCALL 32 (créée fin 2025) ajoutée. Restent à confirmer (Kbis scannés ou introuvables) : CHILI, TERANI, ZANZIBAR, DFM INVEST, SC CAMERON INVEST, SCI CAMERON 1 &amp; 2, SC GRAND LARGE, SCI CANAAN, CHIRAZ CRUZ, COLNETT 32, LES TOURS, SOEURS, PAO 7, GALLIENI 13, NETCALL 32, ASL, HEIVARUE (juridiction), PR DIFFUSION (juridiction).</li>
+      </ul>
+      <h3>Délais légaux paramétrés par défaut</h3>
+      <ul>
+        <li><b>AGO d'approbation des comptes</b> : 6 mois après la clôture (droit commun des sociétés applicable en NC comme en PF ; prorogation possible sur requête au président du tribunal).</li>
+        <li><b>Dépôt des comptes au greffe (RCS)</b> : 1 mois après l'AGO — paramétré à clôture + 7 mois.</li>
+        <li><b>Déclaration fiscale NC (DSF/IS, IRVM le cas échéant)</b> : paramétrée à clôture + 4 mois. À valider avec la DSF selon le régime (IS, IS simplifié, IRCDC…).</li>
+        <li><b>Déclaration fiscale PF (DICP)</b> : paramétrée à clôture + 3 mois (IS + contribution supplémentaire à l'IS ; impôt sur les transactions pour les sociétés concernées). À valider avec la DICP / l'expert-comptable, des reports existent via les conventions cabinet.</li>
+        <li><b>CAC</b> : mise à disposition des comptes au commissaire et rapport disponible avant l'AG (droit de communication des associés : 15 jours avant l'AG). Paramétré à clôture + 135 j.</li>
+      </ul>
+      <h3>Jalons internes (issus de votre tableau de suivi historique)</h3>
+      <p>Envoi du dossier au cabinet, révision / saisie des OD, réception bilan &amp; liasse, envoi puis renvoi des projets d'AG, enregistrement. Les délais par défaut reproduisent votre pratique constatée et sont librement ajustables.</p>
+      <h3>Pointage automatique du 08/07/2026</h3>
+      <p>À la première ouverture, toutes les étapes dont l'échéance était dépassée au 08/07/2026 ont été marquées « faites » (note : pointage auto), à l'exception des dossiers non finalisés DUTEX, SEFRAKO, SEFRACA et SOCADIM. « SEFRACO » étant ambigu, SEFRAKO et SEFRACA ont toutes deux été laissées ouvertes : cocher celle qui est terminée. Quand toutes les cases d'une société sont vertes, une ligne « exercice suivant » apparaît en bas du tableau.</p>
+      <h3>Réserves</h3>
+      <p>Cet outil est une aide au pilotage, pas un avis juridique ou fiscal. Les délais légaux et fiscaux (NC : DSF, RCS Nouméa ; PF : DICP, RCS/CCISM Papeete) évoluent : faites valider le paramétrage par vos conseils (avocat, experts-comptables) avant de vous y fier pour des actes à délai impératif. Je ne suis ni avocat ni conseiller fiscal.</p>
+      <h3>Sauvegarde</h3>
+      <p>Les données sont enregistrées automatiquement (stockage local du navigateur ou stockage persistant de l'appli selon l'environnement). Utilisez Exporter / Importer JSON pour sauvegarder ou partager l'état du registre — recommandé avant toute modification massive.</p>
+    </div>
+  </section>
+</main>
+<div id="modalHost"></div>
+<script>
+/* ================= DONNEES INITIALES ================= */
+/* cloture: "MM-JJ" ; jur: NC | PF | ? ; conf: true = date fiable (source interne), false = à confirmer dans les statuts */
+const SEED_COMPANIES = [
+ {n:"SMRC", f:"SARL", jur:"NC", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"DUTEX", f:"SARL", jur:"NC", cl:"03-31", cac:true, conf:true, note:""},
+ {n:"SEFRAKO", f:"SARL", jur:"NC", cl:"03-31", cac:false, conf:true, note:""},
+ {n:"SEFRACA", f:"SARL", jur:"NC", cl:"03-31", cac:false, conf:true, note:""},
+ {n:"SOCADIM", f:"SARL", jur:"NC", cl:"03-31", cac:false, conf:true, note:""},
+ {n:"SOMARI", f:"SARL", jur:"NC", cl:"03-31", cac:false, conf:true, note:""},
+ {n:"TRITEX", f:"SARL", jur:"NC", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"MARTRI", f:"SARL", jur:"NC", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"SERCOPAC NOUMEA", f:"SARL", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"EKEKO", f:"SAS", jur:"NC", cl:"12-31", cac:true, conf:true, note:""},
+ {n:"SC LES LONNES", f:"SC", jur:"NC", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"BRM DIFFUSION", f:"SARL", jur:"NC", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"GRAIN DE SEL", f:"SARL", jur:"NC", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"BRICONC (APOTEX)", f:"SARL", jur:"NC", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"BRICONC2 (NILYTEX)", f:"SARL", jur:"NC", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"CALEDOJOB", f:"SARL", jur:"NC", cl:"09-30", cac:false, conf:true, premier:"2025-09-30", note:""},
+ {n:"SCI YAHOUE", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI AMPJOULE", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI AUSTERLITZ", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI CONCEPTION 56", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI DU NORD 1", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI GUYON 12", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI IMPASSE", f:"SCI", jur:"NC", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI HEIVARUE", f:"SCI", jur:"?", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SCI MIRMAN", f:"SCI", jur:"NC", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"SCI VIRANI", f:"SCI", jur:"NC", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"SCI COLNETT 32", f:"SCI", jur:"NC", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI RICO", f:"SCI", jur:"NC", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI CANAAN", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI CHIRAZ CRUZ", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI LES TOURS", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI MARCILLAC 1", f:"SCI", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SCI SOEURS", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI SDE (ex SDE)", f:"SCI", jur:"PF", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SC CAMERON INVEST", f:"SC", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI CAMERON 1", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI CAMERON 2", f:"SCI", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"SC GRAND LARGE", f:"SC", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"DFM INVEST", f:"?", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"ASL", f:"LTD", jur:"HK", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI NETCALL 32", f:"SCI", jur:"NC", cl:"", cac:false, conf:false, premier:"2026-12-31", note:""},
+ {n:"GOAL", f:"LTD", jur:"HK", cl:"12-31", cac:false, conf:false, note:""},
+ {n:"CHILI", f:"?", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"TERANI", f:"?", jur:"?", cl:"", cac:false, conf:false, note:""},
+ {n:"ZANZIBAR", f:"?", jur:"?", cl:"12-31", cac:false, conf:false, note:""},
+ {n:"MOST LIFE", f:"LTD", jur:"HK", cl:"12-31", cac:false, conf:false, note:""},
+ /* ------- POLYNESIE ------- */
+ {n:"TAHITI PAS CHER (TPC)", f:"SAS", jur:"PF", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"SOFADIF", f:"SAS", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"TAHITI LUMINAIRES", f:"SARL", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"PR DIFFUSION", f:"SARL", jur:"PF", cl:"12-31", cac:false, conf:false, note:""},
+ {n:"SCI TEMOANA", f:"SCI", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SCI VATEA", f:"SCI", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SEMAPA", f:"SAS", jur:"PF", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SERCOPAC PPTE", f:"SARL", jur:"PF", cl:"09-30", cac:false, conf:true, note:""},
+ {n:"SERLOG", f:"SARL", jur:"PF", cl:"03-31", cac:false, conf:true, note:""},
+ {n:"SEFRATEX", f:"SAS", jur:"PF", cl:"04-30", cac:false, conf:true, note:""},
+ {n:"LOGISER", f:"SARL", jur:"PF", cl:"06-30", cac:false, conf:true, note:""},
+ {n:"MOTEX", f:"SNC", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SOMODIF", f:"SNC", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SC PUNAHERE", f:"SC", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"BRICOPF1", f:"SASU", jur:"PF", cl:"09-30", cac:false, conf:true, premier:"2027-09-30", note:""},
+ {n:"BRICOPF2", f:"SAS", jur:"PF", cl:"09-30", cac:false, conf:true, premier:"2027-09-30", note:""},
+ {n:"TAHITIJOB", f:"SAS", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SCI PAETOU 13", f:"SCI", jur:"PF", cl:"12-31", cac:false, conf:true, note:""},
+ {n:"SCI PAO 7", f:"SCI", jur:"PF", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI AROA HITI", f:"SCI", jur:"PF", cl:"12-31", cac:false, conf:true, premier:"2026-12-31", note:""},
+ {n:"GALLIENI 13", f:"SCI", jur:"PF", cl:"", cac:false, conf:false, note:""},
+ {n:"SCI ARUE", f:"SCI", jur:"PF", cl:"", cac:false, conf:false, note:""}
+];
+/* Règles : off = jours après clôture ; jur: NC/PF/BOTH ; type: interne/legal/fiscal/cac ; cacOnly */
+const SEED_RULES = [
+ {id:"fin_ex", lbl:"Fin d'exercice (clôture)", type:"interne", jur:"BOTH", off:0, cacOnly:false, src:"Statuts de la société"},
+ {id:"envoi_dossier", lbl:"Envoi du dossier au cabinet comptable", type:"interne", jur:"BOTH", off:45, cacOnly:false, src:"Pratique groupe (tableau suivi COMPTA et AG)"},
+ {id:"revision", lbl:"Révision / saisie des OD / balance définitive", type:"interne", jur:"BOTH", off:90, cacOnly:false, src:"Pratique groupe"},
+ {id:"bilan", lbl:"Réception bilan & liasse", type:"interne", jur:"BOTH", off:120, cacOnly:false, src:"Pratique groupe"},
+ {id:"decl_pf", lbl:"Déclaration fiscale DICP (IS + contribution suppl. / IT)", type:"fiscal", jur:"PF", off:90, cacOnly:false, src:"Code des impôts PF — à valider avec la DICP / EC (reports possibles)"},
+ {id:"decl_nc", lbl:"Déclaration fiscale DSF (IS / régime applicable)", type:"fiscal", jur:"NC", off:120, cacOnly:false, src:"Code des impôts NC — à valider avec la DSF / EC"},
+ {id:"cac_remise", lbl:"Comptes remis au CAC + rapport disponible", type:"cac", jur:"BOTH", off:135, cacOnly:true, src:"Rapport à disposition des associés 15 j avant l'AG"},
+ {id:"envoi_projets", lbl:"Envoi des projets d'AG aux associés", type:"interne", jur:"BOTH", off:140, cacOnly:false, src:"Pratique groupe (« envoi »)"},
+ {id:"renvoi_projets", lbl:"Renvoi des projets d'AG signés", type:"interne", jur:"BOTH", off:165, cacOnly:false, src:"Pratique groupe (« renvois des AG »)"},
+ {id:"ago", lbl:"AGO — approbation des comptes (limite légale)", type:"legal", jur:"BOTH", off:182, cacOnly:false, src:"6 mois après clôture — droit des sociétés (prorogation possible sur requête)"},
+ {id:"depot", lbl:"Dépôt des comptes / PV au greffe (RCS)", type:"legal", jur:"BOTH", off:212, cacOnly:false, src:"1 mois après l'AGO (dépôt & enregistrement)"}
+];
+/* ================= ETAT & STOCKAGE ================= */
+const DB_KEY = "registre-echeances-mantovani-v3";
+let state = null;
+let storageMode = "memory";
+
+async function loadState(){
+  // 1) stockage persistant artefact (window.storage), 2) localStorage (fichier local), 3) mémoire
+  try{
+    if(window.storage && window.storage.get){
+      try{
+        const r = await window.storage.get(DB_KEY);
+        if(r && r.value){ state = JSON.parse(r.value); storageMode = "app"; return; }
+      }catch(e){ /* clé absente */ }
+      storageMode = "app";
+    }
+  }catch(e){}
+  if(storageMode !== "app"){
+    try{
+      const raw = window.localStorage ? localStorage.getItem(DB_KEY) : null;
+      if(raw){ state = JSON.parse(raw); storageMode = "local"; return; }
+      if(window.localStorage){ storageMode = "local"; }
+    }catch(e){ storageMode = "memory"; }
+  }
+  if(!state){
+    state = {
+      companies: SEED_COMPANIES.map((c,i)=>({id:"c"+i, name:c.n, forme:c.f, jur:c.jur, cloture:c.cl, premier:c.premier, cac:c.cac, conf:c.conf, note:c.note})),
+      rules: SEED_RULES.map(r=>({...r})),
+      tracking: {}  // clé: companyId|exYYYY-MM-DD|ruleId -> {done, date, note}
+    };
+    await saveState();
+  }
+}
+/* Pointage automatique (une seule fois) : toutes les étapes dont l'échéance est
+   dépassée au 08/07/2026 sont marquées faites, SAUF pour les dossiers non finalisés
+   (DUTEX, SEFRAKO, SEFRACA, SOCADIM). Conserve la liste de sociétés existante. */
+function applyAutofill072026(){
+  if(state.meta && state.meta.autofill072026) return false;
+  const excl = ["DUTEX","SEFRAKO","SEFRACA","SOCADIM"];
+  for(const c of state.companies){
+    const up = (c.name||"").toUpperCase();
+    if(excl.some(n=>up.includes(n))) continue;
+    const lc = lastClotureFor(c); if(!lc) continue;
+    const exKey = iso(lc);
+    for(const r of rulesFor(c)){
+      const due = addDays(lc, r.off);
+      if(due < TODAY){
+        const k = c.id+"|"+exKey+"|"+r.id;
+        const t = state.tracking[k] || {};
+        if(!t.done){ t.done=true; t.date=t.date||fmt(due); t.note=t.note||"pointage auto 08/07/2026"; state.tracking[k]=t; }
+      }
+    }
+  }
+  state.meta = Object.assign({}, state.meta||{}, {autofill072026:true});
+  return true;
+}
+/* Compteurs animés (respecte prefers-reduced-motion) */
+function animateCounters(){
+  const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("#kpis b[data-count]").forEach(el=>{
+    const target = Number(el.dataset.count)||0;
+    if(reduce || target===0){ el.textContent=target; return; }
+    const t0 = performance.now(), dur = 600;
+    function step(t){
+      const p = Math.min(1,(t-t0)/dur);
+      el.textContent = Math.round(target*(1-Math.pow(1-p,3)));
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+let saveTimer=null;
+async function saveState(){
+  const payload = JSON.stringify(state);
+  try{
+    if(storageMode==="app"){ await window.storage.set(DB_KEY, payload); return; }
+    if(storageMode==="local"){ localStorage.setItem(DB_KEY, payload); return; }
+  }catch(e){ console.error("Sauvegarde impossible", e); }
+}
+function scheduleSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(saveState, 400); }
+
+/* ================= DATES ================= */
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+function fmt(d){ return d ? d.toLocaleDateString("fr-FR",{day:"2-digit",month:"2-digit",year:"numeric"}) : "—"; }
+function iso(d){ return d.toISOString().slice(0,10); }
+function addDays(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function lastCloture(cl){
+  // cl = "MM-JJ" -> dernière date de clôture <= aujourd'hui
+  if(!cl) return null;
+  const [m,dd] = cl.split("-").map(Number);
+  let d = new Date(TODAY.getFullYear(), m-1, dd);
+  if(d > TODAY) d = new Date(TODAY.getFullYear()-1, m-1, dd);
+  return d;
+}
+function nextCloture(cl){
+  if(!cl) return null;
+  const lc = lastCloture(cl);
+  return new Date(lc.getFullYear()+1, lc.getMonth(), lc.getDate());
+}
+function daysUntil(d){ return Math.round((d - TODAY)/86400000); }
+/* Premier exercice : si c.premier (ISO) est postérieur à la dernière clôture théorique,
+   aucun exercice n'est encore clos -> pas d'échéances, seule la prochaine clôture s'affiche. */
+function lastClotureFor(c){
+  const lc = lastCloture(c.cloture);
+  if(!lc) return null;
+  if(c.premier){ const p = new Date(c.premier); p.setHours(0,0,0,0); if(lc < p) return null; }
+  return lc;
+}
+function nextClotureFor(c){
+  if(c.premier){ const p = new Date(c.premier); p.setHours(0,0,0,0); if(p > TODAY) return p; }
+  return nextCloture(c.cloture);
+}
+
+/* ================= MOTEUR D'ECHEANCES ================= */
+function rulesFor(c){
+  return state.rules.filter(r => {
+    if(c.jur==="HK") return r.type==="interne" && (!r.cacOnly || c.cac); // hors droit NC/PF : jalons internes seulement
+    return (r.jur==="BOTH" || r.jur===c.jur) && (!r.cacOnly || c.cac);
+  });
+}
+function deadlinesFor(c){
+  const out = [];
+  const lc = lastClotureFor(c);
+  if(!lc) return out;
+  const exKey = iso(lc);
+  for(const r of rulesFor(c)){
+    const due = addDays(lc, r.off);
+    const tk = state.tracking[c.id+"|"+exKey+"|"+r.id] || null;
+    out.push({company:c, rule:r, due, exKey, exDate:lc, track:tk});
+  }
+  // prochaine fin d'exercice (info)
+  const nc = nextClotureFor(c);
+  if(nc && daysUntil(nc) <= 400){
+    const r = state.rules.find(x=>x.id==="fin_ex");
+    if(r) out.push({company:c, rule:r, due:nc, exKey:iso(nc), exDate:nc, track:state.tracking[c.id+"|"+iso(nc)+"|fin_ex"]||null, future:true});
+  }
+  return out;
+}
+function statusOf(item){
+  if(item.track && item.track.done) return "ok";
+  const d = daysUntil(item.due);
+  if(d < 0) return "late";
+  if(d <= 30) return "soon";
+  return "todo";
+}
+
+/* ================= RENDU ================= */
+const $ = s=>document.querySelector(s);
+const views = ["echeancier","societes","regles","aide"];
+document.querySelectorAll("nav button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x===b));
+    views.forEach(v=>$("#view-"+v).classList.toggle("hidden", v!==b.dataset.view));
+    render();
+  });
+});
+function esc(s){ return (s||"").replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function jurBadge(j){
+  if(j==="NC") return '<span class="badge nc">NOUMÉA</span>';
+  if(j==="PF") return '<span class="badge pf">TAHITI</span>';
+  if(j==="HK") return '<span class="badge q" style="background:#EDE7DA;color:#8A6D1D">HONG KONG</span>';
+  return '<span class="badge q">À CONFIRMER</span>';
+}
+function chip(st){
+  return {late:'<span class="chip late">En retard</span>',soon:'<span class="chip soon">≤ 30 j</span>',
+          todo:'<span class="chip todo">À venir</span>',ok:'<span class="chip ok">Fait</span>'}[st];
+}
+function typeChip(t){
+  const lbl={legal:"Légal",fiscal:"Fiscal",interne:"Interne",cac:"CAC"}[t]||t;
+  return '<span class="chip '+t+'">'+lbl+'</span>';
+}
+
+function allDeadlines(){
+  let items=[];
+  for(const c of state.companies) items = items.concat(deadlinesFor(c));
+  return items;
+}
+
+/* Colonnes de la matrice : chaque règle = 1 colonne, sauf les règles
+   fiscales (fusionnées en une colonne « Fiscal ») et fin_ex (colonnes Clôture / Prochaine). */
+const SHORT_LBL = {envoi_dossier:"Envoi dossier", revision:"Révision / OD", bilan:"Bilan & liasse",
+  cac_remise:"CAC", envoi_projets:"Envoi projets AG", renvoi_projets:"Renvoi projets", ago:"AGO (limite)", depot:"Dépôt greffe"};
+function matrixColumns(){
+  const cols=[];
+  const rs = state.rules.filter(r=>r.id!=="fin_ex").slice().sort((a,b)=>a.off-b.off);
+  let fiscalDone=false;
+  for(const r of rs){
+    if(r.type==="fiscal"){
+      if(!fiscalDone){ cols.push({id:"__fiscal", lbl:"Déclaration fiscale", fiscal:true, off:r.off}); fiscalDone=true; }
+      continue;
+    }
+    cols.push({id:r.id, lbl:SHORT_LBL[r.id]||r.lbl, rule:r, off:r.off});
+  }
+  return cols.sort((a,b)=>a.off-b.off);
+}
+function cellItem(c, col, exDate, exKey){
+  let rule = col.rule;
+  if(col.fiscal){
+    const fr = state.rules.filter(r=>r.type==="fiscal" && (r.jur==="BOTH"||r.jur===c.jur));
+    if(!fr.length) return null;
+    rule = fr.slice().sort((a,b)=>a.off-b.off)[0];
+  }
+  if(rule.cacOnly && !c.cac) return null;
+  if(c.jur==="HK" && rule.type!=="interne") return null; // hors droit NC/PF
+  if(!(rule.jur==="BOTH"||rule.jur===c.jur)) return null;
+  const due = addDays(exDate, rule.off);
+  return {company:c, rule, due, exKey, exDate, track: state.tracking[c.id+"|"+exKey+"|"+rule.id]||null};
+}
+function dcellHTML(it){
+  if(!it) return '<span style="color:#C6CFCC">—</span>';
+  const st = statusOf(it);
+  const cls = st==="ok" ? "done" : st;
+  const d = it.due;
+  const lbl = String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0")+
+              ' <span class="yr">'+String(d.getFullYear()).slice(2)+'</span>';
+  const hasNote = it.track && it.track.note;
+  return '<span class="dcell '+cls+'" title="'+esc(it.rule.lbl)+' — échéance '+fmt(it.due)+
+         (it.track&&it.track.done?(' — fait le '+(it.track.date||"?")):"")+(hasNote?'\n'+esc(it.track.note):'')+'">'+
+         (st==="ok"?"✓ ":"")+lbl+(hasNote?" ✎":"")+'</span>';
+}
+function urgencyScore(c){
+  // plus petit = plus urgent ; sociétés sans date en bas
+  const exDate = lastClotureFor(c);
+  if(!exDate) return 99999;
+  let min = 99998;
+  for(const col of matrixColumns()){
+    const it = cellItem(c, col, exDate, iso(exDate));
+    if(it && !(it.track&&it.track.done)) min = Math.min(min, daysUntil(it.due));
+  }
+  return min;
+}
+function companyUpToDate(c){
+  const exDate = lastClotureFor(c);
+  if(!exDate) return false;
+  for(const col of matrixColumns()){
+    const it = cellItem(c, col, exDate, iso(exDate));
+    if(it && !(it.track&&it.track.done) && daysUntil(it.due)<=30) return false;
+  }
+  return true;
+}
+/* Cycle courant totalement pointé ? */
+function currentCycleComplete(c){
+  const exDate = lastClotureFor(c);
+  if(!exDate) return false;
+  let any=false;
+  for(const col of matrixColumns()){
+    const it = cellItem(c, col, exDate, iso(exDate));
+    if(it){ any=true; if(!(it.track&&it.track.done)) return false; }
+  }
+  return any;
+}
+let echSort = null; // null = tri du sélecteur ; sinon {key, dir}
+function echSortVal(c, key, cols){
+  if(key==="soc") return c.name.toUpperCase();
+  if(key==="cloture") return c.cloture||"99";
+  const exDate = lastClotureFor(c);
+  if(key==="ex") return exDate ? exDate.getTime() : Infinity;
+  if(key==="next"){ const n=nextClotureFor(c); return n?n.getTime():Infinity; }
+  if(key.startsWith("col:")){
+    if(!exDate) return Infinity;
+    const col = cols.find(x=>x.id===key.slice(4));
+    const it = col ? cellItem(c, col, exDate, iso(exDate)) : null;
+    return it ? it.due.getTime() : Infinity;
+  }
+  return 0;
+}
+function renderEcheancier(){
+  const jur=$("#fJur").value, fcl=$("#fCl").value, sort=$("#fSort").value,
+        hideDone=$("#fHideDone").checked, q=$("#fSearch").value.toLowerCase();
+  const cols = matrixColumns();
+  // entête triable (clic = tri sur la colonne, second clic = inverse)
+  const arrow = k => echSort && echSort.key===k ? (echSort.dir>0?" ▲":" ▼") : "";
+  $("#tblEch thead").innerHTML = '<tr>'+
+    '<th class="socname sortable'+(echSort&&echSort.key==="soc"?" active":"")+'" data-key="soc">Société'+arrow("soc")+'</th>'+
+    '<th class="sortable'+(echSort&&echSort.key==="cloture"?" active":"")+'" data-key="cloture">Clôture'+arrow("cloture")+'</th>'+
+    '<th class="sortable'+(echSort&&echSort.key==="ex"?" active":"")+'" data-key="ex">Exercice clos'+arrow("ex")+'</th>'+
+    cols.map(c=>'<th class="sortable'+(echSort&&echSort.key==="col:"+c.id?" active":"")+'" data-key="col:'+c.id+'">'+esc(c.lbl)+arrow("col:"+c.id)+'</th>').join("")+
+    '<th class="sortable'+(echSort&&echSort.key==="next"?" active":"")+'" data-key="next">Prochaine clôture'+arrow("next")+'</th></tr>';
+  $("#tblEch thead").querySelectorAll("th.sortable").forEach(th=>{
+    th.addEventListener("click",()=>{
+      const k=th.dataset.key;
+      if(echSort && echSort.key===k) echSort.dir*=-1; else echSort={key:k,dir:1};
+      renderEcheancier();
+    });
+  });
+  // lignes
+  let comps = state.companies.filter(c=>{
+    if(jur && c.jur!==jur) return false;
+    if(fcl==="none" && c.cloture) return false;
+    if(fcl && fcl!=="none" && c.cloture!==fcl) return false;
+    if(q && !c.name.toLowerCase().includes(q)) return false;
+    if(hideDone && companyUpToDate(c)) return false;
+    return true;
+  });
+  if(echSort){
+    comps.sort((a,b)=>{
+      const va=echSortVal(a,echSort.key,cols), vb=echSortVal(b,echSort.key,cols);
+      let r = (typeof va==="number" && typeof vb==="number") ? va-vb : String(va).localeCompare(String(vb),"fr");
+      if(r===0) r=a.name.localeCompare(b.name,"fr");
+      return r*echSort.dir;
+    });
+  }
+  else if(sort==="alpha") comps.sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+  else if(sort==="cloture") comps.sort((a,b)=>(a.cloture||"99").localeCompare(b.cloture||"99")||a.name.localeCompare(b.name,"fr"));
+  else comps.sort((a,b)=>urgencyScore(a)-urgencyScore(b)||a.name.localeCompare(b.name,"fr"));
+  // KPIs
+  const all = allDeadlines().filter(i=>!i.future);
+  const late = all.filter(i=>statusOf(i)==="late").length;
+  const soon = all.filter(i=>statusOf(i)==="soon").length;
+  const noDate = state.companies.filter(c=>!c.cloture).length;
+  $("#kpis").innerHTML =
+    '<div class="kpi late"><b data-count="'+late+'">0</b><span>échéances en retard</span></div>'+
+    '<div class="kpi soon"><b data-count="'+soon+'">0</b><span>sous 30 jours</span></div>'+
+    '<div class="kpi"><b data-count="'+state.companies.length+'">0</b><span>sociétés suivies</span></div>'+
+    '<div class="kpi"><b data-count="'+noDate+'">0</b><span>clôtures à confirmer</span></div>';
+  animateCounters();
+  const tb = $("#tblEch tbody"); tb.innerHTML="";
+  // lignes exercice courant, puis lignes "exercice suivant" en bas pour les cycles complétés
+  const rowsDef = comps.map(c=>({c, exDate:lastClotureFor(c), future:false}));
+  for(const c of comps){
+    if(currentCycleComplete(c)){
+      const nx = nextClotureFor(c);
+      if(nx) rowsDef.push({c, exDate:nx, future:true});
+    }
+  }
+  for(const rd of rowsDef){
+    const c = rd.c;
+    const exDate = rd.exDate;
+    const exKey = exDate ? iso(exDate) : null;
+    const tr = document.createElement("tr");
+    if(rd.future) tr.style.background = "#F4F8F6";
+    let html = '<td class="socname"><b>'+esc(c.name)+'</b> '+jurBadge(c.jur)+
+      (c.conf?'':' <span class="warn" title="Date de clôture à confirmer dans les statuts">⚠</span>')+
+      (rd.future?' <span class="chip todo" title="Cycle précédent entièrement pointé">exercice suivant</span>':'')+'</td>'+
+      '<td class="mono">'+(c.cloture?c.cloture.split("-").reverse().join("/"):"—")+'</td>'+
+      '<td class="mono">'+(exDate?fmt(exDate):"—")+'</td>';
+    for(const col of cols){
+      const it = exDate ? cellItem(c, col, exDate, exKey) : null;
+      html += '<td data-col="'+col.id+'">'+dcellHTML(it)+'</td>';
+    }
+    const nc = rd.future ? new Date(exDate.getFullYear()+1, exDate.getMonth(), exDate.getDate()) : nextClotureFor(c);
+    html += '<td class="mono">'+(nc?fmt(nc):"—")+'</td>';
+    tr.innerHTML = html;
+    if(exDate){
+      tr.querySelectorAll("td[data-col] .dcell").forEach(el=>{
+        const colId = el.closest("td").dataset.col;
+        const col = cols.find(x=>x.id===colId);
+        const it = cellItem(c, col, exDate, exKey);
+        if(it) el.addEventListener("click",()=>openTrackModal(it));
+      });
+    }
+    tr.style.animationDelay = Math.min(rowsDef.indexOf(rd),25)*18+"ms";
+    tb.appendChild(tr);
+  }
+  if(!rowsDef.length) tb.innerHTML='<tr><td colspan="'+(cols.length+4)+'" style="text-align:center;color:var(--ink-soft);padding:24px">Aucune société dans les filtres choisis.</td></tr>';
+}
+function openTrackModal(it){
+  const key = it.company.id+"|"+it.exKey+"|"+it.rule.id;
+  const t = state.tracking[key] || {done:false, date:"", note:""};
+  modal(
+    '<h3>'+esc(it.company.name)+' — '+esc(it.rule.lbl)+'</h3>'+
+    '<p style="font-size:13px;color:var(--ink-soft);margin-bottom:14px">Exercice clos le '+fmt(it.exDate)+' · échéance calculée : <b class="mono">'+fmt(it.due)+'</b></p>'+
+    '<div class="row"><label>Fait</label><input type="checkbox" id="tDone" '+(t.done?"checked":"")+'></div>'+
+    '<div class="row"><label>Fait le</label><input id="tDate" placeholder="jj/mm/aaaa" value="'+esc(t.date||"")+'"></div>'+
+    '<div class="row"><label>Note</label><textarea id="tNote" rows="3">'+esc(t.note||"")+'</textarea></div>',
+    host=>{
+      const done = host.querySelector("#tDone").checked;
+      let date = host.querySelector("#tDate").value.trim();
+      if(done && !date) date = fmt(TODAY);
+      state.tracking[key] = {done, date, note: host.querySelector("#tNote").value.trim()};
+    }
+  );
+}
+
+function railFor(c){
+  const lc = lastClotureFor(c);
+  if(!lc){
+    const nc = nextClotureFor(c);
+    return '<span style="color:var(--ink-soft);font-size:12px">'+(nc?('1er exercice clos le '+fmt(nc)):'clôture inconnue')+'</span>';
+  }
+  const rs = rulesFor(c).slice().sort((a,b)=>a.off-b.off);
+  let html = '<div class="rail" title="Exercice clos le '+fmt(lc)+'">';
+  rs.forEach((r,i)=>{
+    const it = {track: state.tracking[c.id+"|"+iso(lc)+"|"+r.id], due: addDays(lc,r.off)};
+    const st = it.track&&it.track.done ? "done" : (daysUntil(it.due)<0?"late":(daysUntil(it.due)<=30?"soon":""));
+    if(i>0) html += '<span class="seg"></span>';
+    html += '<span class="dot '+st+'" title="'+esc(r.lbl)+' — '+fmt(it.due)+'"></span>';
+  });
+  return html+"</div>";
+}
+
+let selSoc = new Set();
+function refreshDelBtn(){
+  const b=$("#btnDelSel");
+  b.disabled = selSoc.size===0;
+  b.textContent = "Supprimer la sélection ("+selSoc.size+")";
+  const all=$("#selAll");
+  if(all) all.checked = selSoc.size>0 && selSoc.size===state.companies.length;
+}
+let socSort = {key:"name", dir:1};
+function socSortVal(c,k){
+  if(k==="cac") return c.cac?0:1;
+  if(k==="conf") return c.conf?0:1;
+  return String(c[k]||"").toUpperCase();
+}
+function renderSocietes(){
+  selSoc = new Set([...selSoc].filter(id=>state.companies.some(c=>c.id===id)));
+  document.querySelectorAll("#tblSoc th.sortable").forEach(th=>{
+    th.classList.toggle("active", th.dataset.sort===socSort.key);
+  });
+  const tb = $("#tblSoc tbody"); tb.innerHTML="";
+  const sorted = state.companies.slice().sort((a,b)=>{
+    const va=socSortVal(a,socSort.key), vb=socSortVal(b,socSort.key);
+    let r = (typeof va==="number") ? va-vb : String(va).localeCompare(String(vb),"fr");
+    if(r===0) r = a.name.localeCompare(b.name,"fr");
+    return r*socSort.dir;
+  });
+  for(const c of sorted){
+    const tr = document.createElement("tr");
+    const clLbl = c.cloture ? c.cloture.split("-").reverse().join("/") : "—";
+    tr.innerHTML =
+      '<td><input type="checkbox" class="selRow" '+(selSoc.has(c.id)?"checked":"")+'></td>'+
+      '<td><b>'+esc(c.name)+'</b></td><td>'+esc(c.forme)+'</td>'+
+      '<td>'+jurBadge(c.jur)+'</td>'+
+      '<td class="mono">'+clLbl+'</td>'+
+      '<td>'+(c.cac?"Oui":"—")+'</td>'+
+      '<td>'+railFor(c)+'</td>'+
+      '<td style="max-width:280px;font-size:12px;color:var(--ink-soft)">'+esc(c.note)+'</td>'+
+      '<td style="white-space:nowrap"><button class="btn sm ghost bEdit">Modifier</button> <button class="btn sm danger bDel">Suppr.</button></td>';
+    tr.querySelector(".selRow").addEventListener("change",e=>{
+      if(e.target.checked) selSoc.add(c.id); else selSoc.delete(c.id);
+      refreshDelBtn();
+    });
+    tr.querySelector(".bEdit").addEventListener("click",()=>editCompany(c));
+    tr.querySelector(".bDel").addEventListener("click",()=>{
+      if(confirm("Supprimer "+c.name+" du registre ?")){
+        state.companies = state.companies.filter(x=>x.id!==c.id); scheduleSave(); render();
+      }
+    });
+    tb.appendChild(tr);
+  }
+  refreshDelBtn();
+}
+
+function renderRules(){
+  const tb = $("#tblRules tbody"); tb.innerHTML="";
+  const sorted = state.rules.slice().sort((a,b)=>a.off-b.off);
+  for(const r of sorted){
+    const tr = document.createElement("tr");
+    tr.innerHTML =
+      '<td><b>'+esc(r.lbl)+'</b></td><td>'+typeChip(r.type)+'</td>'+
+      '<td>'+(r.jur==="BOTH"?"NC + PF":(r.jur==="NC"?"Nouméa":"Tahiti"))+'</td>'+
+      '<td class="mono">J + '+r.off+'</td>'+
+      '<td>'+(r.cacOnly?"Oui":"—")+'</td>'+
+      '<td style="font-size:12px;color:var(--ink-soft)">'+esc(r.src)+'</td>'+
+      '<td style="white-space:nowrap"><button class="btn sm ghost bEdit">Modifier</button> <button class="btn sm danger bDel">Suppr.</button></td>';
+    tr.querySelector(".bEdit").addEventListener("click",()=>editRule(r));
+    tr.querySelector(".bDel").addEventListener("click",()=>{
+      if(confirm("Supprimer la règle « "+r.lbl+" » ?")){
+        state.rules = state.rules.filter(x=>x.id!==r.id); scheduleSave(); render();
+      }
+    });
+    tb.appendChild(tr);
+  }
+}
+
+function render(){ renderEcheancier(); renderSocietes(); renderRules(); }
+
+/* ================= MODALES ================= */
+function modal(html, onOk){
+  const host=$("#modalHost");
+  host.innerHTML='<div class="modal-bg"><div class="modal">'+html+
+    '<div class="actions"><button class="btn ghost" id="mCancel">Annuler</button><button class="btn" id="mOk">Enregistrer</button></div></div></div>';
+  host.querySelector("#mCancel").onclick=()=>host.innerHTML="";
+  host.querySelector(".modal-bg").addEventListener("click",e=>{ if(e.target.classList.contains("modal-bg")) host.innerHTML=""; });
+  host.querySelector("#mOk").onclick=()=>{ if(onOk(host)!==false){ host.innerHTML=""; scheduleSave(); render(); } };
+}
+function editCompany(c){
+  const isNew = !c;
+  if(isNew) c = {id:"c"+Date.now(), name:"", forme:"SARL", jur:"?", cloture:"", cac:false, conf:false, note:""};
+  modal(
+    '<h3>'+(isNew?"Nouvelle société":"Modifier — "+esc(c.name))+'</h3>'+
+    '<div class="row"><label>Dénomination</label><input id="mName" value="'+esc(c.name)+'"></div>'+
+    '<div class="row"><label>Forme</label><input id="mForme" value="'+esc(c.forme)+'"></div>'+
+    '<div class="row"><label>Juridiction</label><select id="mJur"><option value="NC">Nouméa (NC)</option><option value="PF">Tahiti (PF)</option><option value="HK">Hong Kong / autre</option><option value="?">À confirmer</option></select></div>'+
+    '<div class="row"><label>Clôture (jj/mm)</label><input id="mCl" placeholder="ex : 31/03" value="'+(c.cloture?c.cloture.split("-").reverse().join("/"):"")+'"></div>'+
+    '<div class="row"><label>1er exercice clos le (jj/mm/aaaa, optionnel)</label><input id="mPremier" placeholder="ex : 30/09/2027" value="'+(c.premier?c.premier.split("-").reverse().join("/"):"")+'"></div>'+
+    '<div class="row"><label>CAC en fonction</label><input type="checkbox" id="mCac" '+(c.cac?"checked":"")+'></div>'+
+    '<div class="row"><label>Date fiable (vérifiée)</label><input type="checkbox" id="mConf" '+(c.conf?"checked":"")+'></div>'+
+    '<div class="row"><label>Notes</label><textarea id="mNote" rows="3">'+esc(c.note)+'</textarea></div>',
+    host=>{
+      const name=host.querySelector("#mName").value.trim();
+      if(!name){ alert("La dénomination est obligatoire."); return false; }
+      let cl=host.querySelector("#mCl").value.trim();
+      if(cl){
+        const m=cl.match(/^(\d{1,2})[\/\-](\d{1,2})$/);
+        if(!m){ alert("Format de clôture attendu : jj/mm (ex : 31/03)."); return false; }
+        cl=String(m[2]).padStart(2,"0")+"-"+String(m[1]).padStart(2,"0");
+      }
+      let prem = host.querySelector("#mPremier").value.trim();
+      if(prem){
+        const pm = prem.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+        if(!pm){ alert("Format attendu pour le 1er exercice : jj/mm/aaaa."); return false; }
+        prem = pm[3]+"-"+String(pm[2]).padStart(2,"0")+"-"+String(pm[1]).padStart(2,"0");
+      }
+      Object.assign(c,{name, forme:host.querySelector("#mForme").value.trim(), jur:host.querySelector("#mJur").value,
+        cloture:cl, premier:prem||undefined, cac:host.querySelector("#mCac").checked, conf:host.querySelector("#mConf").checked,
+        note:host.querySelector("#mNote").value.trim()});
+      if(isNew) state.companies.push(c);
+    }
+  );
+  $("#modalHost #mJur").value=c.jur;
+}
+function editRule(r){
+  const isNew=!r;
+  if(isNew) r={id:"r"+Date.now(), lbl:"", type:"interne", jur:"BOTH", off:0, cacOnly:false, src:""};
+  modal(
+    '<h3>'+(isNew?"Nouvelle règle":"Modifier la règle")+'</h3>'+
+    '<div class="row"><label>Intitulé</label><input id="rLbl" value="'+esc(r.lbl)+'"></div>'+
+    '<div class="row"><label>Type</label><select id="rType"><option value="legal">Légal</option><option value="fiscal">Fiscal</option><option value="interne">Interne</option><option value="cac">CAC</option></select></div>'+
+    '<div class="row"><label>Juridiction</label><select id="rJur"><option value="BOTH">NC + PF</option><option value="NC">Nouméa</option><option value="PF">Tahiti</option></select></div>'+
+    '<div class="row"><label>Jours après clôture</label><input id="rOff" type="number" value="'+r.off+'"></div>'+
+    '<div class="row"><label>Uniquement si CAC</label><input type="checkbox" id="rCac" '+(r.cacOnly?"checked":"")+'></div>'+
+    '<div class="row"><label>Fondement / note</label><input id="rSrc" value="'+esc(r.src)+'"></div>',
+    host=>{
+      const lbl=host.querySelector("#rLbl").value.trim();
+      if(!lbl){ alert("Intitulé obligatoire."); return false; }
+      Object.assign(r,{lbl, type:host.querySelector("#rType").value, jur:host.querySelector("#rJur").value,
+        off:Number(host.querySelector("#rOff").value)||0, cacOnly:host.querySelector("#rCac").checked,
+        src:host.querySelector("#rSrc").value.trim()});
+      if(isNew) state.rules.push(r);
+    }
+  );
+  $("#modalHost #rType").value=r.type; $("#modalHost #rJur").value=r.jur;
+}
+
+/* ================= EXPORT / IMPORT ================= */
+$("#btnExport").addEventListener("click",()=>{
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="registre-echeances-"+iso(TODAY)+".json"; a.click();
+});
+$("#btnImport").addEventListener("click",()=>$("#fileImport").click());
+$("#fileImport").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const rd=new FileReader();
+  rd.onload=()=>{ try{
+      const s=JSON.parse(rd.result);
+      if(!s.companies||!s.rules) throw 0;
+      state=s; scheduleSave(); render();
+    }catch(err){ alert("Fichier invalide : import annulé."); } };
+  rd.readAsText(f);
+});
+$("#btnAddSoc").addEventListener("click",()=>editCompany(null));
+document.querySelectorAll("#tblSoc th.sortable").forEach(th=>{
+  th.addEventListener("click",()=>{
+    const k=th.dataset.sort;
+    if(socSort.key===k) socSort.dir*=-1; else socSort={key:k,dir:1};
+    renderSocietes();
+  });
+});
+$("#selAll").addEventListener("change",e=>{
+  selSoc = e.target.checked ? new Set(state.companies.map(c=>c.id)) : new Set();
+  renderSocietes();
+});
+$("#btnDelSel").addEventListener("click",()=>{
+  if(!selSoc.size) return;
+  const names = state.companies.filter(c=>selSoc.has(c.id)).map(c=>c.name).sort((a,b)=>a.localeCompare(b,"fr"));
+  if(!confirm("Supprimer définitivement "+names.length+" société(s) du registre ?\n\n– "+names.join("\n– "))) return;
+  state.companies = state.companies.filter(c=>!selSoc.has(c.id));
+  selSoc = new Set(); scheduleSave(); render();
+});
+$("#btnAddRule").addEventListener("click",()=>editRule(null));
+["fJur","fCl","fHideDone"].forEach(id=>$("#"+id).addEventListener("change",renderEcheancier));
+$("#fSort").addEventListener("change",()=>{ echSort=null; renderEcheancier(); });
+$("#fSearch").addEventListener("input",renderEcheancier);
+
+/* ================= INIT ================= */
+(async function(){
+  $("#todayLbl").textContent = TODAY.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  await loadState();
+  if(applyAutofill072026()) await saveState();
+  if(storageMode==="memory"){
+    const n=$("#storageNotice"); n.style.display="block";
+    n.innerHTML="<b>Sauvegarde non disponible dans cet environnement.</b> Vos modifications seront perdues à la fermeture : utilisez « Exporter JSON » (onglet Sociétés) pour conserver l'état.";
+  }
+  render();
+})();
+</script>
+</body>
+</html>
