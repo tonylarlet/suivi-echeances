@@ -123,6 +123,7 @@ h2.sec{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;text
 <nav>
   <button data-view="echeancier" class="active">Échéancier</button>
   <button data-view="societes">Sociétés</button>
+  <button data-view="historique">Historique</button>
   <button data-view="regles">Règles de délais</button>
   <button data-view="aide">Méthode &amp; réserves</button>
 </nav>
@@ -170,6 +171,30 @@ h2.sec{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:15px;text
     <div style="overflow:auto">
     <table id="tblSoc"><thead><tr>
       <th style="width:34px"><input type="checkbox" id="selAll" title="Tout sélectionner"></th><th class="sortable" data-sort="name">Société ↕</th><th class="sortable" data-sort="forme">Forme ↕</th><th class="sortable" data-sort="jur">Juridiction ↕</th><th class="sortable" data-sort="cloture">Clôture ↕</th><th class="sortable" data-sort="cac">CAC ↕</th><th>Cycle exercice en cours</th><th class="sortable" data-sort="note">Notes ↕</th><th></th>
+    </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- VUE HISTORIQUE -->
+  <section id="view-historique" class="hidden">
+    <div class="toolbar">
+      <span style="font-size:12px;color:var(--ink-soft)">Sociétés ayant finalisé 100% de leurs échéances pour le cycle en cours. Utilisez le bouton « Réactiver » pour relancer un cycle si besoin.</span>
+    </div>
+    <div class="filters">
+      <label>Juridiction
+        <select id="fHistJur"><option value="">Toutes</option><option value="NC">Nouméa (NC)</option><option value="PF">Tahiti (PF)</option><option value="HK">Hong Kong / autre</option><option value="?">À confirmer</option></select>
+      </label>
+      <label>Cycle de clôture
+        <select id="fHistCl"><option value="">Tous</option><option value="03-31">31/03</option><option value="06-30">30/06</option><option value="09-30">30/09</option><option value="12-31">31/12</option><option value="none">Sans date</option></select>
+      </label>
+      <label>Tri
+        <select id="fHistSort"><option value="alpha">Alphabétique</option><option value="cloture">Par date de clôture</option></select>
+      </label>
+      <input type="search" id="fHistSearch" placeholder="Rechercher une société…">
+    </div>
+    <div style="overflow:auto">
+    <table id="tblHist"><thead><tr>
+      <th class="sortable" data-sort="name">Société ↕</th><th class="sortable" data-sort="forme">Forme ↕</th><th class="sortable" data-sort="jur">Juridiction ↕</th><th class="sortable" data-sort="cloture">Clôture ↕</th><th class="sortable" data-sort="cac">CAC ↕</th><th>Cycle exercice finalisé</th><th class="sortable" data-sort="note">Notes ↕</th><th></th>
     </tr></thead><tbody></tbody></table>
     </div>
   </section>
@@ -454,7 +479,7 @@ function statusOf(item){
 
 /* ================= RENDU ================= */
 const $ = s=>document.querySelector(s);
-const views = ["echeancier","societes","regles","aide"];
+const views = ["echeancier","societes","historique","regles","aide"];
 document.querySelectorAll("nav button").forEach(b=>{
   b.addEventListener("click",()=>{
     document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x===b));
@@ -772,7 +797,60 @@ function renderRules(){
   }
 }
 
-function render(){ renderEcheancier(); renderSocietes(); renderRules(); }
+let histSort = {key:"name", dir:1};
+function histSortVal(c,k){
+  if(k==="cac") return c.cac?0:1;
+  return String(c[k]||"").toUpperCase();
+}
+function renderHistorique(){
+  document.querySelectorAll("#tblHist th.sortable").forEach(th=>{
+    th.classList.toggle("active", th.dataset.sort===histSort.key);
+  });
+  const jur=$("#fHistJur").value, fcl=$("#fHistCl").value, sort=$("#fHistSort").value, q=$("#fHistSearch").value.toLowerCase();
+  const tb = $("#tblHist tbody"); tb.innerHTML="";
+  // Filtre sur currentCycleComplete(c) === true
+  let comps = state.companies.filter(c=>{
+    if(!currentCycleComplete(c)) return false;
+    if(jur && c.jur!==jur) return false;
+    if(fcl==="none" && c.cloture) return false;
+    if(fcl && fcl!=="none" && c.cloture!==fcl) return false;
+    if(q && !c.name.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  // Tri
+  const sorted = comps.slice().sort((a,b)=>{
+    const va=histSortVal(a,histSort.key), vb=histSortVal(b,histSort.key);
+    let r = (typeof va==="number") ? va-vb : String(va).localeCompare(String(vb),"fr");
+    if(r===0) r = a.name.localeCompare(b.name,"fr");
+    return r*histSort.dir;
+  });
+  for(const c of sorted){
+    const tr = document.createElement("tr");
+    const clLbl = c.cloture ? c.cloture.split("-").reverse().join("/") : "—";
+    tr.innerHTML =
+      '<td><b>'+esc(c.name)+'</b></td><td>'+esc(c.forme)+'</td>'+
+      '<td>'+jurBadge(c.jur)+'</td>'+
+      '<td class="mono">'+clLbl+'</td>'+
+      '<td>'+(c.cac?"Oui":"—")+'</td>'+
+      '<td>'+railFor(c)+'</td>'+
+      '<td style="max-width:280px;font-size:12px;color:var(--ink-soft)">'+esc(c.note)+'</td>'+
+      '<td style="white-space:nowrap"><button class="btn sm ghost bReact">Réactiver</button></td>';
+    tr.querySelector(".bReact").addEventListener("click",()=>{
+      if(confirm("Réactiver le cycle de "+c.name+" ?\n\nCela supprimera les pointages du cycle en cours.")){
+        const exKey = iso(lastClotureFor(c));
+        for(const r of rulesFor(c)){
+          const k = c.id+"|"+exKey+"|"+r.id;
+          delete state.tracking[k];
+        }
+        scheduleSave(); render();
+      }
+    });
+    tb.appendChild(tr);
+  }
+  if(!sorted.length) tb.innerHTML='<tr><td colspan="8" style="text-align:center;color:var(--ink-soft);padding:24px">Aucune société à afficher. Terminez des cycles pour les voir apparaître ici.</td></tr>';
+}
+
+function render(){ renderEcheancier(); renderSocietes(); renderHistorique(); renderRules(); }
 
 /* ================= MODALES ================= */
 function modal(html, onOk){
@@ -882,6 +960,16 @@ $("#btnAddRule").addEventListener("click",()=>editRule(null));
 ["fJur","fCl","fHideDone"].forEach(id=>$("#"+id).addEventListener("change",renderEcheancier));
 $("#fSort").addEventListener("change",()=>{ echSort=null; renderEcheancier(); });
 $("#fSearch").addEventListener("input",renderEcheancier);
+document.querySelectorAll("#tblHist th.sortable").forEach(th=>{
+  th.addEventListener("click",()=>{
+    const k=th.dataset.sort;
+    if(histSort.key===k) histSort.dir*=-1; else histSort={key:k,dir:1};
+    renderHistorique();
+  });
+});
+["fHistJur","fHistCl"].forEach(id=>$("#"+id).addEventListener("change",renderHistorique));
+$("#fHistSort").addEventListener("change",renderHistorique);
+$("#fHistSearch").addEventListener("input",renderHistorique);
 
 /* ================= INIT ================= */
 (async function(){
