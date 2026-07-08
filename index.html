@@ -343,7 +343,7 @@ async function loadState(){
     if(window.storage && window.storage.get){
       try{
         const r = await window.storage.get(DB_KEY);
-        if(r && r.value){ state = JSON.parse(r.value); storageMode = "app"; return; }
+        if(r && r.value){ state = JSON.parse(r.value); storageMode = "app"; applyAutofill072026(); initMarkCompleteUntil20251231(); await saveState(); return; }
       }catch(e){ /* clé absente */ }
       storageMode = "app";
     }
@@ -351,7 +351,7 @@ async function loadState(){
   if(storageMode !== "app"){
     try{
       const raw = window.localStorage ? localStorage.getItem(DB_KEY) : null;
-      if(raw){ state = JSON.parse(raw); storageMode = "local"; return; }
+      if(raw){ state = JSON.parse(raw); storageMode = "local"; applyAutofill072026(); initMarkCompleteUntil20251231(); await saveState(); return; }
       if(window.localStorage){ storageMode = "local"; }
     }catch(e){ storageMode = "memory"; }
   }
@@ -361,6 +361,8 @@ async function loadState(){
       rules: SEED_RULES.map(r=>({...r})),
       tracking: {}  // clé: companyId|exYYYY-MM-DD|ruleId -> {done, date, note}
     };
+    applyAutofill072026();
+    initMarkCompleteUntil20251231();
     await saveState();
   }
 }
@@ -385,6 +387,25 @@ function applyAutofill072026(){
     }
   }
   state.meta = Object.assign({}, state.meta||{}, {autofill072026:true});
+  return true;
+}
+/* Initialisation : marquer 100% complétées toutes les sociétés avec clôture <= 31/12/2025
+   (au 08/07/2026 : clôtures "12-31" et "09-30"). Une seule fois. */
+function initMarkCompleteUntil20251231(){
+  if(state.meta && state.meta.initComplete20251231) return false;
+  const target = ["12-31", "09-30"]; // Clôtures dont le dernier exercice clos est <= 31/12/2025
+  for(const c of state.companies){
+    if(!target.includes(c.cloture)) continue;
+    const lc = lastClotureFor(c); if(!lc) continue;
+    const exKey = iso(lc);
+    for(const r of rulesFor(c)){
+      const due = addDays(lc, r.off);
+      const k = c.id+"|"+exKey+"|"+r.id;
+      const t = state.tracking[k] || {};
+      if(!t.done){ t.done=true; t.date=t.date||fmt(due); t.note=t.note||"initialisé"; state.tracking[k]=t; }
+    }
+  }
+  state.meta = Object.assign({}, state.meta||{}, {initComplete20251231:true});
   return true;
 }
 /* Compteurs animés (respecte prefers-reduced-motion) */
