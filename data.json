@@ -1,0 +1,51 @@
+{
+  "derniere_execution": "2026-10-07",
+  "societes": [
+    {
+      "nom": "SCI HEIVARUE",
+      "forme": "SCI",
+      "juridiction": "PF",
+      "cloture": "09-30",
+      "confirme": true,
+      "note": "Juridiction tranchee : siege 67 rue des Poilus Tahitiens, RCS Papeete TPI 1283 C (PV AGO du 12/02/2026). Cloture 30/09 confirmee. Co-gerants Jean-Marc et Mireille Mantovani."
+    },
+    {
+      "nom": "SOFADIF",
+      "forme": "SARL",
+      "juridiction": "PF",
+      "cloture": "12-31",
+      "confirme": true,
+      "note": "Denomination exacte : FAA'A DIFFUSION SARL. Exercice 2025 : prorogation du delai de convocation de l'AGOA au 30/09/2026 obtenue par ordonnance du President du Tribunal Mixte de Commerce de Papeete du 10/07/2026."
+    }
+  ],
+  "etapes_constatees": [
+    {
+      "societe": "SOFADIF",
+      "exercice": "2025-12-31",
+      "etape": "ago",
+      "date": "30/09/2026",
+      "note": "AGO d'approbation tenue dans le delai proroge par ordonnance du 10/07/2026"
+    },
+    {
+      "societe": "SOFADIF",
+      "exercice": "2025-12-31",
+      "etape": "depot",
+      "date": "05/08/2026",
+      "note": "Formalites d'enregistrement et depot RCS realisees (note d'honoraires Vaiana Tang & Sophie Dubau 26/152)"
+    },
+    {
+      "societe": "SCI HEIVARUE",
+      "exercice": "2025-09-30",
+      "etape": "ago",
+      "date": "12/02/2026",
+      "note": "PV AGO du 12/02/2026 : comptes approuves, benefice 16 967 485 XPF, dividendes 16 900 000 XPF"
+    },
+    {
+      "societe": "SCI SDE (ex SDE)",
+      "exercice": "2025-09-30",
+      "etape": "ago",
+      "date": "12/02/2026",
+      "note": "PV AGO du 12/02/2026 classe dans DOCUMENTS FIN EXERCICE / 30 09 2025"
+    }
+  ]
+}
