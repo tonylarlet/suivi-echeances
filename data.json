@@ -16,6 +16,14 @@
       "cloture": "12-31",
       "confirme": true,
       "note": "Denomination exacte : FAA'A DIFFUSION SARL. Exercice 2025 : prorogation du delai de convocation de l'AGOA au 30/09/2026 obtenue par ordonnance du President du Tribunal Mixte de Commerce de Papeete du 10/07/2026."
+    },
+    {
+      "nom": "SCI VIRANI",
+      "forme": "SCI",
+      "juridiction": "NC",
+      "cloture": "06-30",
+      "confirme": true,
+      "note": "Bilan definitif 30/06/2026 recu (confirme par le DAF). ATTENTION : le dossier NC-006-COMPTABILITE/SCI VIRANI/2026/Definitifs est vide - seul le projet v1 du 20/08/2026 y figure. Classer le definitif."
     }
   ],
   "etapes_constatees": [
@@ -46,6 +54,27 @@
       "etape": "ago",
       "date": "12/02/2026",
       "note": "PV AGO du 12/02/2026 classe dans DOCUMENTS FIN EXERCICE / 30 09 2025"
+    },
+    {
+      "societe": "SCI MIRMAN",
+      "exercice": "2026-06-30",
+      "etape": "bilan",
+      "date": "04/09/2026",
+      "note": "Etats financiers definitifs au 30/06/2026 (MIRMAN EF 30.06.2026.pdf) - arrete des comptes clos"
+    },
+    {
+      "societe": "SCI VIRANI",
+      "exercice": "2026-06-30",
+      "etape": "bilan",
+      "date": "07/10/2026",
+      "note": "Bilan definitif 30/06/2026 recu (confirme par le DAF) - arrete des comptes clos. Document a classer dans le dossier Definitifs."
+    },
+    {
+      "societe": "LOGISER",
+      "exercice": "2026-06-30",
+      "etape": "bilan",
+      "date": "06/10/2026",
+      "note": "LOGISER EF 30.06.26.pdf depose dans 06 2026/Definitifs le 06/10/2026 - arrete des comptes clos"
     }
   ]
 }

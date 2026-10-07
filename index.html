@@ -743,6 +743,25 @@ function renderEcheancier(){
   }
   if(!rowsDef.length) tb.innerHTML='<tr><td colspan="'+(cols.length+4)+'" style="text-align:center;color:var(--ink-soft);padding:24px">Aucune société dans les filtres choisis.</td></tr>';
 }
+/* Règle métier : la réception du bilan définitif clôt tout l'arrêté des comptes.
+   Cocher "Bilan & liasse" valide donc aussi l'amont (envoi du dossier, révision/OD)
+   et la déclaration fiscale. Restent ouverts le CAC et le juridique (projets d'AG,
+   AGO, dépôt au greffe), qui ne découlent pas de l'arrêté. */
+const ETAPES_ARRETE = ["envoi_dossier","revision","decl_nc","decl_pf"];
+function cascadeArreteComptes(c, exKey, ruleId, date){
+  if(ruleId!=="bilan") return 0;
+  let n=0;
+  for(const r of rulesFor(c)){
+    if(!ETAPES_ARRETE.includes(r.id)) continue;
+    const k = c.id+"|"+exKey+"|"+r.id;
+    const t = state.tracking[k];
+    if(!(t && t.done)){
+      state.tracking[k] = {done:true, date:date||"", note:"validé automatiquement : bilan définitif reçu"};
+      n++;
+    }
+  }
+  return n;
+}
 function openTrackModal(it){
   const key = it.company.id+"|"+it.exKey+"|"+it.rule.id;
   const t = state.tracking[key] || {done:false, date:"", note:""};
@@ -757,6 +776,7 @@ function openTrackModal(it){
       let date = host.querySelector("#tDate").value.trim();
       if(done && !date) date = fmt(TODAY);
       state.tracking[key] = {done, date, note: host.querySelector("#tNote").value.trim()};
+      if(done) cascadeArreteComptes(it.company, it.exKey, it.rule.id, date);
     }
   );
 }
@@ -1034,6 +1054,16 @@ $("#btnSync").addEventListener("click",()=>syncFromData(true));
    uniquement ce qui a changé : clôtures, juridictions, sociétés nouvelles,
    étapes constatées. Le pointage manuel de l'utilisateur n'est jamais écrasé. */
 let syncInfo = {etat:"", date:"", changements:[]};
+/* Les clés internes de pointage sont produites par iso(), qui passe par
+   toISOString() : en UTC+11 (Nouméa) une clôture au 30/06 est stockée "2026-06-29".
+   C'est cohérent pour toute l'appli, mais le data.json porte les vraies dates.
+   On convertit donc chaque date reçue par le même chemin, pour que les clés
+   coïncident sans avoir à réécrire le pointage déjà saisi. */
+function exKeyFromDate(s){
+  const m = String(s||"").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(!m) return s;
+  return iso(new Date(Number(m[1]), Number(m[2])-1, Number(m[3])));
+}
 async function syncFromData(manuel){
   const el = $("#syncLbl");
   if(el) el.textContent = "Synchronisation…";
@@ -1069,10 +1099,13 @@ async function syncFromData(manuel){
     for(const e of (d.etapes_constatees||[])){
       const c = state.companies.find(x=>x.name.trim().toUpperCase()===(e.societe||"").trim().toUpperCase());
       if(!c || !e.exercice || !e.etape) continue;
-      const k = c.id+"|"+e.exercice+"|"+e.etape;
+      const exk = exKeyFromDate(e.exercice);
+      const k = c.id+"|"+exk+"|"+e.etape;
       if(!(state.tracking[k] && state.tracking[k].done)){
         state.tracking[k] = {done:true, date:e.date||"", note:e.note||"constaté par la veille SharePoint"};
         chg.push(c.name+" : "+e.etape+" constaté");
+        const n = cascadeArreteComptes(c, exk, e.etape, e.date);
+        if(n) chg.push(c.name+" : arrêté des comptes clos ("+n+" étape(s) validée(s) en cascade)");
       }
     }
     syncInfo = {etat:"ok", date:d.derniere_execution||"", changements:chg};
