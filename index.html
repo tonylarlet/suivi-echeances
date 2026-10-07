@@ -743,23 +743,50 @@ function renderEcheancier(){
   }
   if(!rowsDef.length) tb.innerHTML='<tr><td colspan="'+(cols.length+4)+'" style="text-align:center;color:var(--ink-soft);padding:24px">Aucune société dans les filtres choisis.</td></tr>';
 }
-/* Règle métier : la réception du bilan définitif clôt tout l'arrêté des comptes.
-   Cocher "Bilan & liasse" valide donc aussi l'amont (envoi du dossier, révision/OD)
-   et la déclaration fiscale. Restent ouverts le CAC et le juridique (projets d'AG,
-   AGO, dépôt au greffe), qui ne découlent pas de l'arrêté. */
-const ETAPES_ARRETE = ["envoi_dossier","revision","decl_nc","decl_pf"];
-function cascadeArreteComptes(c, exKey, ruleId, date){
-  if(ruleId!=="bilan") return 0;
+/* Règle métier : une étape franchie suppose que tout l'amont l'est aussi.
+   Cocher n'importe quelle étape valide donc automatiquement toutes celles qui la
+   précèdent dans le cycle (délai inférieur ou égal), y compris les étapes ajoutées
+   après coup dans l'onglet "Règles de délais". Rien n'est validé en aval : cocher
+   le bilan ne touche ni au CAC (délai supérieur) ni au juridique. */
+function cascadeEtapesPrecedentes(c, exKey, ruleId, date){
+  const ref = state.rules.find(r=>r.id===ruleId);
+  if(!ref) return 0;
   let n=0;
   for(const r of rulesFor(c)){
-    if(!ETAPES_ARRETE.includes(r.id)) continue;
+    if(r.id===ruleId || r.id==="fin_ex") continue;
+    if(r.off > ref.off) continue;            // étape postérieure : on n'y touche pas
     const k = c.id+"|"+exKey+"|"+r.id;
     const t = state.tracking[k];
     if(!(t && t.done)){
-      state.tracking[k] = {done:true, date:date||"", note:"validé automatiquement : bilan définitif reçu"};
+      state.tracking[k] = {done:true, date:date||"",
+        note:"validé automatiquement : « "+ref.lbl+" » est franchi"};
       n++;
     }
   }
+  return n;
+}
+/* Rattrapage unique : applique la règle ci-dessus à tout le pointage déjà saisi,
+   pour les étapes cochées avant que la cascade n'existe. */
+function migrationCascadeRetroactive(){
+  if(state.meta && state.meta.cascadeRetro) return 0;
+  let n=0;
+  for(const c of state.companies){
+    const exs = new Set();
+    for(const k of Object.keys(state.tracking)){
+      const p = k.split("|");
+      if(p[0]===c.id && state.tracking[k] && state.tracking[k].done) exs.add(p[1]);
+    }
+    for(const ex of exs){
+      // repère l'étape franchie la plus avancée de cet exercice, puis cascade
+      let maxOff = -1, maxId = null;
+      for(const r of rulesFor(c)){
+        const t = state.tracking[c.id+"|"+ex+"|"+r.id];
+        if(t && t.done && r.off > maxOff){ maxOff = r.off; maxId = r.id; }
+      }
+      if(maxId) n += cascadeEtapesPrecedentes(c, ex, maxId, "");
+    }
+  }
+  state.meta = Object.assign({}, state.meta||{}, {cascadeRetro:true});
   return n;
 }
 function openTrackModal(it){
@@ -776,7 +803,7 @@ function openTrackModal(it){
       let date = host.querySelector("#tDate").value.trim();
       if(done && !date) date = fmt(TODAY);
       state.tracking[key] = {done, date, note: host.querySelector("#tNote").value.trim()};
-      if(done) cascadeArreteComptes(it.company, it.exKey, it.rule.id, date);
+      if(done) cascadeEtapesPrecedentes(it.company, it.exKey, it.rule.id, date);
     }
   );
 }
@@ -1104,8 +1131,8 @@ async function syncFromData(manuel){
       if(!(state.tracking[k] && state.tracking[k].done)){
         state.tracking[k] = {done:true, date:e.date||"", note:e.note||"constaté par la veille SharePoint"};
         chg.push(c.name+" : "+e.etape+" constaté");
-        const n = cascadeArreteComptes(c, exk, e.etape, e.date);
-        if(n) chg.push(c.name+" : arrêté des comptes clos ("+n+" étape(s) validée(s) en cascade)");
+        const n = cascadeEtapesPrecedentes(c, exk, e.etape, e.date);
+        if(n) chg.push(c.name+" : "+n+" étape(s) amont validée(s) en cascade");
       }
     }
     syncInfo = {etat:"ok", date:d.derniere_execution||"", changements:chg};
@@ -1125,7 +1152,9 @@ async function syncFromData(manuel){
 (async function(){
   $("#todayLbl").textContent = TODAY.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   await loadState();
-  if(applyAutofill072026()) await saveState();
+  let maj = applyAutofill072026();
+  if(migrationCascadeRetroactive()) maj = true;
+  if(maj) await saveState();
   if(storageMode==="memory"){
     const n=$("#storageNotice"); n.style.display="block";
     n.innerHTML="<b>Sauvegarde non disponible dans cet environnement.</b> Vos modifications seront perdues à la fermeture : utilisez « Exporter JSON » (onglet Sociétés) pour conserver l'état.";
