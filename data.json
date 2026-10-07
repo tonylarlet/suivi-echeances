@@ -23,7 +23,7 @@
       "juridiction": "NC",
       "cloture": "06-30",
       "confirme": true,
-      "note": "Bilan definitif 30/06/2026 recu (confirme par le DAF). ATTENTION : le dossier NC-006-COMPTABILITE/SCI VIRANI/2026/Definitifs est vide - seul le projet v1 du 20/08/2026 y figure. Classer le definitif."
+      "note": "Bilan definitif 30/06/2026 recu : VIRANI EF 30.06.26.pdf classe dans 2026/Definitifs."
     }
   ],
   "etapes_constatees": [
@@ -67,7 +67,7 @@
       "exercice": "2026-06-30",
       "etape": "bilan",
       "date": "07/10/2026",
-      "note": "Bilan definitif 30/06/2026 recu (confirme par le DAF) - arrete des comptes clos. Document a classer dans le dossier Definitifs."
+      "note": "Etats financiers definitifs au 30/06/2026 (VIRANI EF 30.06.26.pdf) - arrete des comptes clos"
     },
     {
       "societe": "LOGISER",
