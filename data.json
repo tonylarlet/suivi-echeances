@@ -70,6 +70,55 @@
       "note": "Etats financiers definitifs au 30/06/2026 (VIRANI EF 30.06.26.pdf) - arrete des comptes clos"
     },
     {
+      "societe": "DUTEX",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "03/08/2026",
+      "note": "EF DUTEX_03082026.pdf dans MARS 2026/Definitfs, avec declaration IS (1305972-DECLA-IS-LF-2026) - arrete des comptes clos"
+    },
+    {
+      "societe": "SEFRAKO",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "03/08/2026",
+      "note": "EF SEFRAKO_03082026.pdf dans MARS 2026/Definitifs, avec declaration IS (1189532-DECLA-IS-LF-2026)"
+    },
+    {
+      "societe": "SEFRACA",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "03/08/2026",
+      "note": "EF SEFRACA_03082026.pdf dans 31 03 2026/Definitifs, avec declaration IS (1191099-DECLA-IS-LFS-2026)"
+    },
+    {
+      "societe": "SOCADIM",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "13/08/2026",
+      "note": "EF SOCADIM_13082026.pdf dans 03 2026/Definitifs, avec declaration IS et solde (1190453-DECLA-IS-LF-2026)"
+    },
+    {
+      "societe": "SOMARI",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "31/03/2026",
+      "note": "SOMARI EF 31.03.2026.pdf dans 03 2026/Definitifs"
+    },
+    {
+      "societe": "SERLOG",
+      "exercice": "2026-03-31",
+      "etape": "bilan",
+      "date": "31/03/2026",
+      "note": "SERLOG EF 31.03.26.pdf dans 2026/Definitifs"
+    },
+    {
+      "societe": "SEFRATEX",
+      "exercice": "2026-04-30",
+      "etape": "bilan",
+      "date": "31/03/2026",
+      "note": "SEFRATEX EF 31..03.26.pdf dans 2025-2026/Definitifs. ATTENTION : les EF portent la date du 31/03/2026, ancien cycle, alors que l'AGE du 15/05/2026 a porte la cloture au 30/04. Confirmer a partir de quel exercice la nouvelle date s'applique."
+    },
+    {
       "societe": "TAHITI PAS CHER (TPC)",
       "exercice": "2026-06-30",
       "etape": "bilan",
