@@ -10,12 +10,31 @@
       "note": "Juridiction tranchee : siege 67 rue des Poilus Tahitiens, RCS Papeete TPI 1283 C (PV AGO du 12/02/2026). Cloture 30/09 confirmee. Co-gerants Jean-Marc et Mireille Mantovani."
     },
     {
+      "nom": "SEFRAKO",
+      "forme": "SARL",
+      "juridiction": "NC",
+      "cloture": "03-31",
+      "cac": true,
+      "confirme": true,
+      "note": "CAC en fonction : rapports RCA et RS au 31/03/2026 dans MARS 2026/CAC/RAPPORTS."
+    },
+    {
+      "nom": "SEFRATEX",
+      "forme": "SAS",
+      "juridiction": "PF",
+      "cloture": "04-30",
+      "cac": true,
+      "confirme": true,
+      "note": "CAC en fonction. Exercice clos 31/03/2026 : etat des conventions reglementees produit, rapports RCA/RS pas encore deposes (audit en cours, dossier CAC mis a jour le 06/10/2026). AGE du 15/05/2026 : cloture portee au 30/04 - confirmer a partir de quel exercice."
+    },
+    {
       "nom": "SOFADIF",
       "forme": "SARL",
       "juridiction": "PF",
       "cloture": "12-31",
+      "cac": true,
       "confirme": true,
-      "note": "Denomination exacte : FAA'A DIFFUSION SARL. Exercice 2025 : prorogation du delai de convocation de l'AGOA au 30/09/2026 obtenue par ordonnance du President du Tribunal Mixte de Commerce de Papeete du 10/07/2026."
+      "note": "Denomination exacte : FAA'A DIFFUSION SARL. CAC en fonction (rapports RCA et RS 2025). Exercice 2025 : prorogation du delai de convocation de l'AGOA au 30/09/2026 par ordonnance du President du TMC de Papeete du 10/07/2026."
     },
     {
       "nom": "SCI VIRANI",
@@ -131,6 +150,34 @@
       "etape": "bilan",
       "date": "06/10/2026",
       "note": "LOGISER EF 30.06.26.pdf depose dans 06 2026/Definitifs le 06/10/2026 - arrete des comptes clos"
+    },
+    {
+      "societe": "DUTEX",
+      "exercice": "2026-03-31",
+      "etape": "cac_remise",
+      "date": "31/03/2026",
+      "note": "Rapports CAC signes : DUTEX_RCA_31.03.2026.pdf et DUTEX_RS_31.03.2026.pdf"
+    },
+    {
+      "societe": "SEFRAKO",
+      "exercice": "2026-03-31",
+      "etape": "cac_remise",
+      "date": "31/03/2026",
+      "note": "Rapports CAC signes : SEFRAKO_RCA_31.03.2026.pdf et SEFRAKO_RS_31.03.2026.pdf"
+    },
+    {
+      "societe": "EKEKO",
+      "exercice": "2025-12-31",
+      "etape": "cac_remise",
+      "date": "31/12/2025",
+      "note": "Rapports CAC : EKEKO 2025_RCA.pdf et SAS EKEKO RS 31.12.2025.pdf"
+    },
+    {
+      "societe": "SOFADIF",
+      "exercice": "2025-12-31",
+      "etape": "cac_remise",
+      "date": "31/12/2025",
+      "note": "Rapports CAC : SOFADIF 2025_RCA.pdf et SOFADIF 2025_RS.pdf"
     }
   ]
 }
