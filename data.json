@@ -1,1284 +1,1092 @@
 {
-  "derniere_execution": "2026-10-08",
-  "societes": [
-    {
-      "nom": "SCI HEIVARUE",
-      "forme": "SCI",
-      "juridiction": "PF",
-      "cloture": "09-30",
-      "cac": false,
-      "confirme": true,
-      "note": "Juridiction tranchee : siege 67 rue des Poilus Tahitiens, RCS Papeete TPI 1283 C (PV AGO du 12/02/2026). Cloture 30/09 confirmee. Co-gerants Jean-Marc et Mireille Mantovani. Au 08/10/2026 : le dossier d'exercice 2026 n'a pas encore ete cree, les dossiers sont nommes par annee civile seule ('2025')."
-    },
-    {
-      "nom": "SEFRAKO",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "03-31",
-      "cac": true,
-      "confirme": true,
-      "note": "CAC en fonction : rapports RCA et RS au 31/03/2026 dans MARS 2026/CAC/RAPPORTS. Bilan definitif 31/03/2026 avec declaration IS (1189532-DECLA-IS-LF-2026)."
-    },
-    {
-      "nom": "SEFRATEX",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "04-30",
-      "cac": true,
-      "confirme": true,
-      "note": "CHANGEMENT DE CLOTURE TRANCHE : l'AGE du 15/05/2026 a porte la cloture au 30 avril (statuts art. 6 modifies), M2 CFE Papeete du 24/06/2026, recepisse CCISM du 24/06/2026, certificat de depot et Kbis du 02/07/2026 'date de cloture : 30 avril'. La cloture 31/03 s'applique jusqu'a l'exercice clos le 31/03/2026 INCLUS ; le 30/04 s'applique a partir de l'exercice ouvert le 01/04/2026, dont la premiere cloture est le 30/04/2027 (exercice exceptionnel de 13 mois). Il n'y a PAS d'exercice clos au 30/04/2026. CAC en fonction, audit de l'exercice 31/03/2026 TOUJOURS EN COURS au 08/10/2026 : ni RCA ni RS, le dossier CAC ne contient que ECHANGE, balances et GL au 31/03/2026, l'etat des conventions reglementees (produit le 06/10/2026) et un FEC ; les derniers rapports au depot sont ceux du 31/03/2025. Deux dossiers comptables en parallele ('2025-2026' qui porte les definitifs et le CAC, et '03 2026' qui ne contient qu'un doublon de l'etat des conventions) : risque de dispersion des pieces. Le dossier '2026-2027' est ouvert."
-    },
-    {
-      "nom": "SOFADIF",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "12-31",
-      "cac": true,
-      "confirme": true,
-      "note": "Denomination exacte : FAA'A DIFFUSION SARL (forme SAS au PV 2025). CAC en fonction : Financial Audit SAS titulaire et M. Gilles Bellaiche suppleant, nommes par PV d'AGO du 18/02/2025, publication JOPF du 28/03/2025. Rapports RCA et RS 2025 au dossier. Exercice 2025 : delai de convocation de l'AGOA proroge au 30/09/2026 par ordonnance du President du TMC de Papeete du 10/07/2026 ; AGO tenue et depot RCS realises. AUGMENTATION DE CAPITAL : capital porte a 24 000 000 F CFP, M2 du 25/06/2026, depot d'actes et Kbis du 02/07/2026. A CLARIFIER : des pieces datees de 2026 (GL et fournisseurs au 30/06/2026, FEC 2026, dossier 'mail du 17 09 2026') sont classees dans 2025/CAC."
-    },
-    {
-      "nom": "SCI VIRANI",
-      "forme": "SCI",
-      "juridiction": "PF",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": true,
-      "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre. Pieces : facture d'honoraires AUDIT PACIFIQUE du 01/09/2026 adressee a 'S.C.I. VIRANI, BP 3553, PAPEETE Tahiti 98713, Polynesie francaise', en XPF avec TVA a 13% (taux PF) ; courrier DICP au dossier d'administration ; note 'passage a l'IT et degrevements' ; lettre de mission Audit Pacifique (membre de l'Ordre des experts-comptables de Polynesie francaise). Aucune mention DSF, impots.nc, Noumea ou TGC. Cloture 30/06 confirmee (dossiers en annees civiles 2011 a 2026). Bilan definitif 30/06/2026 recu : 'VIRANI EF 30.06.26.pdf' dans 2026/Definitifs."
-    },
-    {
-      "nom": "ZANZIBAR",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee : tous les dossiers d'exercice sont nommes '31 12 AAAA' et l'EF 2025 vise l'exercice du 01/01/2025 au 31/12/2025. NC confirme par la liasse 1185556-DECLA-IS-LF-2025 (Code des impots NC) et le cabinet PGA Noumea. Forme a confirmer."
-    },
-    {
-      "nom": "DFM INVEST",
-      "forme": "?",
-      "juridiction": "NC",
-      "cloture": "09-30",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 30/09 deduite des dossiers '09 2023' et '09 2024' et du fichier 'DFM Invest -Bilan 30.09.2024.pdf'. Juridiction NC presumee (classement avec les entites NC, aucun marqueur PF) - a confirmer. ALERTE CONFIRMEE AU 08/10/2026 : toujours aucun dossier d'exercice 30/09/2025 ni 30/09/2026, deux exercices clos sans dossier comptable. Comptes 2024 deposes (recepisse au dossier)."
-    },
-    {
-      "nom": "SC CAMERON INVEST",
-      "forme": "SC",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "MISE A JOUR 08/10/2026 : le dernier exercice n'est pas 2022 mais la PERIODE DE LIQUIDATION du 01/01/2023 au 31/07/2023. Le bilan de cloture de liquidation ('EF cameron invest - societe en liquidation_25082023.pdf', attestation PG & Associes du 23/08/2023, total bilan 1 457 802 F.CFP, resultat -180 399) est classe par erreur dans le dossier '12 2022' et duplique a la racine de la societe : il n'existe pas de dossier d'exercice 2023. Liquidation cloturee comptablement au 31/07/2023 - verifier la radiation au RCS."
-    },
-    {
-      "nom": "SCI CAMERON 1",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee (dossiers '31 12 2021' a '31 12 2025'). NC confirme par la liasse 1273966-DECLA-IR-SCI-2024. Aucun dossier '31 12 2026' au 08/10/2026."
-    },
-    {
-      "nom": "SCI CAMERON 2",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee. NC confirme par la liasse 1273968-DECLA-IR-SCI-2024. Cessions de lots en cours (dossier VENTES actif en septembre 2026) et sinistre assurance C1007."
-    },
-    {
-      "nom": "SCI CANAAN",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee (dossiers '31 12 2020' a '31 12 2025'). NC confirme par la liasse 1273897-DECLA-IR-SCI-2024."
-    },
-    {
-      "nom": "SCI CHIRAZ CRUZ",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee (dossiers '31 12 2021' a '31 12 2025'). NC confirme par la liasse 1273981-DECLA-IR-SCI-2024."
-    },
-    {
-      "nom": "SCI PAO 7",
-      "forme": "SCI",
-      "juridiction": "PF",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee (dossiers '31 12 2022' a '31 12 2025'). PF confirme : declaration IT (impot sur les transactions), dossier IRCM dans NC-017-FISCALITE/TAHITI, rattachement au pole TERANI."
-    },
-    {
-      "nom": "GALLIENI 13",
-      "forme": "SC",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee par les EF 'SC GALLIENI 13 E.F. au 31.12.2025/2024'. JURIDICTION CORRIGEE : NC (Dock Gallieni Noumea, EEC, assurances MRP Noumea), et non PF. Participation avec Philippe Etwiller. Appel de fonds en cours aupres des associes. Ne pas confondre avec SCI GALLIENI 32. Dossier d'exercice '2018' vide (0 octet)."
-    },
-    {
-      "nom": "SC GRAND LARGE",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cac": false,
-      "confirme": false,
-      "note": "Denomination exacte : SCI GRAND LARGE 44. NC confirme (courrier Direction des services fiscaux de NC du 25/05/2023, identifiant fiscal 1447847, siege chez Jean-Marc Mantovani, BP 3598 Noumea, compte BCI). CLOTURE TOUJOURS INDETERMINEE : aucun dossier comptable, aucun exercice, aucun EF nulle part. ALERTE : societe non suivie en comptabilite."
-    },
-    {
-      "nom": "SCI LES TOURS",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "09-30",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 30/09 confirmee (dossiers 30 09 2013 a 30 09 2016, EF 'SCI LES TOURS 10-15 au 09-16'). NC confirme par la liasse 1190697-DECLA-IS-LFS-2016. ALERTE : societe ABSORBEE par SC LES LONNES (dossiers 'situation a la fusion' et 'Impot a la fusion'), dernier exercice 30/09/2016 - a archiver."
-    },
-    {
-      "nom": "SCI COLNETT 32",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "premier_exercice": "2026-12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 confirmee par la procuration d'AG de SC LES LONNES du 31/03/2026 ('l'exercice social commencera le 1er janvier pour se terminer le 31 decembre'), 1er exercice au 31/12/2026. NC (siege 4 av. Baie de Koutio Noumea, terrain 32 rue James Colnett Anse Vata). Capital 100 000 XPF, gerance Gregory Darmizin, 'commissaire aux comptes : neant'. AU 08/10/2026 : le dossier juridique SCI COLNETT 32 ne contient que deux pieces (delegation de pouvoir du gerant, notice descriptive signee du 15/04/2026), ni statuts ni Kbis ni acte de changement de denomination. A TRANCHER : meme projet que SCI NETCALL 32, ne pas suivre deux lignes."
-    },
-    {
-      "nom": "SCI NETCALL 32",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "premier_exercice": "2026-12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/12 CONFIRMEE par les statuts notaries (art. 22 : annee sociale du 1er janvier au 31 decembre, 1er exercice jusqu'au 31/12/2026), acte recu par Me Elisa MOUGEL a Noumea. Capital 100 000 XPF. 'Commissaire aux comptes : neant'. AU 08/10/2026 : Kbis definitif TOUJOURS introuvable comme fichier autonome - il est encapsule dans 'NETCALL 32-CPUC 23-09-25.pdf' (NC-023-PROJETS/IRN/CPUC), a ouvrir manuellement. POINT NOUVEAU : l'avis RIDET (n. 0572784 non, voir SCI RICO) qualifie NETCALL 32 de 'Societe a responsabilite limitee' et non de SCI, et un TROISIEME libelle 'SCI GALILLEE 3' heberge les rachats de parts (cession Darmizin du 27/07/2026, virements des 30/07 et 14/08/2026). Autorisation d'exploitation commerciale de 2 845 m2 accordee par arrete du 11/12/2025 au nom de NETCALL 32, demandeur G. Darmizin. Trois denominations coexistent pour le meme projet foncier : a arbitrer."
-    },
-    {
-      "nom": "BRICOPF1",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "09-30",
-      "premier_exercice": "2027-09-30",
-      "cac": false,
-      "confirme": true,
-      "note": "CONFIRME PAR KBIS du 18/02/2026 : cloture de l'exercice social au 30 septembre, 1er exercice clos le 30/09/2027. RCS Papeete 26 150 B, immatriculation 18/02/2026, debut d'activite 01/12/2026, capital 200 000 XPF. Presidente Mireille Risso, DG Jean-Marc Mantovani. Aucun CAC inscrit au Kbis. FORME CORRIGEE : SAS (le registre portait SASU)."
-    },
-    {
-      "nom": "BRICOPF2",
-      "forme": "SASU",
-      "juridiction": "PF",
-      "cloture": "09-30",
-      "premier_exercice": "2027-09-30",
-      "cac": false,
-      "confirme": true,
-      "note": "CONFIRME PAR KBIS du 06/05/2026 : cloture au 30 septembre, 1er exercice clos le 30/09/2027. RCS Papeete 26 372 B, n. de gestion 2026B00372, immatriculation 06/05/2026, debut d'activite 01/12/2026, capital 200 000 XPF. Denomination exacte au RCS : 'BRICOPF2.' avec un point final. SAS a associe unique, presidente Mireille Risso. FORME CORRIGEE : SASU (le registre portait SAS)."
-    },
-    {
-      "nom": "SCI AROA HITI",
-      "forme": "SCI",
-      "juridiction": "PF",
-      "cloture": "12-31",
-      "premier_exercice": "2026-12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "CONFIRME PAR LE M1 (CFE Papeete, declaration C 9871 121198 5, recu le 11/02/2026) : cloture au 31/12, 1er exercice clos le 31/12/2026, debut d'activite 01/01/2026. Statuts du 31/12/2025. Capital 100 000 XPF, duree 99 ans, 10 associes, co-gerants Jean-Marc Mantovani et Mireille Risso. Mandataire Me Sophie Dubau. Ouverture de compte SOCREDO et acquisition de terrain en cours (emprunt autorise en AG, PVAG du 23/04/2026). Pieces de statuts egalement dans PH-002-JURIDIQUE/SCI AROA HITI/Statuts."
-    },
-    {
-      "nom": "PR DIFFUSION",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "JURIDICTION CONFIRMEE : Polynesie francaise. Le PV d'AGOA du 30/06/2026 porte 'PR DIFFUSION, SAS au capital de 2 650 000 F CFP, siege Centre Commercial Moana Nui Punaauia, BP 13137 98717 Punaauia, RCS Papeete TPI 86'. FORME CORRIGEE : SAS (le registre portait SARL). Le classement du dossier sur le site NC n'est qu'une convention d'archivage. Ecart de patente 2025 a justifier : 2 090 975 F dus, 1 922 453 F payes."
-    },
-    {
-      "nom": "GOAL",
-      "forme": "LTD",
-      "juridiction": "HK",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Denomination exacte : GLOBAL OVERSEAS ASIA LIMITED, droit hongkongais, capital 10 000 HKD, banque HSBC, Profits Tax IRD Hong Kong. Cloture 31/12 confirmee. Titulaire des licences de marques (GEMO, TATI, VETIR) et emetteur des redevances aux societes NC/PF. Pieces au juridique : NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/GOAL. Au 08/10/2026 : aucun dossier 2026, derniere piece datee du 10/07/2026 ; une demande de confirmation bancaire HSBC au 31/12/2026 amorce l'audit de l'exercice en cours. Formulaire fiscal S2 prix de transfert 2025-2026 au dossier."
-    },
-    {
-      "nom": "MOST LIFE",
-      "forme": "LTD",
-      "juridiction": "HK",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Denomination exacte : MOST LIFE LIMITED, droit hongkongais, 18/F Arion Commercial Centre, Queen's Road West, Sheung Wan, HSBC. Cloture 31/12 confirmee. Facture les commissions sur ventes (10%) et le fret a SMRC et TPC. Pieces au juridique : NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/MOST LIFE. Au 08/10/2026 : aucun dossier 2026, derniere piece datee du 10/07/2026. Un dossier parallele existe hors ASIE : 12-JURIDIQUE SOCIETES/MOST LIFE/Documents fin exercice/2026.pdf (27/08/2026)."
-    },
-    {
-      "nom": "ASL",
-      "forme": "LTD",
-      "juridiction": "HK",
-      "cac": false,
-      "confirme": false,
-      "note": "Denomination : ASIAN SOURCING LIMITED (variante ASIAN SOURCING INTERNATIONAL LTD au dedouanement), HK, HSBC, bureau de sourcing a Guangzhou. CLOTURE TOUJOURS INDETERMINEE - ABSENCE CONFIRMEE AU 08/10/2026 : le dossier ASIE/ASL ne contient que deux pieces (declaration d'actionnaires, transfert d'actionnaires), aucun etat financier, aucun dossier d'audit, aucune declaration fiscale, aucun dossier d'exercice dans tout le tenant. Partout ailleurs ASL n'apparait que comme fournisseur / commissionnaire d'achat du groupe (proformas, packing lists, DAU, factures de fret, releves HSBC), jamais comme entite dont le groupe tient les comptes. Statut a trancher avec le juridique avant inscription au registre d'echeances."
-    },
-    {
-      "nom": "TAHITI PAS CHER (TPC)",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "06-30",
-      "cac": true,
-      "confirme": true,
-      "note": "CAC EN FONCTION (CAC historique : AUDIT PACIFIQUE - Jacqueline Hurel, Marion Sola). Rapports FY 30/06/2025 signes : '2025.06.30-RCA - TPC.pdf' et '2025.06.30 RS - TPC.pdf' dans 06 2025/CAC/Rapports des CAC ; dossiers CAC egalement sur 06 2024 et 06 2023. ALERTE MAINTENUE AU 08/10/2026 : aucun dossier CAC ouvert sur l'exercice 30/06/2026 alors que le bilan definitif est signe, et aucun dossier '30 06 2026' au juridique. Aucune piece de fin ni de non-renouvellement de mandat : le mandat n'est pas eteint. Les travaux d'audit sont bien engages mais classes en revision comptable (06 2026/REVISION COMPTA/ECHANGE AUDIT, echanges des 03/09, 17/09, 22/09 et 05/10/2026) : c'est le CLASSEMENT du dossier CAC et des pieces de mandat qui manque. AGO a tenir avant le 31/12/2026."
-    },
-    {
-      "nom": "SEMAPA",
-      "forme": "SAS",
-      "juridiction": "PF",
-      "cloture": "09-30",
-      "cac": true,
-      "confirme": true,
-      "note": "MANDAT DE CAC CONFIRME ACTIF : lettre de mission 'SEMAPA - CAC LM 2025 signee.pdf' au dossier 30 09 2025/CAC, rapports RCA et RS 2025 emis, convocation du CAC Grant Thornton a l'AGO du 19/02/2026. CAC = KPMG Polynesie francaise sur FY2024. Exercice 30/09/2026 : le dossier '30 09 2026' s'est rempli (Inventaire, REVISION COMPTA, ~41 Mo) mais ne contient ni definitifs ni CAC au 08/10/2026."
-    },
-    {
-      "nom": "SOMARI",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "03-31",
-      "cac": true,
-      "confirme": true,
-      "note": "MANDAT DE CAC CONFIRME ACTIF : lettre de mission au dossier 03 2026/CAC, dossier de nomination CAC dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SOMARI/NOMINATION CAC. Audit de l'exercice 31/03/2026 TOUJOURS EN COURS au 08/10/2026 : le dossier CAC ne contient que balance et GL au 31/03/2026, lettre de mission, etat des conventions reglementees (produit le 06/10/2026), un FEC et un sous-dossier ECHANGE (mails des 30/09, 01/10 et 02/10/2026) - aucun sous-dossier Rapports, aucun RCA, aucun RS. Declaration IS 31/03/2026 TOUJOURS ABSENTE du dossier - a reclamer. A noter : le dossier 'SOMARI/CAC' a la racine ne contient qu'un rapport d'examen limite au 31/03/2024, qui n'est pas un RCA. Exercice suivant '03 2027' deja ouvert."
-    },
-    {
-      "nom": "SMRC",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "06-30",
-      "cac": true,
-      "confirme": true,
-      "note": "MANDAT DE CAC CONFIRME. Exercice 30/06/2025 BOUCLE : EF definitif 'EF S.M.R.C. MANTOVANI RISSO_14012026.pdf' et rapports de CAC complets ('2025.06.30-RCA - SMRC.pdf' et '2025.06.30-RS CAC - SMRC.pdf') dans Cloture Juin 2025/CAC/Rapport CAC - noter le sous-dossier au SINGULIER, variante de nommage. Exercice 30/06/2026 : rien d'ouvert cote definitifs ni cote CAC au 08/10/2026, seule la revision comptable est en cours (REVISION COMPTA/ECHANGE - PGA, estimations et provisions au 30/06/2026). Exercice suivant 'Cloture Juin 2027' deja ouvert. SMRC boucle historiquement tard : l'EF 30/06/2025 n'a ete signe que le 14/01/2026."
-    },
-    {
-      "nom": "LOGISER",
-      "forme": "SARL",
-      "juridiction": "PF",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": true,
-      "note": "MANDAT DE CAC : rien en comptabilite, ni sur 06 2026 ni sur les exercices anterieurs. Seule trace : un dossier CAC au juridique modifie le 04/10/2024. Le 'commissaire a la transformation' du rapport du 24/12/2024 est lie au changement de forme juridique du 18/02/2025, ce n'est pas un CAC. Mandat non etabli - laisse a false. Dossier modificatif depose au RCS le 07/09/2026 (A2026/002628), Kbis du 07/09/2026, RCS Papeete 08 261 B. ALERTE NOUVELLE 08/10/2026 : 'DT_Mise en demeure declaration DAETH 2025.pdf' date du 07/10/2026, classe hors du site comptabilite (sites/TEST/18.LOGISER) - mise en demeure sur la declaration des travailleurs handicapes, volet social, a traiter et a reclasser."
-    },
-    {
-      "nom": "SCI MIRMAN",
-      "forme": "SCI",
-      "juridiction": "PF",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": true,
-      "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre. Pieces : l'attestation de l'expert-comptable des EF au 30/06/2026 est signee 'A Papeete, le 4 septembre 2026' par Marion Sola ; montants en FCFP ; l'annexe comporte une rubrique dediee 'Impot sur les transactions' (pages 20 a 26), impot polynesien ; lettre de mission Audit Pacifique (OEC de Polynesie francaise) ; note interne au dossier d'administration mentionnant l'IRVM, l'IRCDC et l'IT. Aucune mention DSF, impots.nc, Noumea ou TGC. Cloture 30/06 confirmee (dossiers en annees civiles 2009 a 2026). L'EF est pose a la racine du dossier d'exercice, sans sous-dossier de definitifs."
-    },
-    {
-      "nom": "CHILI",
-      "cac": false,
-      "confirme": false,
-      "note": "N'EST PAS UNE SOCIETE : '12-JURIDIQUE SOCIETES/CHILI' est un dossier de regroupement geographique contenant les entites chiliennes SODIRAL (societe d'exploitation de vigne) et COLINAS DE TAPIHUE (statuts, achat de terrains, evaluation). Aucun dossier comptable, aucun exercice, aucun EF, derniere activite 2021. A retirer du registre ou a eclater en SODIRAL / LAS COLINAS DE TAPIHUE."
-    },
-    {
-      "nom": "TERANI",
-      "cac": false,
-      "confirme": false,
-      "note": "N'EST PAS UNE SOCIETE : '12-JURIDIQUE SOCIETES/TERANI' est le dossier de regroupement du pole polynesien, il contient 18 sous-dossiers de societes (SCI PAETOU 13, SCI PAO 7, SOMARI, TPC, SCI MIRMAN, SCI HEIVARUE, SCI SDE, SC PUNAHERE, SCI MARCILLAC 1, SOMOFID, SOFADIF, MOTEX, TAHITI LUMINAIRES, SERLOG, PR DIFFUSION, SEMAPA, LOGISER, SEFRATEX). Les seules occurrences du mot sont des personnes physiques (Me Terani Yeou, notaire a Papeete). A retirer du registre."
-    },
-    {
-      "nom": "SCI SOEURS",
-      "cac": false,
-      "confirme": false,
-      "note": "N'EST PAS UNE SOCIETE : dossier de regroupement patrimonial contenant trois SCI distinctes - SCI ALHENA 13 (Kbis mis a jour 30/09/2025), SCI SCHMIDT 12 et SCI LONGCHAMP 34. Aucune des trois n'a de dossier comptable ni d'exercice. A eclater en trois lignes ou a retirer du registre."
-    },
-    {
-      "nom": "SCI RICO",
-      "juridiction": "NC",
-      "cac": false,
-      "confirme": false,
-      "note": "INVESTIGUEE POUR LA PREMIERE FOIS LE 08/10/2026. La societe EXISTE REELLEMENT : Ridet n. 0572784, BP 27810 - 98863 Noumea cedex, juridiction Nouvelle-Caledonie. MAIS CE N'EST PAS (ENCORE) UNE SOCIETE DU GROUPE : elle n'apparait que comme contrepartie du dossier 'Rachat CODIMA' (compromis et CPV du 03/04/2026, avenant du 26/05/2026, attestation sur les comptes courants de la SCI OCTOPUS dans ses livres a l'attention de M. Philippe Etwiller, comptes annuels 'RICO - Cegid Projet Bilan+CR 2025.pdf'). Emplacements : NC-023-PROJETS/Rachat CODIMA/Compromis et NC-001-CONTROLEDEGESTION/AC et UC/SMRC DUCOS codima/UC - CODIMA (SCI RICO). AUCUN dossier dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES, AUCUN dossier dans NC-006-COMPTABILITE. Cloture vraisemblablement 31/12 (comptes presentes par exercice civil) mais NON CONFIRMEE sur piece. A arbitrer : sortir du registre ou marquer 'hors perimetre - acquisition en cours'."
-    },
-    {
-      "nom": "SCI ARUE",
-      "cac": false,
-      "confirme": false,
-      "note": "INVESTIGUEE POUR LA PREMIERE FOIS LE 08/10/2026 : N'EXISTE PAS COMME ENTITE. Le seul dossier est 'NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SCI en cours de constitution pour ARUE', qui ne contient que quatre offres d'achat du 21/12/2023. Aucun statut, aucun Kbis, aucun M1, aucun PV, aucun compte bancaire. Le projet ARUE a abouti via SCI MARCILLAC 1 (code dossier 24108, statuts du 24/01/2024, terrain Arue : 'arue A85 TOPO.pdf', 'arrete Arue.pdf', facture de geometre 'SCI MARCILLAC Topo Arue'). 'Arue' est par ailleurs la commune du magasin TPC Arue (bail SCI HEIVARUE / TPC Arue). A RETIRER DU REGISTRE ou a requalifier en SCI MARCILLAC 1."
-    },
-    {
-      "nom": "SCI FOCH 25",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL. Cloture 31/12 confirmee (dossiers en annees civiles 2016-2025, EF 'SCI FOCH 25 EF au 31.12.2025.pdf', AGOA du 26/06/2026 pour l'exercice 2025). NC : pret BNP Nouvelle-Caledonie, siege 25 av. du Marechal Foch, Noumea, acte notarie a Noumea. Rachetee en 2026 (cession OCTOPUS vers SC LES LONNES). ALERTE CLASSEMENT MAINTENUE AU 08/10/2026 : toute la comptabilite reste archivee sous 'Anciens avant rachat', aucun dossier d'exercice post-rachat n'a ete cree, aucun exercice 2026. Exercice 2018 toujours manquant. La societe apparait DEUX FOIS dans l'arborescence (dossier autonome et sous-dossier de 4-_PHILIPPE ETWILLER SCI NOUMEA, meme contenu) : risque de double comptage. Attention : 'RS 2024 FOCH 25.pdf' est un rapport special du gerant sur les conventions, pas un rapport de CAC."
-    },
-    {
-      "nom": "SCI APOGOTI FIRST",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller (dossier '4-_PHILIPPE ETWILLER SCI NOUMEA'). Cloture 31/12 deduite des dossiers en annees civiles 2022-2025 et des EF 'SCI APOGOTI FIRST E.F. au 31.12.AAAA.pdf'. EF au 31/12/2025 recu. A confirmer si cette societe doit etre suivie dans le registre."
-    },
-    {
-      "nom": "SCI APOGOTI SECOND",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller. Cloture 31/12 deduite (dossiers 2023-2025, EF 'SCI APOGOTI SECOND E.F. au 31.12.AAAA.pdf'). EF au 31/12/2025 recu. A confirmer si elle doit etre suivie."
-    },
-    {
-      "nom": "SCI GALLIENI 32",
-      "forme": "SC",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller. Cloture 31/12 deduite (dossiers 2013-2025, EF 'SC GALLIENI 32 E.F. au 31.12.2025.pdf'). Entite DISTINCTE de GALLIENI 13. Dossiers d'exercice '2015' et '2018' vides (0 octet). A confirmer si elle doit etre suivie."
-    },
-    {
-      "nom": "SCI LES ECOLES",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller. EF libelles 'SCI DES ECOLES E.F. au 31.12.2025.pdf'. Cloture 31/12 (dossiers 2013-2025). Dossiers '2015' et '2018' vides. Le dossier SCI QUARTIER AUTEUIL est imbrique dedans. A confirmer si elle doit etre suivie."
-    },
-    {
-      "nom": "SCI VERGAL ET CAPRICORNE",
-      "forme": "SC",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller. EF libelles 'SC VERGAL E.F. au 31.12.2025.pdf'. Cloture 31/12 (dossiers 2015-2017 et 2019-2025, exercice 2018 absent). A confirmer si elle doit etre suivie."
-    },
-    {
-      "nom": "SCI VILLA DE GAULLE HOLDING",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller. EF libelles 'SCI VILLA DE GAULLE E.F. au 31.12.2025.pdf'. Cloture 31/12 (dossiers 2019-2025). A confirmer si elle doit etre suivie."
-    },
-    {
-      "nom": "SCI QUARTIER AUTEUIL",
-      "forme": "SCI",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL - participation avec Philippe Etwiller, dossier imbrique dans SCI LES ECOLES. Cloture 31/12. Le dossier est PLAT, sans sous-dossiers d'exercice : les EF 2014 a 2017 puis 'SCI QUARTIER D'AUTEUIL E.F. au 31.12.2019.pdf' sont poses cote a cote. ALERTE CONFIRMEE ET AGGRAVEE AU 08/10/2026 : dernier EF au 31/12/2019, les exercices 2020 a 2025 sont tous manquants, soit SIX exercices sans etats financiers - societe dormante ou cedee, a clarifier."
-    },
-    {
-      "nom": "VAICO",
-      "forme": "?",
-      "juridiction": "NC",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL mais RADIEE : RCS Noumea 2012/B667, AGO de liquidation du 08/12/2016, depot DSF, radiation RCS et Kbis de radiation au dossier NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ZZZZ/VAICO liquidation. Dernier exercice 30/06/2014. A archiver, pas a suivre."
-    },
-    {
-      "nom": "SOTAPAR",
-      "forme": "SC",
-      "juridiction": "NC",
-      "cac": false,
-      "confirme": false,
-      "note": "SOCIETE ABSENTE DU REFERENTIEL mais LIQUIDEE : societe civile de participation au capital de 100 000 XPF, dissolution 2012-2013, liquidation close fin 2013 (PV de liquidation, MG3, extrait Kbis apres dissolution). Les deux pieces en comptabilite sont le bilan de dissolution. A archiver, pas a suivre."
-    },
-    {
-      "nom": "GRAIN DE SEL",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "ALERTE CONFIRMEE AU 08/10/2026 : le dossier comptable s'arrete a l'exercice '31 12 2022'. Les exercices 2023, 2024 et 2025 sont totalement absents, soit trois exercices clos sans dossier. Le dossier '1 - Administration' contient une lettre de mission et des documents d'evaluation (evaluation.pdf, methode d'evaluation.pdf) - coherent avec une cession. Releves bancaires BCI jusqu'en 2023 seulement. A clarifier : societe cedee, radiee, ou dossier tenu hors SharePoint ?"
-    },
-    {
-      "nom": "BRICONC (APOTEX)",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "12-31",
-      "cac": false,
-      "confirme": true,
-      "note": "ALERTE RETARD CONFIRMEE AU 08/10/2026 : exercice 31/12/2025 toujours non boucle, plus de neuf mois apres la cloture. Le dossier '2025' ne contient qu'un seul fichier ('Etat du compte au 31.12.2025 -BRICONC SARL.pdf'), ni revision, ni projet, ni comptes definitifs, aucun EF - alors que l'exercice 2024 est boucle (dossier '2024/Definitif') et que toutes les autres societes du groupe ont leur bilan 2025. Un dossier '2026' a ete cree mais ne contient qu'une circularisation BCI."
-    },
-    {
-      "nom": "TRITEX",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": true,
-      "note": "MISE A JOUR 08/10/2026 : l'exercice 30/06/2025 EST BOUCLE, contrairement a ce qui etait note - l'EF definitif 'EF TRITEX_21112025.pdf' est bien dans 'TRITEX/06 2025/DEFINITIFS' (le fichier 'EF TRITEX_02122024.pdf' retrouvee precedemment concernait l'exercice 30/06/2024). ALERTE MAINTENUE sur l'exercice 30/06/2026 : le dossier '06 2026' ne contient aucun compte definitif, seulement un sous-dossier 'Projet' (avec 'TRITEX - PROJET 300626 BILAN.pdf' du 07/10/2026) et deux fichiers de travail. Aucun mandat de CAC constate. RCS Noumea 1 178 573."
-    },
-    {
-      "nom": "MARTRI",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "06-30",
-      "cac": false,
-      "confirme": true,
-      "note": "ALERTE CONFIRMEE AU 08/10/2026 : le dossier d'exercice 30/06/2026 n'a toujours PAS ete cree, la racine s'arrete a 'Juin 2025'. C'est la seule societe du pole NC ou le repertoire d'exercice courant est entierement absent - aucun travail de cloture visible, pas meme une estimation. MARTRI ne range pas ses EF dans un sous-dossier 'Definitifs' mais a la racine de l'exercice : 'SARL  MARTRI  E.F. au 30.06.2025.pdf' (double espace confirme)."
-    },
-    {
-      "nom": "SOCADIM",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "03-31",
-      "cac": false,
-      "confirme": true,
-      "note": "POINT OUVERT RESOLU LE 08/10/2026 : l'AGO de l'exercice 31/03/2026 a bien ete tenue le 14/08/2026 a 14h au siege (proces-verbal des decisions de l'associee unique EKEKO SAS, representee par Mireille Mantovani ; Jean-Marc Mantovani gerant non associe). Comptes et rapport de gestion approuves, resultat beneficiaire 45 735 819 FCFP affecte en autres reserves (total a affecter 155 030 804 FCFP, report a nouveau anterieur 109 294 985 FCFP). Un jeu SIGNE complet existe : 'Documents fin exercice 2026.pdf' dans DOCUMENTS FIN EXERCICE/03 2026/Signes (05/09/2026), PDF scanne illisible par le connecteur. Attestation de conformite signee avec mandat de depot au Cabinet Commodore Juridique et Fiscal. ETAPE 'depot' NON JUSTIFIEE : aucun AR DSF (ar-pvag-is), aucun certificat de depot pour cet exercice - la formalite est engagee mais non prouvee. Deux EF definitifs successifs au dossier 03 2026/Definitifs ('EF socadim_23072026.pdf' puis 'EF SOCADIM_13082026.pdf') : verifier lequel a ete depose. ALERTE : litige de defiscalisation avec mises en demeure INTER INVEST / BISCO INVEST / ENDEMIA du 14/08/2026, concerne aussi DUTEX."
-    },
-    {
-      "nom": "SEFRACA",
-      "forme": "SARL",
-      "juridiction": "NC",
-      "cloture": "03-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/03 confirmee. Bilan definitif 31/03/2026 (EF du 03/08/2026) avec liasse 1191099-DECLA-IS-LFS-2026. AJOUT 08/10/2026 : l'AGO et le depot au RCS du 07/09/2026 existent bien, ils avaient ete manques parce que le PV est groupe avec le rapport de gestion dans un PDF scanne et que le dossier d'exercice est nomme '03 2026' et non '31 03 2026'. RID DSF 0411546, code conseil 11134. MANQUENT sur 2026 (presents en 2025) : AR DSF ar-pvag-is, attestation de conformite, certificat de depot greffe lisible."
-    },
-    {
-      "nom": "SERLOG",
-      "forme": "SNC",
-      "juridiction": "PF",
-      "cloture": "03-31",
-      "cac": false,
-      "confirme": true,
-      "note": "Cloture 31/03 confirmee. Bilan definitif 31/03/2026 dans 2026/Definitifs. AJOUT 08/10/2026 : l'AGO et le depot au RCS du 07/09/2026 existent bien, ils avaient ete manques parce que l'unique piece d'AG est nommee '31 03 2026.pdf' - aucun mot-cle dans le nom, PDF scanne sans couche texte, donc invisible a toute recherche plein texte. Code conseil 13037. SERLOG est au 1er niveau de 12-JURIDIQUE SOCIETES, pas sous TERANI. MANQUENT sur 2026 (presents en 2025) : feuille de presence, rapport de gestion separe, certificat de depot lisible."
-    }
-  ],
-  "etapes_constatees": [
-    {
-      "societe": "SOFADIF",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "30/09/2026",
-      "note": "AGO d'approbation tenue dans le delai proroge par ordonnance du 10/07/2026"
-    },
-    {
-      "societe": "SOFADIF",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "05/08/2026",
-      "note": "Formalites d'enregistrement et depot RCS realisees (note d'honoraires Vaiana Tang & Sophie Dubau 26/152)"
-    },
-    {
-      "societe": "SCI HEIVARUE",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "12/02/2026",
-      "note": "PV AGO du 12/02/2026 : comptes approuves, benefice 16 967 485 XPF, dividendes 16 900 000 XPF"
-    },
-    {
-      "societe": "SCI SDE (ex SDE)",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "12/02/2026",
-      "note": "PV AGO du 12/02/2026 classe dans DOCUMENTS FIN EXERCICE / 30 09 2025"
-    },
-    {
-      "societe": "SCI MIRMAN",
-      "exercice": "2026-06-30",
-      "etape": "bilan",
-      "date": "04/09/2026",
-      "note": "Etats financiers definitifs au 30/06/2026 (MIRMAN EF 30.06.2026.pdf) poses a la racine du dossier 2026 ; attestation de l'expert-comptable signee a Papeete le 04/09/2026"
-    },
-    {
-      "societe": "SCI VIRANI",
-      "exercice": "2026-06-30",
-      "etape": "bilan",
-      "date": "07/10/2026",
-      "note": "Etats financiers definitifs au 30/06/2026 (VIRANI EF 30.06.26.pdf) dans 2026/Definitifs"
-    },
-    {
-      "societe": "DUTEX",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "03/08/2026",
-      "note": "EF DUTEX_03082026.pdf dans MARS 2026/Definitfs, avec declaration IS (1305972-DECLA-IS-LF-2026)"
-    },
-    {
-      "societe": "SEFRAKO",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "03/08/2026",
-      "note": "EF SEFRAKO_03082026.pdf dans MARS 2026/Definitifs, avec declaration IS (1189532-DECLA-IS-LF-2026)"
-    },
-    {
-      "societe": "SEFRACA",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "03/08/2026",
-      "note": "EF SEFRACA_03082026.pdf dans 31 03 2026/Definitifs, avec declaration IS (1191099-DECLA-IS-LFS-2026). Un brouillon de la liasse traine dans le meme dossier."
-    },
-    {
-      "societe": "SOCADIM",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "13/08/2026",
-      "note": "EF SOCADIM_13082026.pdf dans 03 2026/Definitifs, avec declaration IS et solde (1190453-DECLA-IS-LF-2026)"
-    },
-    {
-      "societe": "SOMARI",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "31/03/2026",
-      "note": "'SOMARI EF 31.03.2026 .pdf' (espace parasite avant l'extension) dans 03 2026/Definitifs, seul fichier du dossier"
-    },
-    {
-      "societe": "SERLOG",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "31/03/2026",
-      "note": "SERLOG EF 31.03.26.pdf dans 2026/Definitifs"
-    },
-    {
-      "societe": "TAHITI PAS CHER (TPC)",
-      "exercice": "2026-06-30",
-      "etape": "bilan",
-      "date": "30/06/2026",
-      "note": "Etats financiers definitifs signes au 30/06/2026 (TPC_EF au 30.06.2026_signe.pdf) dans 06 2026/Defintiifs. La declaration IS 30/06/2026 est classee dans PROJETS/V def, pas dans les definitifs."
-    },
-    {
-      "societe": "LOGISER",
-      "exercice": "2026-06-30",
-      "etape": "bilan",
-      "date": "06/10/2026",
-      "note": "LOGISER EF 30.06.26.pdf depose dans 06 2026/Definitifs le 06/10/2026"
-    },
-    {
-      "societe": "DUTEX",
-      "exercice": "2026-03-31",
-      "etape": "cac_remise",
-      "date": "31/03/2026",
-      "note": "Rapports CAC signes : DUTEX_RCA_31.03.2026.pdf et DUTEX_RS_31.03.2026.pdf"
-    },
-    {
-      "societe": "SEFRAKO",
-      "exercice": "2026-03-31",
-      "etape": "cac_remise",
-      "date": "31/03/2026",
-      "note": "Rapports CAC signes : SEFRAKO_RCA_31.03.2026.pdf et SEFRAKO_RS_31.03.2026.pdf"
-    },
-    {
-      "societe": "EKEKO",
-      "exercice": "2025-12-31",
-      "etape": "cac_remise",
-      "date": "31/12/2025",
-      "note": "Rapports CAC : EKEKO 2025_RCA.pdf et SAS EKEKO RS 31.12.2025.pdf, poses a la racine du dossier CAC"
-    },
-    {
-      "societe": "SOFADIF",
-      "exercice": "2025-12-31",
-      "etape": "cac_remise",
-      "date": "31/12/2025",
-      "note": "Rapports CAC : SOFADIF 2025_RCA.pdf et SOFADIF 2025_RS.pdf dans 2025/CAC/Rapports"
-    },
-    {
-      "societe": "SEFRATEX",
-      "exercice": "2026-03-31",
-      "etape": "bilan",
-      "date": "31/03/2026",
-      "note": "'SEFRATEX EF 31..03.26.pdf' (double point dans le nom reel) dans 2025-2026/Definitifs. L'exercice clos le 31/03/2026 est le dernier de l'ancien cycle ; la cloture au 30/04 ne s'applique qu'a partir de l'exercice 01/04/2026-30/04/2027."
-    },
-    {
-      "societe": "SERCOPAC NOUMEA",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "17/03/2026",
-      "note": "EF SERCOPAC_17032026.pdf dans 30 09 2025/Definitifs, avec les liasses 1187338-DECLA-IS-LF-2025 et 1478507-DECLA-IS-LFS-2025. Boucle tardivement (mars 2026)."
-    },
-    {
-      "societe": "SERCOPAC PPTE",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "30/12/2025",
-      "note": "SERCOPAC EF 30.09.25.pdf dans SERCOPAC/SERCOPAC TAHITI/30 09 2025/Definitifs. Pas de declaration fiscale au dossier. Sous-dossiers d'alerte a la racine : 'redressement patente' et 'Refacturation bureaux PAPEETE'."
-    },
-    {
-      "societe": "EKEKO",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "13/08/2026",
-      "note": "EF EKEKO_13082026.pdf dans 31 12 2025/Definitifs, avec DSF EKEKO.pdf. Liasse IS 1355145-DECLA-IS-LFS-2025 classee au juridique (13-IMPOTS SOCIETES/EKEKO/Liasse fiscale)."
-    },
-    {
-      "societe": "SC LES LONNES",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "24/06/2026",
-      "note": "EF LES LONNES_24062026.pdf dans 31 12 2025/Definitifs. Liasse 1383534-DECLA-IS-LFS-2025 classee au juridique."
-    },
-    {
-      "societe": "BRM DIFFUSION",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "01/06/2026",
-      "note": "EF B.R.M.DIFFUSION_01062026.pdf dans 31 12 2025/Definitifs. Liasse 1187278-DECLA-IS-LF-2025 classee au juridique."
-    },
-    {
-      "societe": "BRICONC2 (NILYTEX)",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "10/03/2026",
-      "note": "EF NILYTEX_10032026.pdf dans 2025/DEFINITIF (majuscules, singulier). Une version anterieure 'EF nilytex_24022026.pdf' traine a la racine de l'exercice, hors du dossier definitif."
-    },
-    {
-      "societe": "CALEDOJOB",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "04/02/2026",
-      "note": "'EF CALEDOJOB _04022026.pdf' dans 09 2025/Definitifs (espace avant l'underscore). Declaration IS 1478507-DECLA-IS-LFS-2025 mal classee dans 09 2025/Echange PGA ; un fichier de meme nom figure aussi dans SERCOPAC/30 09 2025/Definitifs - doublon a arbitrer."
-    },
-    {
-      "societe": "ZANZIBAR",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "28/05/2026",
-      "note": "EF ZANZIBAR_28052026.pdf dans 31 12 2025/DEFINITIF. Liasse 1185556-DECLA-IS-LF-2025 classee au juridique. 'ZANZIBAR - PROJET 2025.pdf' reste a la racine de l'exercice (projet, ne compte pas)."
-    },
-    {
-      "societe": "DFM INVEST",
-      "exercice": "2024-09-30",
-      "etape": "bilan",
-      "date": "30/09/2024",
-      "note": "'DFM Invest -Bilan 30.09.2024.pdf' pose a la racine du dossier 09 2024 (pas de sous-dossier de definitifs)."
-    },
-    {
-      "societe": "SCI YAHOUE",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "EF YAHOUE_12122025.pdf pose a la racine du dossier 30 09 2025 (dossier plat, seul sous-dossier 'OD')."
-    },
-    {
-      "societe": "SCI AMPJOULE",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "EF AMPJOULE_12122025.pdf a la racine du dossier 30 09 2025."
-    },
-    {
-      "societe": "SCI AUSTERLITZ",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "EF AUSTERLITZ_12122025.pdf a la racine du dossier 30 09 2025."
-    },
-    {
-      "societe": "SCI CONCEPTION 56",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "EF CONCEPTION 56_12122025.pdf a la racine du dossier 30 09 2025."
-    },
-    {
-      "societe": "SCI DU NORD 1",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "'EF DU NORD I_12122025.pdf' a la racine du dossier 30 09 2025 - chiffre romain I dans le nom du fichier alors que le dossier est 'SCI DU NORD 1'. Trois orthographes circulent : DU NORD 1, DU NORD I, LE NORD - une seule et meme societe."
-    },
-    {
-      "societe": "SCI GUYON 12",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "'EF GUYON 12 _12122025.pdf' a la racine du dossier 30 09 2025 (espace parasite). A qualifier : dossier 'FISC 2023' avec un courrier des Services Fiscaux et un mouvement de compte courant d'associe de 4 000 000 F depuis EKEKO."
-    },
-    {
-      "societe": "SCI IMPASSE",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "12/12/2025",
-      "note": "\"EF L'IMPASSE_12122025.pdf\" a la racine du dossier 30 09 2025 (dossier SharePoint : SCI L'IMPASSE). A qualifier : dossier 'FISC 2023' avec CCA loyers 2020-2022 et un mouvement de compte courant de 2 500 000 F depuis EKEKO."
-    },
-    {
-      "societe": "SCI FOCH 25",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SCI FOCH 25 EF au 31.12.2025.pdf' dans 'Anciens avant rachat/2025'. Aucun dossier d'exercice post-rachat n'a ete cree."
-    },
-    {
-      "societe": "SOFADIF",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "SOFADIF EF 31.12.25.pdf dans 2025/Definitifs, avec 'resultat definitif.pdf'. Pas de liasse fiscale au dossier."
-    },
-    {
-      "societe": "TAHITI LUMINAIRES",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'RISSO MONTOVANI-TAHITI LUMINAIRES EF 31.12.25.pdf' dans 31 12 2025/Definitifs (nom prefixe du cabinet). Liasse fiscale signee a la racine de l'exercice. Option a l'IS au dossier racine."
-    },
-    {
-      "societe": "PR DIFFUSION",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "PR DIFFUSION EF 31.12.25.pdf dans 31 12 2025/Definitifs, avec 'PR DIFFUSION IS 31.12.25.pdf' dans le meme dossier."
-    },
-    {
-      "societe": "SEMAPA",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "30/09/2025",
-      "note": "SEMAPA EF 30.09.25.pdf dans 30 09 2025/Definitifs. Pas de liasse fiscale au dossier."
-    },
-    {
-      "societe": "MOTEX",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "MOTEX EF 31.12.25.pdf dans 2025/Definitifs. Declaration IS mal classee : 'Motex_Declaration IS 2025.pdf' dans 2025/Revision compta/Echange AUDIT/mai du 27 04 26."
-    },
-    {
-      "societe": "SOMODIF",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'251231 Etats financiers (23125).pdf' dans 2025/Definitifs. Declaration 'SOMODIF IS 2025.pdf' posee a la racine de l'exercice."
-    },
-    {
-      "societe": "SC PUNAHERE",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "PUNAHERE EF 31.12.25.pdf dans '31 12 2025/Deffinitifs' - orthographe reelle avec deux f. Pas de liasse, seulement un avis d'impot sur les societes civiles de participation de 200 000 F."
-    },
-    {
-      "societe": "TAHITIJOB",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "TAHITIJOB EF 31.12.25.pdf dans 2025/DEFINITIF (majuscules, singulier), seul fichier du dossier. AUCUNE declaration fiscale, confirme absente au 08/10/2026 - a reclamer."
-    },
-    {
-      "societe": "SCI TEMOANA",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'251231 Etats financiers (18140).pdf' pose a la racine du dossier '12 2025' (dossier plat). Pas de declaration fiscale. ALERTE : dossiers 'Sortie Defisc' et 'Bloody Mary' dans NC-017-FISCALITE/TAHITI/SCI TEMOANA modifies le 06/10/2026."
-    },
-    {
-      "societe": "SCI VATEA",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "VATEA EF 31.12.25.pdf pose a la racine du dossier 31 12 2025 (dossier plat). Pas de declaration fiscale au dossier."
-    },
-    {
-      "societe": "SCI PAETOU 13",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "PAETOU 13 EF 31.12.25.pdf dans 31 12 2025/DEFINITIF. Pas de declaration fiscale. A verifier : deux fichiers 'TA PAETOU 13' de 156 000 000 F et de 277 000 000 F a la racine de l'exercice, sigle TA non identifie."
-    },
-    {
-      "societe": "SCI MARCILLAC 1",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "MARCILLAC EF 31.12.25.pdf dans SCI MARCILLAC/2025/Definitifs. Declarations presentes : 'Marcillac1_Declaration IT 2025.pdf' et 'IT SIGNE.pdf' a la racine de l'exercice."
-    },
-    {
-      "societe": "SCI SDE (ex SDE)",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "30/09/2025",
-      "note": "Deux fichiers dans 09 2025/Definitifs : 'SDE EF 30.09.25.pdf' et '250930 Etats financiers (23209).pdf'. Pas de declaration de l'exercice. Le dossier 'ECHANGE AUDIT PACIFIQUE' est de la revision comptable, ce n'est pas un CAC."
-    },
-    {
-      "societe": "SCI HEIVARUE",
-      "exercice": "2025-09-30",
-      "etape": "bilan",
-      "date": "30/09/2025",
-      "note": "'HEIVARUE EF AU 30.09.25.pdf' et '250930 Etats financiers (13385).pdf' dans 2025/Definitifs (dossier d'exercice nomme '2025' tout court). Declaration 'Heivarue_Declaration IT 30.09.25.pdf' a la racine de l'exercice."
-    },
-    {
-      "societe": "SCI CAMERON 1",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "17/03/2026",
-      "note": "EF CAMERON 1_17032026.pdf pose a la racine du dossier 31 12 2025 (en 2024 il y avait un sous-dossier 'Definitifs')."
-    },
-    {
-      "societe": "SCI CAMERON 2",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "17/03/2026",
-      "note": "EF CAMERON 2_17032026.pdf pose a la racine du dossier 31 12 2025. En 2024 le dossier de definitifs s'orthographiait 'Defintiifs'."
-    },
-    {
-      "societe": "SCI CANAAN",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "17/03/2026",
-      "note": "EF CANAAN_17032026.pdf pose a la racine du dossier 31 12 2025."
-    },
-    {
-      "societe": "SCI CHIRAZ CRUZ",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "17/03/2026",
-      "note": "EF CHIRAZ-CRUZ_17032026.pdf pose a la racine du dossier 31 12 2025."
-    },
-    {
-      "societe": "SCI PAO 7",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "19/03/2026",
-      "note": "'260319 Etats financiers (23123).pdf' dans 31 12 2025/Definitifs, copie egalement au juridique. Un dossier 'Projet' coexiste dans le meme exercice (non retenu)."
-    },
-    {
-      "societe": "GALLIENI 13",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SC  GALLIENI  13  E.F.  au 31.12.2025.pdf' (doubles espaces dans le nom reel) pose a la racine du dossier 2025, dans 4-_PHILIPPE ETWILLER SCI NOUMEA/SCI GALLIENI 13."
-    },
-    {
-      "societe": "SCI APOGOTI FIRST",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SCI  APOGOTI  FIRST  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "SCI APOGOTI SECOND",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SCI   APOGOTI SECOND  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "SCI GALLIENI 32",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SC  GALLIENI 32  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "SCI LES ECOLES",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SCI  DES ECOLES  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "SCI VERGAL ET CAPRICORNE",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SC  VERGAL  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "SCI VILLA DE GAULLE HOLDING",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "31/12/2025",
-      "note": "'SCI  VILLA DE GAULLE  E.F. au 31.12.2025.pdf' a la racine du dossier 2025 (participation Philippe Etwiller)."
-    },
-    {
-      "societe": "GOAL",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "09/07/2026",
-      "note": "'GOAL - Etats financiers audites - Exercice 2025.pdf' dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/GOAL/2025. Audit termine (lettre de representation du 10/07/2026), avec calcul et declaration Profits Tax 2025-2026."
-    },
-    {
-      "societe": "MOST LIFE",
-      "exercice": "2025-12-31",
-      "etape": "bilan",
-      "date": "09/07/2026",
-      "note": "'MOST LIFE - Etats financiers audites - Exercice 2025.pdf' dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/MOST LIFE/2025. Audit termine (lettre de representation du 10/07/2026), avec Profits Tax Computation et Return 2025-2026."
-    },
-    {
-      "societe": "TAHITI PAS CHER (TPC)",
-      "exercice": "2025-06-30",
-      "etape": "cac_remise",
-      "date": "30/06/2025",
-      "note": "Rapports CAC du FY 30/06/2025 : '2025.06.30-RCA - TPC.pdf' et '2025.06.30 RS - TPC.pdf' dans 06 2025/CAC/Rapports des CAC."
-    },
-    {
-      "societe": "SEMAPA",
-      "exercice": "2025-09-30",
-      "etape": "cac_remise",
-      "date": "30/09/2025",
-      "note": "'SEMAPA - RCA+RS 2025.pdf' dans 30 09 2025/CAC/Rapports : les deux rapports sont regroupes dans un seul PDF de 26 pages. PDF scanne sans couche texte : A VERIFIER MANUELLEMENT que le RCA et le RS y figurent tous les deux. Lettre de mission 2025 signee au dossier."
-    },
-    {
-      "societe": "SEMAPA",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "19/02/2026",
-      "note": "'260219 AGOA SEMAPA (12102).pdf' avec feuille de presence, et convocation du CAC Grant Thornton du 30/01/2026."
-    },
-    {
-      "societe": "CALEDOJOB",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "05/02/2026",
-      "note": "Decision de l'associe unique : 'CALEDOJOB - DAU DU 05.02.2026 - EX 2025.pdf'."
-    },
-    {
-      "societe": "TAHITI PAS CHER (TPC)",
-      "exercice": "2025-06-30",
-      "etape": "ago",
-      "date": "31/12/2025",
-      "note": "AGO d'approbation des comptes tenue le 31/12/2025 ('251231 PV AGOA TAHITI PAS CHER (22220).pdf'). Une seconde AGO du 06/02/2026 porte sur la distribution de dividendes."
-    },
-    {
-      "societe": "SCI CAMERON 1",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "09/05/2026",
-      "note": "Decision de l'associe unique 'CAMERON 1 - DAU ex 2025.pdf', avec rapport de gestion, rapport special et rapport sur les conventions (rapports du GERANT, pas d'un CAC)."
-    },
-    {
-      "societe": "SCI CAMERON 2",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "09/05/2026",
-      "note": "Decision de l'associe unique 'CAMERON 2 - DAU ex 2025.pdf'."
-    },
-    {
-      "societe": "SCI CANAAN",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "09/05/2026",
-      "note": "Decision de l'associe unique 'CANAAN - DAU ex 2025.pdf'."
-    },
-    {
-      "societe": "SCI CHIRAZ CRUZ",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "09/05/2026",
-      "note": "Decision de l'associe unique 'CHIRAZ-CRUZ - DAU ex 2025.pdf'."
-    },
-    {
-      "societe": "BRICONC2 (NILYTEX)",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "09/05/2026",
-      "note": "'BRICONC2 (anc NILYTEX) - DAU DU 09.05.2026 - EX 2025.pdf' avec extrait."
-    },
-    {
-      "societe": "BRM DIFFUSION",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "17/06/2026",
-      "note": "'BRM - DAU DU 17.06.2026 - EX 31.12.25.pdf' avec extrait."
-    },
-    {
-      "societe": "PR DIFFUSION",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "30/06/2026",
-      "note": "'260630 PV AGOA PR DIFFUSION.pdf' avec feuille de presence et rapport de gestion."
-    },
-    {
-      "societe": "EKEKO",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "24/08/2026",
-      "note": "AGO des associes du 24/08/2026. Preuve indirecte : note d'honoraires Commodore Juridique & Fiscal n.8199 du 27/08/2026. Au juridique, seuls des projets sont classes."
-    },
-    {
-      "societe": "SEFRATEX",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "30/09/2026",
-      "note": "PVAG SEFRATEX.pdf dans DOCUMENT FIN EXERCICE/31 03 2026, avec convocation et texte des resolutions dates du 30/09/2026 et rapport de gestion au 31/03/2026. Le PV est scanne sans couche texte (4 pages) : date deduite de la convocation, bornee entre le 30/09 et le 07/10/2026. A VERIFIER MANUELLEMENT. Le nom du fichier ne porte pas le code dossier 11138, contrairement a la convention."
-    },
-    {
-      "societe": "SOMARI",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "30/09/2026",
-      "note": "PVAG SOMARI.pdf dans DOCUMENTS FIN EXERCICE/31 03 2026, avec convocation du 03/08/2026, texte des resolutions du 30/09/2026 et rapport de gestion au 31/03/2026. PV scanne (4 pages), date deduite du texte des resolutions. A VERIFIER MANUELLEMENT. L'AGO a ete tenue alors que l'audit du CAC est toujours en cours. Le nom du fichier ne porte pas le code dossier 11136."
-    },
-    {
-      "societe": "SMRC",
-      "exercice": "2025-06-30",
-      "etape": "ago",
-      "date": "05/03/2026",
-      "note": "PVAG.pdf et Extrait PVAG.pdf scannes, date exacte illisible. Date retenue = celle de la transmission du PV a la DSF (AR 819538899793 du 05/03/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SERCOPAC NOUMEA",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "27/03/2026",
-      "note": "'PV AG.pdf' et 'EXTRAIT DU pv ag.pdf' scannes, date exacte illisible. Date retenue = celle de la transmission du PV a la DSF (AR 893388290163 du 27/03/2026). A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "DUTEX",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "17/08/2026",
-      "note": "'Rapport de gestion + PV DUTEX.pdf' dans DOCUMENTS FIN EXERCICE/31 03 2026, scanne sans couche texte. Date retenue = borne inferieure : le rapport special du CAC Grant Thornton a ete signe a Noumea le 17/08/2026, l'AGO est donc posterieure. A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SEFRAKO",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "17/08/2026",
-      "note": "'Rapport de gestin + PV SEFRAKO.pdf' (sic) dans DOCUMENTS FIN EXERCICE/31 03 2026, scanne. Date retenue = borne inferieure (rapport special CAC du 17/08/2026). A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "LOGISER",
-      "exercice": "2025-06-30",
-      "etape": "ago",
-      "date": "04/06/2026",
-      "note": "PVAG Logiser.pdf, feuille de presence et rapport de gestion dans DOCUMENTS FIN EXERCICE/30 06 2025. PV scanne, date illisible : date retenue = celle du depot des comptes (04/06/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "TAHITIJOB",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "28/05/2026",
-      "note": "PVAG TAHITIJOB.pdf et rapport de gestion dans Documents fin exercice/2025. PV sans date dans le nom et scanne : date retenue = celle de la reception des comptes par le greffe (28/05/2026). A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SCI YAHOUE",
-      "exercice": "2025-09-30",
-      "etape": "ago",
-      "date": "20/04/2026",
-      "note": "PV non localise dans DOCUMENTS FIN EXERCICE/30 09 2025 (seul le certificat de depot y est indexe). Date retenue = celle du depot des comptes au greffe (20/04/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SCI FOCH 25",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "26/06/2026",
-      "note": "'FOCH 25 -AGOA DU 26.06.2026 - EX 2025.pdf'."
-    },
-    {
-      "societe": "SOMODIF",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "26/05/2026",
-      "note": "'260526 AGOA SOMODIF (23125).pdf' dans DOCUMENTS FIN EXERCICES/31 12 2025."
-    },
-    {
-      "societe": "SC PUNAHERE",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "06/03/2026",
-      "note": "'260306 PV AGO (22219).pdf' dans DOCUMENTS FIN EXERCICES/31 12 2025."
-    },
-    {
-      "societe": "SCI TEMOANA",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "15/04/2026",
-      "note": "'260415 PV AU (18140).pdf' dans DOCUMENTS FIN EXERCICE/2025 (decision d'associe unique, libelle 'PV AU')."
-    },
-    {
-      "societe": "SCI VATEA",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "15/04/2026",
-      "note": "'260415 PV AGO (11139).pdf' dans DOCUMENTS FIN EXERCICE/31 12 2025."
-    },
-    {
-      "societe": "SCI PAETOU 13",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "14/04/2026",
-      "note": "'260414 PV AGO (21242).pdf' dans DOCUMENTS FIN EXERCICE/2025."
-    },
-    {
-      "societe": "SCI MARCILLAC 1",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "06/03/2026",
-      "note": "'260306 PV AGO (24108).pdf' dans Documents fin exercice/2025."
-    },
-    {
-      "societe": "SCI PAO 7",
-      "exercice": "2025-12-31",
-      "etape": "ago",
-      "date": "06/03/2026",
-      "note": "'260306 PV AGO (23123).pdf' dans DOCUMENT FIN EXERCICE/2025 31 12."
-    },
-    {
-      "societe": "SCI YAHOUE",
-      "exercice": "2025-09-30",
-      "etape": "depot",
-      "date": "20/04/2026",
-      "note": "Comptes deposes le 20/04/2026 sous le n. 1207, recepisse DAE delivre le meme jour (GRF-CERT_DEPOT.PDF)."
-    },
-    {
-      "societe": "BRICONC2 (NILYTEX)",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "29/05/2026",
-      "note": "Comptes deposes le 29/05/2026 sous le n. 1643, recepisse DECAT delivre le 03/06/2026."
-    },
-    {
-      "societe": "LOGISER",
-      "exercice": "2025-06-30",
-      "etape": "depot",
-      "date": "04/06/2026",
-      "note": "'260604 Certificat de depot (11135).pdf' - comptes recus et deposes le 04/06/2026, ref. D2615500417 / B2026/000676."
-    },
-    {
-      "societe": "TAHITIJOB",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "05/06/2026",
-      "note": "'260605 Certificat de depot (24197).pdf' - comptes recus le 28/05/2026, deposes le 05/06/2026 (B2026/000684)."
-    },
-    {
-      "societe": "TAHITI PAS CHER (TPC)",
-      "exercice": "2025-06-30",
-      "etape": "depot",
-      "date": "30/06/2026",
-      "note": "'260630 Certificat de depot (22220).pdf' - comptes recus le 29/06/2026, deposes le 30/06/2026 (B2026/000978)."
-    },
-    {
-      "societe": "SEMAPA",
-      "exercice": "2025-09-30",
-      "etape": "depot",
-      "date": "16/07/2026",
-      "note": "'260716 Certificat de depot (12102).pdf' - comptes recus le 09/07/2026, deposes le 16/07/2026 (B2026/001118)."
-    },
-    {
-      "societe": "SOMODIF",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "29/07/2026",
-      "note": "'260729 Certificat de depot (23125).pdf' - comptes recus le 27/07/2026, deposes le 29/07/2026 (B2026/001440)."
-    },
-    {
-      "societe": "EKEKO",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "27/08/2026",
-      "note": "Depot des comptes au RCS facture en debours sur la note d'honoraires Commodore Juridique & Fiscal du 27/08/2026. Le certificat de depot lui-meme n'a pas ete localise - A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SMRC",
-      "exercice": "2025-06-30",
-      "etape": "depot",
-      "date": "05/03/2026",
-      "note": "Transmission du PV d'AG a la DSF (impots.nc) le 05/03/2026, AR n. 819538899793. Il s'agit de la formalite NC, pas d'un depot au greffe."
-    },
-    {
-      "societe": "SERCOPAC NOUMEA",
-      "exercice": "2025-09-30",
-      "etape": "depot",
-      "date": "27/03/2026",
-      "note": "Transmission du PV d'AG a la DSF le 27/03/2026, AR n. 893388290163."
-    },
-    {
-      "societe": "MOTEX",
-      "exercice": "2025-12-31",
-      "etape": "depot",
-      "date": "07/09/2026",
-      "note": "'260907 Depot RCS (23124).pdf' dans MOTEX/Documents fin exercice/31 12 2025 - le code 23124 est celui de MOTEX. A VERIFIER : un depot d'actes du meme jour (A2026/002628) concerne LOGISER (code 11135)."
-    },
-    {
-      "societe": "DFM INVEST",
-      "exercice": "2024-09-30",
-      "etape": "depot",
-      "date": "30/09/2024",
-      "note": "'DFM INVEST - Recepisse depot comptes 2024.PDF' a la racine du dossier 09 2024. Date de depot exacte non lisible dans le nom du fichier."
-    },
-    {
-      "societe": "SMRC",
-      "exercice": "2025-06-30",
-      "etape": "bilan",
-      "date": "14/01/2026",
-      "note": "NOUVEAU 08/10/2026. 'EF S.M.R.C. MANTOVANI RISSO_14012026.pdf' dans Cloture Juin 2025/Definitifs. Nommage atypique (raison sociale longue). L'exercice 30/06/2025 est donc bien boucle ; seul l'exercice 30/06/2026 reste ouvert."
-    },
-    {
-      "societe": "SMRC",
-      "exercice": "2025-06-30",
-      "etape": "cac_remise",
-      "date": "30/06/2025",
-      "note": "NOUVEAU 08/10/2026. Les DEUX rapports de CAC sont presents dans Cloture Juin 2025/CAC/Rapport CAC (sous-dossier au SINGULIER) : '2025.06.30-RCA - SMRC.pdf' (comptes annuels) et '2025.06.30-RS CAC - SMRC.pdf' (rapport special, explicitement marque 'RS CAC')."
-    },
-    {
-      "societe": "TRITEX",
-      "exercice": "2025-06-30",
-      "etape": "bilan",
-      "date": "21/11/2025",
-      "note": "NOUVEAU 08/10/2026 - leve le doute de la passe precedente. 'EF TRITEX_21112025.pdf' dans 'TRITEX/06 2025/DEFINITIFS' (majuscules) : l'exercice 30/06/2025 EST boucle. Le fichier 'EF TRITEX_02122024.pdf' retrouve auparavant concernait l'exercice 30/06/2024. Le dossier contient aussi 'SARL TRITEX  Infos au 30.06.2025.pdf'."
-    },
-    {
-      "societe": "TRITEX",
-      "exercice": "2026-06-30",
-      "etape": "revision",
-      "date": "07/10/2026",
-      "note": "NOUVEAU 08/10/2026. Projet de bilan 'TRITEX - PROJET 300626 BILAN.pdf' depose le 07/10/2026 dans 06 2026/Projet, avec 'Estimation resultat TRITEX 30062026.xlsx'. Revision comptable en cours, AUCUN compte definitif a ce stade."
-    },
-    {
-      "societe": "SC CAMERON INVEST",
-      "exercice": "2023-07-31",
-      "etape": "bilan",
-      "date": "25/08/2023",
-      "note": "NOUVEAU 08/10/2026. Bilan de CLOTURE DE LIQUIDATION pour la periode du 01/01/2023 au 31/07/2023 : 'EF cameron invest - societe en liquidation_25082023.pdf', attestation PG & Associes du 23/08/2023, total bilan 1 457 802 F.CFP, resultat -180 399. Le fichier est classe par erreur dans le dossier '12 2022' et duplique a la racine de la societe, il n'existe pas de dossier d'exercice 2023 - c'est pourquoi il n'avait pas ete constate. Le dernier exercice de la societe n'est donc pas 2022."
-    },
-    {
-      "societe": "SOCADIM",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "14/08/2026",
-      "note": "NOUVEAU 08/10/2026 - point ouvert resolu. PV des decisions de l'associee unique du 14/08/2026 a 14h au siege (associee unique EKEKO SAS representee par Mireille Mantovani, gerant non associe Jean-Marc Mantovani) : rapport de gestion et comptes de l'exercice clos le 31/03/2026 approuves, resultat beneficiaire 45 735 819 FCFP affecte en autres reserves. Le jeu SIGNE est 'Documents fin exercice 2026.pdf' dans DOCUMENTS FIN EXERCICE/03 2026/Signes (05/09/2026), PDF scanne illisible par le connecteur - A VERIFIER MANUELLEMENT ; la version lisible est 'SOCADIM - PV AGOA.pdf' dans le sous-dossier Projets. Attestation de conformite signee avec mandat de depot au Cabinet Commodore Juridique et Fiscal. L'etape 'depot' reste NON justifiee (aucun AR DSF, aucun certificat de depot)."
-    },
-    {
-      "societe": "SEFRACA",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "07/09/2026",
-      "note": "AJOUTE LE 08/10/2026 apres verification ciblee - manquait aux passes precedentes. 'Rapport de gestion + PV SEFRACA.pdf' (5 pages) dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SEFRACA/DOCUMENTS FIN EXERCICE/03 2026 - noter que SEFRACA nomme son exercice '03 2026' et non '31 03 2026'. PDF scanne SANS COUCHE TEXTE : la date de l'AGO n'est pas lisible. Date retenue = BORNE SUPERIEURE, celle du depot RCS du 07/09/2026 qui lui est posterieur ; l'AGO se situe entre le 03/08/2026 (edition des EF) et le 07/09/2026. A VERIFIER MANUELLEMENT."
-    },
-    {
-      "societe": "SEFRACA",
-      "exercice": "2026-03-31",
-      "etape": "depot",
-      "date": "07/09/2026",
-      "note": "AJOUTE LE 08/10/2026. '260907 Depot RCS (11134).pdf' (20 pages, scanne) dans DOCUMENTS FIN EXERCICE/03 2026. Code 11134 = SEFRACA chez le conseil (SELARL Vaiana Tang & Sophie Dubau). Depot groupe au greffe le 07/09/2026 avec SERLOG et MOTEX. MANQUENT par rapport a l'exercice 2025 : AR DSF (ar-pvag-is), attestation de conformite, certificat de depot greffe lisible, declaration DECLA-PVAG.C-2026."
-    },
-    {
-      "societe": "SERLOG",
-      "exercice": "2026-03-31",
-      "etape": "ago",
-      "date": "07/09/2026",
-      "note": "AJOUTE LE 08/10/2026 apres verification ciblee - manquait aux passes precedentes. Piece '31 03 2026.pdf' (6 pages) dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SERLOG/DOCUMENTS FIN EXERCICE/31 03 2026 : NOM DE FICHIER NON DESCRIPTIF, aucun mot-cle, PDF scanne SANS COUCHE TEXTE - c'est pourquoi aucune recherche plein texte ne pouvait l'atteindre. Impossible d'affirmer sur piece s'il s'agit du PV, du rapport de gestion, ou des deux. Date retenue = BORNE SUPERIEURE, celle du depot RCS du 07/09/2026. A VERIFIER MANUELLEMENT. SERLOG est au 1er niveau de 12-JURIDIQUE SOCIETES, pas sous TERANI."
-    },
-    {
-      "societe": "SERLOG",
-      "exercice": "2026-03-31",
-      "etape": "depot",
-      "date": "07/09/2026",
-      "note": "AJOUTE LE 08/10/2026. '260907 Depot RCS (13037).pdf' (20 pages, scanne) dans DOCUMENTS FIN EXERCICE/31 03 2026. Code 13037 = SERLOG chez le conseil. Depot groupe au greffe le 07/09/2026 avec SEFRACA et MOTEX. MANQUENT par rapport a l'exercice 2025 : feuille de presence, rapport de gestion identifie separement, certificat de depot lisible."
-    }
-  ]
+ "derniere_execution": "2026-10-08",
+ "societes": [
+  {
+   "nom": "SCI HEIVARUE",
+   "forme": "SCI",
+   "juridiction": "PF",
+   "cloture": "09-30",
+   "cac": false,
+   "confirme": true,
+   "note": "Juridiction tranchee : siege 67 rue des Poilus Tahitiens, RCS Papeete TPI 1283 C (PV AGO du 12/02/2026). Cloture 30/09 confirmee. Co-gerants Jean-Marc et Mireille Mantovani. Au 08/10/2026 : le dossier d'exercice 2026 n'a pas encore ete cree, les dossiers sont nommes par annee civile seule ('2025')."
+  },
+  {
+   "nom": "SEFRAKO",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "03-31",
+   "cac": true,
+   "confirme": true,
+   "note": "CAC en fonction : rapports RCA et RS au 31/03/2026 dans MARS 2026/CAC/RAPPORTS. Bilan definitif 31/03/2026 avec declaration IS (1189532-DECLA-IS-LF-2026)."
+  },
+  {
+   "nom": "SEFRATEX",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "04-30",
+   "cac": true,
+   "confirme": true,
+   "note": "CHANGEMENT DE CLOTURE TRANCHE : l'AGE du 15/05/2026 a porte la cloture au 30 avril (statuts art. 6 modifies), M2 CFE Papeete du 24/06/2026, recepisse CCISM du 24/06/2026, certificat de depot et Kbis du 02/07/2026 'date de cloture : 30 avril'. La cloture 31/03 s'applique jusqu'a l'exercice clos le 31/03/2026 INCLUS ; le 30/04 s'applique a partir de l'exercice ouvert le 01/04/2026, dont la premiere cloture est le 30/04/2027 (exercice exceptionnel de 13 mois). Il n'y a PAS d'exercice clos au 30/04/2026. CAC en fonction, audit de l'exercice 31/03/2026 TOUJOURS EN COURS au 08/10/2026 : ni RCA ni RS, le dossier CAC ne contient que ECHANGE, balances et GL au 31/03/2026, l'etat des conventions reglementees (produit le 06/10/2026) et un FEC ; les derniers rapports au depot sont ceux du 31/03/2025. Deux dossiers comptables en parallele ('2025-2026' qui porte les definitifs et le CAC, et '03 2026' qui ne contient qu'un doublon de l'etat des conventions) : risque de dispersion des pieces. Le dossier '2026-2027' est ouvert."
+  },
+  {
+   "nom": "SOFADIF",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "12-31",
+   "cac": true,
+   "confirme": true,
+   "note": "Denomination exacte : FAA'A DIFFUSION SARL (forme SAS au PV 2025). CAC en fonction : Financial Audit SAS titulaire et M. Gilles Bellaiche suppleant, nommes par PV d'AGO du 18/02/2025, publication JOPF du 28/03/2025. Rapports RCA et RS 2025 au dossier. Exercice 2025 : delai de convocation de l'AGOA proroge au 30/09/2026 par ordonnance du President du TMC de Papeete du 10/07/2026 ; AGO tenue et depot RCS realises. AUGMENTATION DE CAPITAL : capital porte a 24 000 000 F CFP, M2 du 25/06/2026, depot d'actes et Kbis du 02/07/2026. A CLARIFIER : des pieces datees de 2026 (GL et fournisseurs au 30/06/2026, FEC 2026, dossier 'mail du 17 09 2026') sont classees dans 2025/CAC."
+  },
+  {
+   "nom": "SCI VIRANI",
+   "forme": "SCI",
+   "juridiction": "PF",
+   "cloture": "06-30",
+   "cac": false,
+   "confirme": true,
+   "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre. Pieces : facture d'honoraires AUDIT PACIFIQUE du 01/09/2026 adressee a 'S.C.I. VIRANI, BP 3553, PAPEETE Tahiti 98713, Polynesie francaise', en XPF avec TVA a 13% (taux PF) ; courrier DICP au dossier d'administration ; note 'passage a l'IT et degrevements' ; lettre de mission Audit Pacifique (membre de l'Ordre des experts-comptables de Polynesie francaise). Aucune mention DSF, impots.nc, Noumea ou TGC. Cloture 30/06 confirmee (dossiers en annees civiles 2011 a 2026). Bilan definitif 30/06/2026 recu : 'VIRANI EF 30.06.26.pdf' dans 2026/Definitifs."
+  },
+  {
+   "nom": "ZANZIBAR",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee : tous les dossiers d'exercice sont nommes '31 12 AAAA' et l'EF 2025 vise l'exercice du 01/01/2025 au 31/12/2025. NC confirme par la liasse 1185556-DECLA-IS-LF-2025 (Code des impots NC) et le cabinet PGA Noumea. Forme a confirmer."
+  },
+  {
+   "nom": "DFM INVEST",
+   "forme": "?",
+   "juridiction": "NC",
+   "cloture": "09-30",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 30/09 deduite des dossiers '09 2023' et '09 2024' et du fichier 'DFM Invest -Bilan 30.09.2024.pdf'. Juridiction NC presumee (classement avec les entites NC, aucun marqueur PF) - a confirmer. ALERTE CONFIRMEE AU 08/10/2026 : toujours aucun dossier d'exercice 30/09/2025 ni 30/09/2026, deux exercices clos sans dossier comptable. Comptes 2024 deposes (recepisse au dossier)."
+  },
+  {
+   "nom": "SCI CAMERON 1",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee (dossiers '31 12 2021' a '31 12 2025'). NC confirme par la liasse 1273966-DECLA-IR-SCI-2024. Aucun dossier '31 12 2026' au 08/10/2026."
+  },
+  {
+   "nom": "SCI CAMERON 2",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee. NC confirme par la liasse 1273968-DECLA-IR-SCI-2024. Cessions de lots en cours (dossier VENTES actif en septembre 2026) et sinistre assurance C1007."
+  },
+  {
+   "nom": "SCI CANAAN",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee (dossiers '31 12 2020' a '31 12 2025'). NC confirme par la liasse 1273897-DECLA-IR-SCI-2024."
+  },
+  {
+   "nom": "SCI CHIRAZ CRUZ",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee (dossiers '31 12 2021' a '31 12 2025'). NC confirme par la liasse 1273981-DECLA-IR-SCI-2024."
+  },
+  {
+   "nom": "SCI PAO 7",
+   "forme": "SCI",
+   "juridiction": "PF",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee (dossiers '31 12 2022' a '31 12 2025'). PF confirme : declaration IT (impot sur les transactions), dossier IRCM dans NC-017-FISCALITE/TAHITI, rattachement au pole TERANI."
+  },
+  {
+   "nom": "GALLIENI 13",
+   "forme": "SC",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee par les EF 'SC GALLIENI 13 E.F. au 31.12.2025/2024'. JURIDICTION CORRIGEE : NC (Dock Gallieni Noumea, EEC, assurances MRP Noumea), et non PF. Participation avec Philippe Etwiller. Appel de fonds en cours aupres des associes. Ne pas confondre avec SCI GALLIENI 32. Dossier d'exercice '2018' vide (0 octet)."
+  },
+  {
+   "nom": "SC GRAND LARGE",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cac": false,
+   "confirme": false,
+   "note": "Denomination exacte : SCI GRAND LARGE 44. NC confirme (courrier Direction des services fiscaux de NC du 25/05/2023, identifiant fiscal 1447847, siege chez Jean-Marc Mantovani, BP 3598 Noumea, compte BCI). CLOTURE TOUJOURS INDETERMINEE : aucun dossier comptable, aucun exercice, aucun EF nulle part. ALERTE : societe non suivie en comptabilite."
+  },
+  {
+   "nom": "SCI LES TOURS",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "09-30",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 30/09 confirmee (dossiers 30 09 2013 a 30 09 2016, EF 'SCI LES TOURS 10-15 au 09-16'). NC confirme par la liasse 1190697-DECLA-IS-LFS-2016. ALERTE : societe ABSORBEE par SC LES LONNES (dossiers 'situation a la fusion' et 'Impot a la fusion'), dernier exercice 30/09/2016 - a archiver."
+  },
+  {
+   "nom": "SCI COLNETT 32",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "premier_exercice": "2026-12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 confirmee par la procuration d'AG de SC LES LONNES du 31/03/2026 ('l'exercice social commencera le 1er janvier pour se terminer le 31 decembre'), 1er exercice au 31/12/2026. NC (siege 4 av. Baie de Koutio Noumea, terrain 32 rue James Colnett Anse Vata). Capital 100 000 XPF, gerance Gregory Darmizin, 'commissaire aux comptes : neant'. AU 08/10/2026 : le dossier juridique SCI COLNETT 32 ne contient que deux pieces (delegation de pouvoir du gerant, notice descriptive signee du 15/04/2026), ni statuts ni Kbis ni acte de changement de denomination. A TRANCHER : meme projet que SCI NETCALL 32, ne pas suivre deux lignes."
+  },
+  {
+   "nom": "SCI NETCALL 32",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "premier_exercice": "2026-12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/12 CONFIRMEE par les statuts notaries (art. 22 : annee sociale du 1er janvier au 31 decembre, 1er exercice jusqu'au 31/12/2026), acte recu par Me Elisa MOUGEL a Noumea. Capital 100 000 XPF. 'Commissaire aux comptes : neant'. AU 08/10/2026 : Kbis definitif TOUJOURS introuvable comme fichier autonome - il est encapsule dans 'NETCALL 32-CPUC 23-09-25.pdf' (NC-023-PROJETS/IRN/CPUC), a ouvrir manuellement. POINT NOUVEAU : l'avis RIDET (n. 0572784 non, voir SCI RICO) qualifie NETCALL 32 de 'Societe a responsabilite limitee' et non de SCI, et un TROISIEME libelle 'SCI GALILLEE 3' heberge les rachats de parts (cession Darmizin du 27/07/2026, virements des 30/07 et 14/08/2026). Autorisation d'exploitation commerciale de 2 845 m2 accordee par arrete du 11/12/2025 au nom de NETCALL 32, demandeur G. Darmizin. Trois denominations coexistent pour le meme projet foncier : a arbitrer."
+  },
+  {
+   "nom": "BRICOPF1",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "09-30",
+   "premier_exercice": "2027-09-30",
+   "cac": false,
+   "confirme": true,
+   "note": "CONFIRME PAR KBIS du 18/02/2026 : cloture de l'exercice social au 30 septembre, 1er exercice clos le 30/09/2027. RCS Papeete 26 150 B, immatriculation 18/02/2026, debut d'activite 01/12/2026, capital 200 000 XPF. Presidente Mireille Risso, DG Jean-Marc Mantovani. Aucun CAC inscrit au Kbis. FORME CORRIGEE : SAS (le registre portait SASU)."
+  },
+  {
+   "nom": "BRICOPF2",
+   "forme": "SASU",
+   "juridiction": "PF",
+   "cloture": "09-30",
+   "premier_exercice": "2027-09-30",
+   "cac": false,
+   "confirme": true,
+   "note": "CONFIRME PAR KBIS du 06/05/2026 : cloture au 30 septembre, 1er exercice clos le 30/09/2027. RCS Papeete 26 372 B, n. de gestion 2026B00372, immatriculation 06/05/2026, debut d'activite 01/12/2026, capital 200 000 XPF. Denomination exacte au RCS : 'BRICOPF2.' avec un point final. SAS a associe unique, presidente Mireille Risso. FORME CORRIGEE : SASU (le registre portait SAS)."
+  },
+  {
+   "nom": "SCI AROA HITI",
+   "forme": "SCI",
+   "juridiction": "PF",
+   "cloture": "12-31",
+   "premier_exercice": "2026-12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "CONFIRME PAR LE M1 (CFE Papeete, declaration C 9871 121198 5, recu le 11/02/2026) : cloture au 31/12, 1er exercice clos le 31/12/2026, debut d'activite 01/01/2026. Statuts du 31/12/2025. Capital 100 000 XPF, duree 99 ans, 10 associes, co-gerants Jean-Marc Mantovani et Mireille Risso. Mandataire Me Sophie Dubau. Ouverture de compte SOCREDO et acquisition de terrain en cours (emprunt autorise en AG, PVAG du 23/04/2026). Pieces de statuts egalement dans PH-002-JURIDIQUE/SCI AROA HITI/Statuts."
+  },
+  {
+   "nom": "PR DIFFUSION",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "JURIDICTION CONFIRMEE : Polynesie francaise. Le PV d'AGOA du 30/06/2026 porte 'PR DIFFUSION, SAS au capital de 2 650 000 F CFP, siege Centre Commercial Moana Nui Punaauia, BP 13137 98717 Punaauia, RCS Papeete TPI 86'. FORME CORRIGEE : SAS (le registre portait SARL). Le classement du dossier sur le site NC n'est qu'une convention d'archivage. Ecart de patente 2025 a justifier : 2 090 975 F dus, 1 922 453 F payes."
+  },
+  {
+   "nom": "GOAL",
+   "forme": "LTD",
+   "juridiction": "HK",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Denomination exacte : GLOBAL OVERSEAS ASIA LIMITED, droit hongkongais, capital 10 000 HKD, banque HSBC, Profits Tax IRD Hong Kong. Cloture 31/12 confirmee. Titulaire des licences de marques (GEMO, TATI, VETIR) et emetteur des redevances aux societes NC/PF. Pieces au juridique : NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/GOAL. Au 08/10/2026 : aucun dossier 2026, derniere piece datee du 10/07/2026 ; une demande de confirmation bancaire HSBC au 31/12/2026 amorce l'audit de l'exercice en cours. Formulaire fiscal S2 prix de transfert 2025-2026 au dossier."
+  },
+  {
+   "nom": "MOST LIFE",
+   "forme": "LTD",
+   "juridiction": "HK",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Denomination exacte : MOST LIFE LIMITED, droit hongkongais, 18/F Arion Commercial Centre, Queen's Road West, Sheung Wan, HSBC. Cloture 31/12 confirmee. Facture les commissions sur ventes (10%) et le fret a SMRC et TPC. Pieces au juridique : NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/MOST LIFE. Au 08/10/2026 : aucun dossier 2026, derniere piece datee du 10/07/2026. Un dossier parallele existe hors ASIE : 12-JURIDIQUE SOCIETES/MOST LIFE/Documents fin exercice/2026.pdf (27/08/2026)."
+  },
+  {
+   "nom": "ASL",
+   "forme": "LTD",
+   "juridiction": "HK",
+   "cac": false,
+   "confirme": false,
+   "note": "Denomination : ASIAN SOURCING LIMITED (variante ASIAN SOURCING INTERNATIONAL LTD au dedouanement), HK, HSBC, bureau de sourcing a Guangzhou. CLOTURE TOUJOURS INDETERMINEE - ABSENCE CONFIRMEE AU 08/10/2026 : le dossier ASIE/ASL ne contient que deux pieces (declaration d'actionnaires, transfert d'actionnaires), aucun etat financier, aucun dossier d'audit, aucune declaration fiscale, aucun dossier d'exercice dans tout le tenant. Partout ailleurs ASL n'apparait que comme fournisseur / commissionnaire d'achat du groupe (proformas, packing lists, DAU, factures de fret, releves HSBC), jamais comme entite dont le groupe tient les comptes. Statut a trancher avec le juridique avant inscription au registre d'echeances."
+  },
+  {
+   "nom": "TAHITI PAS CHER (TPC)",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "06-30",
+   "cac": true,
+   "confirme": true,
+   "note": "CAC EN FONCTION (CAC historique : AUDIT PACIFIQUE - Jacqueline Hurel, Marion Sola). Rapports FY 30/06/2025 signes : '2025.06.30-RCA - TPC.pdf' et '2025.06.30 RS - TPC.pdf' dans 06 2025/CAC/Rapports des CAC ; dossiers CAC egalement sur 06 2024 et 06 2023. ALERTE MAINTENUE AU 08/10/2026 : aucun dossier CAC ouvert sur l'exercice 30/06/2026 alors que le bilan definitif est signe, et aucun dossier '30 06 2026' au juridique. Aucune piece de fin ni de non-renouvellement de mandat : le mandat n'est pas eteint. Les travaux d'audit sont bien engages mais classes en revision comptable (06 2026/REVISION COMPTA/ECHANGE AUDIT, echanges des 03/09, 17/09, 22/09 et 05/10/2026) : c'est le CLASSEMENT du dossier CAC et des pieces de mandat qui manque. AGO a tenir avant le 31/12/2026."
+  },
+  {
+   "nom": "SEMAPA",
+   "forme": "SAS",
+   "juridiction": "PF",
+   "cloture": "09-30",
+   "cac": true,
+   "confirme": true,
+   "note": "MANDAT DE CAC CONFIRME ACTIF : lettre de mission 'SEMAPA - CAC LM 2025 signee.pdf' au dossier 30 09 2025/CAC, rapports RCA et RS 2025 emis, convocation du CAC Grant Thornton a l'AGO du 19/02/2026. CAC = KPMG Polynesie francaise sur FY2024. Exercice 30/09/2026 : le dossier '30 09 2026' s'est rempli (Inventaire, REVISION COMPTA, ~41 Mo) mais ne contient ni definitifs ni CAC au 08/10/2026."
+  },
+  {
+   "nom": "SOMARI",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "03-31",
+   "cac": true,
+   "confirme": true,
+   "note": "MANDAT DE CAC CONFIRME ACTIF : lettre de mission au dossier 03 2026/CAC, dossier de nomination CAC dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SOMARI/NOMINATION CAC. Audit de l'exercice 31/03/2026 TOUJOURS EN COURS au 08/10/2026 : le dossier CAC ne contient que balance et GL au 31/03/2026, lettre de mission, etat des conventions reglementees (produit le 06/10/2026), un FEC et un sous-dossier ECHANGE (mails des 30/09, 01/10 et 02/10/2026) - aucun sous-dossier Rapports, aucun RCA, aucun RS. Declaration IS 31/03/2026 TOUJOURS ABSENTE du dossier - a reclamer. A noter : le dossier 'SOMARI/CAC' a la racine ne contient qu'un rapport d'examen limite au 31/03/2024, qui n'est pas un RCA. Exercice suivant '03 2027' deja ouvert."
+  },
+  {
+   "nom": "SMRC",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "06-30",
+   "cac": true,
+   "confirme": true,
+   "note": "MANDAT DE CAC CONFIRME. Exercice 30/06/2025 BOUCLE : EF definitif 'EF S.M.R.C. MANTOVANI RISSO_14012026.pdf' et rapports de CAC complets ('2025.06.30-RCA - SMRC.pdf' et '2025.06.30-RS CAC - SMRC.pdf') dans Cloture Juin 2025/CAC/Rapport CAC - noter le sous-dossier au SINGULIER, variante de nommage. Exercice 30/06/2026 : rien d'ouvert cote definitifs ni cote CAC au 08/10/2026, seule la revision comptable est en cours (REVISION COMPTA/ECHANGE - PGA, estimations et provisions au 30/06/2026). Exercice suivant 'Cloture Juin 2027' deja ouvert. SMRC boucle historiquement tard : l'EF 30/06/2025 n'a ete signe que le 14/01/2026."
+  },
+  {
+   "nom": "LOGISER",
+   "forme": "SARL",
+   "juridiction": "PF",
+   "cloture": "06-30",
+   "cac": false,
+   "confirme": true,
+   "note": "MANDAT DE CAC : rien en comptabilite, ni sur 06 2026 ni sur les exercices anterieurs. Seule trace : un dossier CAC au juridique modifie le 04/10/2024. Le 'commissaire a la transformation' du rapport du 24/12/2024 est lie au changement de forme juridique du 18/02/2025, ce n'est pas un CAC. Mandat non etabli - laisse a false. Dossier modificatif depose au RCS le 07/09/2026 (A2026/002628), Kbis du 07/09/2026, RCS Papeete 08 261 B. ALERTE NOUVELLE 08/10/2026 : 'DT_Mise en demeure declaration DAETH 2025.pdf' date du 07/10/2026, classe hors du site comptabilite (sites/TEST/18.LOGISER) - mise en demeure sur la declaration des travailleurs handicapes, volet social, a traiter et a reclasser."
+  },
+  {
+   "nom": "SCI MIRMAN",
+   "forme": "SCI",
+   "juridiction": "PF",
+   "cloture": "06-30",
+   "cac": false,
+   "confirme": true,
+   "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre. Pieces : l'attestation de l'expert-comptable des EF au 30/06/2026 est signee 'A Papeete, le 4 septembre 2026' par Marion Sola ; montants en FCFP ; l'annexe comporte une rubrique dediee 'Impot sur les transactions' (pages 20 a 26), impot polynesien ; lettre de mission Audit Pacifique (OEC de Polynesie francaise) ; note interne au dossier d'administration mentionnant l'IRVM, l'IRCDC et l'IT. Aucune mention DSF, impots.nc, Noumea ou TGC. Cloture 30/06 confirmee (dossiers en annees civiles 2009 a 2026). L'EF est pose a la racine du dossier d'exercice, sans sous-dossier de definitifs."
+  },
+  {
+   "nom": "GRAIN DE SEL",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "ALERTE CONFIRMEE AU 08/10/2026 : le dossier comptable s'arrete a l'exercice '31 12 2022'. Les exercices 2023, 2024 et 2025 sont totalement absents, soit trois exercices clos sans dossier. Le dossier '1 - Administration' contient une lettre de mission et des documents d'evaluation (evaluation.pdf, methode d'evaluation.pdf) - coherent avec une cession. Releves bancaires BCI jusqu'en 2023 seulement. A clarifier : societe cedee, radiee, ou dossier tenu hors SharePoint ?"
+  },
+  {
+   "nom": "BRICONC (APOTEX)",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "ALERTE RETARD CONFIRMEE AU 08/10/2026 : exercice 31/12/2025 toujours non boucle, plus de neuf mois apres la cloture. Le dossier '2025' ne contient qu'un seul fichier ('Etat du compte au 31.12.2025 -BRICONC SARL.pdf'), ni revision, ni projet, ni comptes definitifs, aucun EF - alors que l'exercice 2024 est boucle (dossier '2024/Definitif') et que toutes les autres societes du groupe ont leur bilan 2025. Un dossier '2026' a ete cree mais ne contient qu'une circularisation BCI."
+  },
+  {
+   "nom": "TRITEX",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "06-30",
+   "cac": false,
+   "confirme": true,
+   "note": "MISE A JOUR 08/10/2026 : l'exercice 30/06/2025 EST BOUCLE, contrairement a ce qui etait note - l'EF definitif 'EF TRITEX_21112025.pdf' est bien dans 'TRITEX/06 2025/DEFINITIFS' (le fichier 'EF TRITEX_02122024.pdf' retrouvee precedemment concernait l'exercice 30/06/2024). ALERTE MAINTENUE sur l'exercice 30/06/2026 : le dossier '06 2026' ne contient aucun compte definitif, seulement un sous-dossier 'Projet' (avec 'TRITEX - PROJET 300626 BILAN.pdf' du 07/10/2026) et deux fichiers de travail. Aucun mandat de CAC constate. RCS Noumea 1 178 573."
+  },
+  {
+   "nom": "MARTRI",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "06-30",
+   "cac": false,
+   "confirme": true,
+   "note": "ALERTE CONFIRMEE AU 08/10/2026 : le dossier d'exercice 30/06/2026 n'a toujours PAS ete cree, la racine s'arrete a 'Juin 2025'. C'est la seule societe du pole NC ou le repertoire d'exercice courant est entierement absent - aucun travail de cloture visible, pas meme une estimation. MARTRI ne range pas ses EF dans un sous-dossier 'Definitifs' mais a la racine de l'exercice : 'SARL  MARTRI  E.F. au 30.06.2025.pdf' (double espace confirme)."
+  },
+  {
+   "nom": "SOCADIM",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "03-31",
+   "cac": false,
+   "confirme": true,
+   "note": "POINT OUVERT RESOLU LE 08/10/2026 : l'AGO de l'exercice 31/03/2026 a bien ete tenue le 14/08/2026 a 14h au siege (proces-verbal des decisions de l'associee unique EKEKO SAS, representee par Mireille Mantovani ; Jean-Marc Mantovani gerant non associe). Comptes et rapport de gestion approuves, resultat beneficiaire 45 735 819 FCFP affecte en autres reserves (total a affecter 155 030 804 FCFP, report a nouveau anterieur 109 294 985 FCFP). Un jeu SIGNE complet existe : 'Documents fin exercice 2026.pdf' dans DOCUMENTS FIN EXERCICE/03 2026/Signes (05/09/2026), PDF scanne illisible par le connecteur. Attestation de conformite signee avec mandat de depot au Cabinet Commodore Juridique et Fiscal. ETAPE 'depot' NON JUSTIFIEE : aucun AR DSF (ar-pvag-is), aucun certificat de depot pour cet exercice - la formalite est engagee mais non prouvee. Deux EF definitifs successifs au dossier 03 2026/Definitifs ('EF socadim_23072026.pdf' puis 'EF SOCADIM_13082026.pdf') : verifier lequel a ete depose. ALERTE : litige de defiscalisation avec mises en demeure INTER INVEST / BISCO INVEST / ENDEMIA du 14/08/2026, concerne aussi DUTEX."
+  },
+  {
+   "nom": "SEFRACA",
+   "forme": "SARL",
+   "juridiction": "NC",
+   "cloture": "03-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/03 confirmee. Bilan definitif 31/03/2026 (EF du 03/08/2026) avec liasse 1191099-DECLA-IS-LFS-2026. AJOUT 08/10/2026 : l'AGO et le depot au RCS du 07/09/2026 existent bien, ils avaient ete manques parce que le PV est groupe avec le rapport de gestion dans un PDF scanne et que le dossier d'exercice est nomme '03 2026' et non '31 03 2026'. RID DSF 0411546, code conseil 11134. MANQUENT sur 2026 (presents en 2025) : AR DSF ar-pvag-is, attestation de conformite, certificat de depot greffe lisible."
+  },
+  {
+   "nom": "SERLOG",
+   "forme": "SNC",
+   "juridiction": "PF",
+   "cloture": "03-31",
+   "cac": false,
+   "confirme": true,
+   "note": "Cloture 31/03 confirmee. Bilan definitif 31/03/2026 dans 2026/Definitifs. AJOUT 08/10/2026 : l'AGO et le depot au RCS du 07/09/2026 existent bien, ils avaient ete manques parce que l'unique piece d'AG est nommee '31 03 2026.pdf' - aucun mot-cle dans le nom, PDF scanne sans couche texte, donc invisible a toute recherche plein texte. Code conseil 13037. SERLOG est au 1er niveau de 12-JURIDIQUE SOCIETES, pas sous TERANI. MANQUENT sur 2026 (presents en 2025) : feuille de presence, rapport de gestion separe, certificat de depot lisible."
+  }
+ ],
+ "etapes_constatees": [
+  {
+   "societe": "SOFADIF",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "30/09/2026",
+   "note": "AGO d'approbation tenue dans le delai proroge par ordonnance du 10/07/2026"
+  },
+  {
+   "societe": "SOFADIF",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "05/08/2026",
+   "note": "Formalites d'enregistrement et depot RCS realisees (note d'honoraires Vaiana Tang & Sophie Dubau 26/152)"
+  },
+  {
+   "societe": "SCI HEIVARUE",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "12/02/2026",
+   "note": "PV AGO du 12/02/2026 : comptes approuves, benefice 16 967 485 XPF, dividendes 16 900 000 XPF"
+  },
+  {
+   "societe": "SCI SDE (ex SDE)",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "12/02/2026",
+   "note": "PV AGO du 12/02/2026 classe dans DOCUMENTS FIN EXERCICE / 30 09 2025"
+  },
+  {
+   "societe": "SCI MIRMAN",
+   "exercice": "2026-06-30",
+   "etape": "bilan",
+   "date": "04/09/2026",
+   "note": "Etats financiers definitifs au 30/06/2026 (MIRMAN EF 30.06.2026.pdf) poses a la racine du dossier 2026 ; attestation de l'expert-comptable signee a Papeete le 04/09/2026"
+  },
+  {
+   "societe": "SCI VIRANI",
+   "exercice": "2026-06-30",
+   "etape": "bilan",
+   "date": "07/10/2026",
+   "note": "Etats financiers definitifs au 30/06/2026 (VIRANI EF 30.06.26.pdf) dans 2026/Definitifs"
+  },
+  {
+   "societe": "DUTEX",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "03/08/2026",
+   "note": "EF DUTEX_03082026.pdf dans MARS 2026/Definitfs, avec declaration IS (1305972-DECLA-IS-LF-2026)"
+  },
+  {
+   "societe": "SEFRAKO",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "03/08/2026",
+   "note": "EF SEFRAKO_03082026.pdf dans MARS 2026/Definitifs, avec declaration IS (1189532-DECLA-IS-LF-2026)"
+  },
+  {
+   "societe": "SEFRACA",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "03/08/2026",
+   "note": "EF SEFRACA_03082026.pdf dans 31 03 2026/Definitifs, avec declaration IS (1191099-DECLA-IS-LFS-2026). Un brouillon de la liasse traine dans le meme dossier."
+  },
+  {
+   "societe": "SOCADIM",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "13/08/2026",
+   "note": "EF SOCADIM_13082026.pdf dans 03 2026/Definitifs, avec declaration IS et solde (1190453-DECLA-IS-LF-2026)"
+  },
+  {
+   "societe": "SOMARI",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "31/03/2026",
+   "note": "'SOMARI EF 31.03.2026 .pdf' (espace parasite avant l'extension) dans 03 2026/Definitifs, seul fichier du dossier"
+  },
+  {
+   "societe": "SERLOG",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "31/03/2026",
+   "note": "SERLOG EF 31.03.26.pdf dans 2026/Definitifs"
+  },
+  {
+   "societe": "TAHITI PAS CHER (TPC)",
+   "exercice": "2026-06-30",
+   "etape": "bilan",
+   "date": "30/06/2026",
+   "note": "Etats financiers definitifs signes au 30/06/2026 (TPC_EF au 30.06.2026_signe.pdf) dans 06 2026/Defintiifs. La declaration IS 30/06/2026 est classee dans PROJETS/V def, pas dans les definitifs."
+  },
+  {
+   "societe": "LOGISER",
+   "exercice": "2026-06-30",
+   "etape": "bilan",
+   "date": "06/10/2026",
+   "note": "LOGISER EF 30.06.26.pdf depose dans 06 2026/Definitifs le 06/10/2026"
+  },
+  {
+   "societe": "DUTEX",
+   "exercice": "2026-03-31",
+   "etape": "cac_remise",
+   "date": "31/03/2026",
+   "note": "Rapports CAC signes : DUTEX_RCA_31.03.2026.pdf et DUTEX_RS_31.03.2026.pdf"
+  },
+  {
+   "societe": "SEFRAKO",
+   "exercice": "2026-03-31",
+   "etape": "cac_remise",
+   "date": "31/03/2026",
+   "note": "Rapports CAC signes : SEFRAKO_RCA_31.03.2026.pdf et SEFRAKO_RS_31.03.2026.pdf"
+  },
+  {
+   "societe": "EKEKO",
+   "exercice": "2025-12-31",
+   "etape": "cac_remise",
+   "date": "31/12/2025",
+   "note": "Rapports CAC : EKEKO 2025_RCA.pdf et SAS EKEKO RS 31.12.2025.pdf, poses a la racine du dossier CAC"
+  },
+  {
+   "societe": "SOFADIF",
+   "exercice": "2025-12-31",
+   "etape": "cac_remise",
+   "date": "31/12/2025",
+   "note": "Rapports CAC : SOFADIF 2025_RCA.pdf et SOFADIF 2025_RS.pdf dans 2025/CAC/Rapports"
+  },
+  {
+   "societe": "SEFRATEX",
+   "exercice": "2026-03-31",
+   "etape": "bilan",
+   "date": "31/03/2026",
+   "note": "'SEFRATEX EF 31..03.26.pdf' (double point dans le nom reel) dans 2025-2026/Definitifs. L'exercice clos le 31/03/2026 est le dernier de l'ancien cycle ; la cloture au 30/04 ne s'applique qu'a partir de l'exercice 01/04/2026-30/04/2027."
+  },
+  {
+   "societe": "SERCOPAC NOUMEA",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "17/03/2026",
+   "note": "EF SERCOPAC_17032026.pdf dans 30 09 2025/Definitifs, avec les liasses 1187338-DECLA-IS-LF-2025 et 1478507-DECLA-IS-LFS-2025. Boucle tardivement (mars 2026)."
+  },
+  {
+   "societe": "SERCOPAC PPTE",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "30/12/2025",
+   "note": "SERCOPAC EF 30.09.25.pdf dans SERCOPAC/SERCOPAC TAHITI/30 09 2025/Definitifs. Pas de declaration fiscale au dossier. Sous-dossiers d'alerte a la racine : 'redressement patente' et 'Refacturation bureaux PAPEETE'."
+  },
+  {
+   "societe": "EKEKO",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "13/08/2026",
+   "note": "EF EKEKO_13082026.pdf dans 31 12 2025/Definitifs, avec DSF EKEKO.pdf. Liasse IS 1355145-DECLA-IS-LFS-2025 classee au juridique (13-IMPOTS SOCIETES/EKEKO/Liasse fiscale)."
+  },
+  {
+   "societe": "SC LES LONNES",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "24/06/2026",
+   "note": "EF LES LONNES_24062026.pdf dans 31 12 2025/Definitifs. Liasse 1383534-DECLA-IS-LFS-2025 classee au juridique."
+  },
+  {
+   "societe": "BRM DIFFUSION",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "01/06/2026",
+   "note": "EF B.R.M.DIFFUSION_01062026.pdf dans 31 12 2025/Definitifs. Liasse 1187278-DECLA-IS-LF-2025 classee au juridique."
+  },
+  {
+   "societe": "BRICONC2 (NILYTEX)",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "10/03/2026",
+   "note": "EF NILYTEX_10032026.pdf dans 2025/DEFINITIF (majuscules, singulier). Une version anterieure 'EF nilytex_24022026.pdf' traine a la racine de l'exercice, hors du dossier definitif."
+  },
+  {
+   "societe": "CALEDOJOB",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "04/02/2026",
+   "note": "'EF CALEDOJOB _04022026.pdf' dans 09 2025/Definitifs (espace avant l'underscore). Declaration IS 1478507-DECLA-IS-LFS-2025 mal classee dans 09 2025/Echange PGA ; un fichier de meme nom figure aussi dans SERCOPAC/30 09 2025/Definitifs - doublon a arbitrer."
+  },
+  {
+   "societe": "ZANZIBAR",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "28/05/2026",
+   "note": "EF ZANZIBAR_28052026.pdf dans 31 12 2025/DEFINITIF. Liasse 1185556-DECLA-IS-LF-2025 classee au juridique. 'ZANZIBAR - PROJET 2025.pdf' reste a la racine de l'exercice (projet, ne compte pas)."
+  },
+  {
+   "societe": "DFM INVEST",
+   "exercice": "2024-09-30",
+   "etape": "bilan",
+   "date": "30/09/2024",
+   "note": "'DFM Invest -Bilan 30.09.2024.pdf' pose a la racine du dossier 09 2024 (pas de sous-dossier de definitifs)."
+  },
+  {
+   "societe": "SCI YAHOUE",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "EF YAHOUE_12122025.pdf pose a la racine du dossier 30 09 2025 (dossier plat, seul sous-dossier 'OD')."
+  },
+  {
+   "societe": "SCI AMPJOULE",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "EF AMPJOULE_12122025.pdf a la racine du dossier 30 09 2025."
+  },
+  {
+   "societe": "SCI AUSTERLITZ",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "EF AUSTERLITZ_12122025.pdf a la racine du dossier 30 09 2025."
+  },
+  {
+   "societe": "SCI CONCEPTION 56",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "EF CONCEPTION 56_12122025.pdf a la racine du dossier 30 09 2025."
+  },
+  {
+   "societe": "SCI DU NORD 1",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "'EF DU NORD I_12122025.pdf' a la racine du dossier 30 09 2025 - chiffre romain I dans le nom du fichier alors que le dossier est 'SCI DU NORD 1'. Trois orthographes circulent : DU NORD 1, DU NORD I, LE NORD - une seule et meme societe."
+  },
+  {
+   "societe": "SCI GUYON 12",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "'EF GUYON 12 _12122025.pdf' a la racine du dossier 30 09 2025 (espace parasite). A qualifier : dossier 'FISC 2023' avec un courrier des Services Fiscaux et un mouvement de compte courant d'associe de 4 000 000 F depuis EKEKO."
+  },
+  {
+   "societe": "SCI IMPASSE",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "12/12/2025",
+   "note": "\"EF L'IMPASSE_12122025.pdf\" a la racine du dossier 30 09 2025 (dossier SharePoint : SCI L'IMPASSE). A qualifier : dossier 'FISC 2023' avec CCA loyers 2020-2022 et un mouvement de compte courant de 2 500 000 F depuis EKEKO."
+  },
+  {
+   "societe": "SOFADIF",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "SOFADIF EF 31.12.25.pdf dans 2025/Definitifs, avec 'resultat definitif.pdf'. Pas de liasse fiscale au dossier."
+  },
+  {
+   "societe": "TAHITI LUMINAIRES",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "'RISSO MONTOVANI-TAHITI LUMINAIRES EF 31.12.25.pdf' dans 31 12 2025/Definitifs (nom prefixe du cabinet). Liasse fiscale signee a la racine de l'exercice. Option a l'IS au dossier racine."
+  },
+  {
+   "societe": "PR DIFFUSION",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "PR DIFFUSION EF 31.12.25.pdf dans 31 12 2025/Definitifs, avec 'PR DIFFUSION IS 31.12.25.pdf' dans le meme dossier."
+  },
+  {
+   "societe": "SEMAPA",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "30/09/2025",
+   "note": "SEMAPA EF 30.09.25.pdf dans 30 09 2025/Definitifs. Pas de liasse fiscale au dossier."
+  },
+  {
+   "societe": "MOTEX",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "MOTEX EF 31.12.25.pdf dans 2025/Definitifs. Declaration IS mal classee : 'Motex_Declaration IS 2025.pdf' dans 2025/Revision compta/Echange AUDIT/mai du 27 04 26."
+  },
+  {
+   "societe": "SOMODIF",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "'251231 Etats financiers (23125).pdf' dans 2025/Definitifs. Declaration 'SOMODIF IS 2025.pdf' posee a la racine de l'exercice."
+  },
+  {
+   "societe": "SC PUNAHERE",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "PUNAHERE EF 31.12.25.pdf dans '31 12 2025/Deffinitifs' - orthographe reelle avec deux f. Pas de liasse, seulement un avis d'impot sur les societes civiles de participation de 200 000 F."
+  },
+  {
+   "societe": "TAHITIJOB",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "TAHITIJOB EF 31.12.25.pdf dans 2025/DEFINITIF (majuscules, singulier), seul fichier du dossier. AUCUNE declaration fiscale, confirme absente au 08/10/2026 - a reclamer."
+  },
+  {
+   "societe": "SCI TEMOANA",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "'251231 Etats financiers (18140).pdf' pose a la racine du dossier '12 2025' (dossier plat). Pas de declaration fiscale. ALERTE : dossiers 'Sortie Defisc' et 'Bloody Mary' dans NC-017-FISCALITE/TAHITI/SCI TEMOANA modifies le 06/10/2026."
+  },
+  {
+   "societe": "SCI VATEA",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "VATEA EF 31.12.25.pdf pose a la racine du dossier 31 12 2025 (dossier plat). Pas de declaration fiscale au dossier."
+  },
+  {
+   "societe": "SCI PAETOU 13",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "PAETOU 13 EF 31.12.25.pdf dans 31 12 2025/DEFINITIF. Pas de declaration fiscale. A verifier : deux fichiers 'TA PAETOU 13' de 156 000 000 F et de 277 000 000 F a la racine de l'exercice, sigle TA non identifie."
+  },
+  {
+   "societe": "SCI MARCILLAC 1",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "MARCILLAC EF 31.12.25.pdf dans SCI MARCILLAC/2025/Definitifs. Declarations presentes : 'Marcillac1_Declaration IT 2025.pdf' et 'IT SIGNE.pdf' a la racine de l'exercice."
+  },
+  {
+   "societe": "SCI SDE (ex SDE)",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "30/09/2025",
+   "note": "Deux fichiers dans 09 2025/Definitifs : 'SDE EF 30.09.25.pdf' et '250930 Etats financiers (23209).pdf'. Pas de declaration de l'exercice. Le dossier 'ECHANGE AUDIT PACIFIQUE' est de la revision comptable, ce n'est pas un CAC."
+  },
+  {
+   "societe": "SCI HEIVARUE",
+   "exercice": "2025-09-30",
+   "etape": "bilan",
+   "date": "30/09/2025",
+   "note": "'HEIVARUE EF AU 30.09.25.pdf' et '250930 Etats financiers (13385).pdf' dans 2025/Definitifs (dossier d'exercice nomme '2025' tout court). Declaration 'Heivarue_Declaration IT 30.09.25.pdf' a la racine de l'exercice."
+  },
+  {
+   "societe": "SCI CAMERON 1",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "17/03/2026",
+   "note": "EF CAMERON 1_17032026.pdf pose a la racine du dossier 31 12 2025 (en 2024 il y avait un sous-dossier 'Definitifs')."
+  },
+  {
+   "societe": "SCI CAMERON 2",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "17/03/2026",
+   "note": "EF CAMERON 2_17032026.pdf pose a la racine du dossier 31 12 2025. En 2024 le dossier de definitifs s'orthographiait 'Defintiifs'."
+  },
+  {
+   "societe": "SCI CANAAN",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "17/03/2026",
+   "note": "EF CANAAN_17032026.pdf pose a la racine du dossier 31 12 2025."
+  },
+  {
+   "societe": "SCI CHIRAZ CRUZ",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "17/03/2026",
+   "note": "EF CHIRAZ-CRUZ_17032026.pdf pose a la racine du dossier 31 12 2025."
+  },
+  {
+   "societe": "SCI PAO 7",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "19/03/2026",
+   "note": "'260319 Etats financiers (23123).pdf' dans 31 12 2025/Definitifs, copie egalement au juridique. Un dossier 'Projet' coexiste dans le meme exercice (non retenu)."
+  },
+  {
+   "societe": "GALLIENI 13",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "31/12/2025",
+   "note": "'SC  GALLIENI  13  E.F.  au 31.12.2025.pdf' (doubles espaces dans le nom reel) pose a la racine du dossier 2025, dans 4-_PHILIPPE ETWILLER SCI NOUMEA/SCI GALLIENI 13."
+  },
+  {
+   "societe": "GOAL",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "09/07/2026",
+   "note": "'GOAL - Etats financiers audites - Exercice 2025.pdf' dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/GOAL/2025. Audit termine (lettre de representation du 10/07/2026), avec calcul et declaration Profits Tax 2025-2026."
+  },
+  {
+   "societe": "MOST LIFE",
+   "exercice": "2025-12-31",
+   "etape": "bilan",
+   "date": "09/07/2026",
+   "note": "'MOST LIFE - Etats financiers audites - Exercice 2025.pdf' dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/ASIE/MOST LIFE/2025. Audit termine (lettre de representation du 10/07/2026), avec Profits Tax Computation et Return 2025-2026."
+  },
+  {
+   "societe": "TAHITI PAS CHER (TPC)",
+   "exercice": "2025-06-30",
+   "etape": "cac_remise",
+   "date": "30/06/2025",
+   "note": "Rapports CAC du FY 30/06/2025 : '2025.06.30-RCA - TPC.pdf' et '2025.06.30 RS - TPC.pdf' dans 06 2025/CAC/Rapports des CAC."
+  },
+  {
+   "societe": "SEMAPA",
+   "exercice": "2025-09-30",
+   "etape": "cac_remise",
+   "date": "30/09/2025",
+   "note": "'SEMAPA - RCA+RS 2025.pdf' dans 30 09 2025/CAC/Rapports : les deux rapports sont regroupes dans un seul PDF de 26 pages. PDF scanne sans couche texte : A VERIFIER MANUELLEMENT que le RCA et le RS y figurent tous les deux. Lettre de mission 2025 signee au dossier."
+  },
+  {
+   "societe": "SEMAPA",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "19/02/2026",
+   "note": "'260219 AGOA SEMAPA (12102).pdf' avec feuille de presence, et convocation du CAC Grant Thornton du 30/01/2026."
+  },
+  {
+   "societe": "CALEDOJOB",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "05/02/2026",
+   "note": "Decision de l'associe unique : 'CALEDOJOB - DAU DU 05.02.2026 - EX 2025.pdf'."
+  },
+  {
+   "societe": "TAHITI PAS CHER (TPC)",
+   "exercice": "2025-06-30",
+   "etape": "ago",
+   "date": "31/12/2025",
+   "note": "AGO d'approbation des comptes tenue le 31/12/2025 ('251231 PV AGOA TAHITI PAS CHER (22220).pdf'). Une seconde AGO du 06/02/2026 porte sur la distribution de dividendes."
+  },
+  {
+   "societe": "SCI CAMERON 1",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "09/05/2026",
+   "note": "Decision de l'associe unique 'CAMERON 1 - DAU ex 2025.pdf', avec rapport de gestion, rapport special et rapport sur les conventions (rapports du GERANT, pas d'un CAC)."
+  },
+  {
+   "societe": "SCI CAMERON 2",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "09/05/2026",
+   "note": "Decision de l'associe unique 'CAMERON 2 - DAU ex 2025.pdf'."
+  },
+  {
+   "societe": "SCI CANAAN",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "09/05/2026",
+   "note": "Decision de l'associe unique 'CANAAN - DAU ex 2025.pdf'."
+  },
+  {
+   "societe": "SCI CHIRAZ CRUZ",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "09/05/2026",
+   "note": "Decision de l'associe unique 'CHIRAZ-CRUZ - DAU ex 2025.pdf'."
+  },
+  {
+   "societe": "BRICONC2 (NILYTEX)",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "09/05/2026",
+   "note": "'BRICONC2 (anc NILYTEX) - DAU DU 09.05.2026 - EX 2025.pdf' avec extrait."
+  },
+  {
+   "societe": "BRM DIFFUSION",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "17/06/2026",
+   "note": "'BRM - DAU DU 17.06.2026 - EX 31.12.25.pdf' avec extrait."
+  },
+  {
+   "societe": "PR DIFFUSION",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "30/06/2026",
+   "note": "'260630 PV AGOA PR DIFFUSION.pdf' avec feuille de presence et rapport de gestion."
+  },
+  {
+   "societe": "EKEKO",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "24/08/2026",
+   "note": "AGO des associes du 24/08/2026. Preuve indirecte : note d'honoraires Commodore Juridique & Fiscal n.8199 du 27/08/2026. Au juridique, seuls des projets sont classes."
+  },
+  {
+   "societe": "SEFRATEX",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "30/09/2026",
+   "note": "PVAG SEFRATEX.pdf dans DOCUMENT FIN EXERCICE/31 03 2026, avec convocation et texte des resolutions dates du 30/09/2026 et rapport de gestion au 31/03/2026. Le PV est scanne sans couche texte (4 pages) : date deduite de la convocation, bornee entre le 30/09 et le 07/10/2026. A VERIFIER MANUELLEMENT. Le nom du fichier ne porte pas le code dossier 11138, contrairement a la convention."
+  },
+  {
+   "societe": "SOMARI",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "30/09/2026",
+   "note": "PVAG SOMARI.pdf dans DOCUMENTS FIN EXERCICE/31 03 2026, avec convocation du 03/08/2026, texte des resolutions du 30/09/2026 et rapport de gestion au 31/03/2026. PV scanne (4 pages), date deduite du texte des resolutions. A VERIFIER MANUELLEMENT. L'AGO a ete tenue alors que l'audit du CAC est toujours en cours. Le nom du fichier ne porte pas le code dossier 11136."
+  },
+  {
+   "societe": "SMRC",
+   "exercice": "2025-06-30",
+   "etape": "ago",
+   "date": "05/03/2026",
+   "note": "PVAG.pdf et Extrait PVAG.pdf scannes, date exacte illisible. Date retenue = celle de la transmission du PV a la DSF (AR 819538899793 du 05/03/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SERCOPAC NOUMEA",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "27/03/2026",
+   "note": "'PV AG.pdf' et 'EXTRAIT DU pv ag.pdf' scannes, date exacte illisible. Date retenue = celle de la transmission du PV a la DSF (AR 893388290163 du 27/03/2026). A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "DUTEX",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "17/08/2026",
+   "note": "'Rapport de gestion + PV DUTEX.pdf' dans DOCUMENTS FIN EXERCICE/31 03 2026, scanne sans couche texte. Date retenue = borne inferieure : le rapport special du CAC Grant Thornton a ete signe a Noumea le 17/08/2026, l'AGO est donc posterieure. A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SEFRAKO",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "17/08/2026",
+   "note": "'Rapport de gestin + PV SEFRAKO.pdf' (sic) dans DOCUMENTS FIN EXERCICE/31 03 2026, scanne. Date retenue = borne inferieure (rapport special CAC du 17/08/2026). A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "LOGISER",
+   "exercice": "2025-06-30",
+   "etape": "ago",
+   "date": "04/06/2026",
+   "note": "PVAG Logiser.pdf, feuille de presence et rapport de gestion dans DOCUMENTS FIN EXERCICE/30 06 2025. PV scanne, date illisible : date retenue = celle du depot des comptes (04/06/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "TAHITIJOB",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "28/05/2026",
+   "note": "PVAG TAHITIJOB.pdf et rapport de gestion dans Documents fin exercice/2025. PV sans date dans le nom et scanne : date retenue = celle de la reception des comptes par le greffe (28/05/2026). A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SCI YAHOUE",
+   "exercice": "2025-09-30",
+   "etape": "ago",
+   "date": "20/04/2026",
+   "note": "PV non localise dans DOCUMENTS FIN EXERCICE/30 09 2025 (seul le certificat de depot y est indexe). Date retenue = celle du depot des comptes au greffe (20/04/2026), qui borne l'AGO. A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SOMODIF",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "26/05/2026",
+   "note": "'260526 AGOA SOMODIF (23125).pdf' dans DOCUMENTS FIN EXERCICES/31 12 2025."
+  },
+  {
+   "societe": "SC PUNAHERE",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "06/03/2026",
+   "note": "'260306 PV AGO (22219).pdf' dans DOCUMENTS FIN EXERCICES/31 12 2025."
+  },
+  {
+   "societe": "SCI TEMOANA",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "15/04/2026",
+   "note": "'260415 PV AU (18140).pdf' dans DOCUMENTS FIN EXERCICE/2025 (decision d'associe unique, libelle 'PV AU')."
+  },
+  {
+   "societe": "SCI VATEA",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "15/04/2026",
+   "note": "'260415 PV AGO (11139).pdf' dans DOCUMENTS FIN EXERCICE/31 12 2025."
+  },
+  {
+   "societe": "SCI PAETOU 13",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "14/04/2026",
+   "note": "'260414 PV AGO (21242).pdf' dans DOCUMENTS FIN EXERCICE/2025."
+  },
+  {
+   "societe": "SCI MARCILLAC 1",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "06/03/2026",
+   "note": "'260306 PV AGO (24108).pdf' dans Documents fin exercice/2025."
+  },
+  {
+   "societe": "SCI PAO 7",
+   "exercice": "2025-12-31",
+   "etape": "ago",
+   "date": "06/03/2026",
+   "note": "'260306 PV AGO (23123).pdf' dans DOCUMENT FIN EXERCICE/2025 31 12."
+  },
+  {
+   "societe": "SCI YAHOUE",
+   "exercice": "2025-09-30",
+   "etape": "depot",
+   "date": "20/04/2026",
+   "note": "Comptes deposes le 20/04/2026 sous le n. 1207, recepisse DAE delivre le meme jour (GRF-CERT_DEPOT.PDF)."
+  },
+  {
+   "societe": "BRICONC2 (NILYTEX)",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "29/05/2026",
+   "note": "Comptes deposes le 29/05/2026 sous le n. 1643, recepisse DECAT delivre le 03/06/2026."
+  },
+  {
+   "societe": "LOGISER",
+   "exercice": "2025-06-30",
+   "etape": "depot",
+   "date": "04/06/2026",
+   "note": "'260604 Certificat de depot (11135).pdf' - comptes recus et deposes le 04/06/2026, ref. D2615500417 / B2026/000676."
+  },
+  {
+   "societe": "TAHITIJOB",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "05/06/2026",
+   "note": "'260605 Certificat de depot (24197).pdf' - comptes recus le 28/05/2026, deposes le 05/06/2026 (B2026/000684)."
+  },
+  {
+   "societe": "TAHITI PAS CHER (TPC)",
+   "exercice": "2025-06-30",
+   "etape": "depot",
+   "date": "30/06/2026",
+   "note": "'260630 Certificat de depot (22220).pdf' - comptes recus le 29/06/2026, deposes le 30/06/2026 (B2026/000978)."
+  },
+  {
+   "societe": "SEMAPA",
+   "exercice": "2025-09-30",
+   "etape": "depot",
+   "date": "16/07/2026",
+   "note": "'260716 Certificat de depot (12102).pdf' - comptes recus le 09/07/2026, deposes le 16/07/2026 (B2026/001118)."
+  },
+  {
+   "societe": "SOMODIF",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "29/07/2026",
+   "note": "'260729 Certificat de depot (23125).pdf' - comptes recus le 27/07/2026, deposes le 29/07/2026 (B2026/001440)."
+  },
+  {
+   "societe": "EKEKO",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "27/08/2026",
+   "note": "Depot des comptes au RCS facture en debours sur la note d'honoraires Commodore Juridique & Fiscal du 27/08/2026. Le certificat de depot lui-meme n'a pas ete localise - A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SMRC",
+   "exercice": "2025-06-30",
+   "etape": "depot",
+   "date": "05/03/2026",
+   "note": "Transmission du PV d'AG a la DSF (impots.nc) le 05/03/2026, AR n. 819538899793. Il s'agit de la formalite NC, pas d'un depot au greffe."
+  },
+  {
+   "societe": "SERCOPAC NOUMEA",
+   "exercice": "2025-09-30",
+   "etape": "depot",
+   "date": "27/03/2026",
+   "note": "Transmission du PV d'AG a la DSF le 27/03/2026, AR n. 893388290163."
+  },
+  {
+   "societe": "MOTEX",
+   "exercice": "2025-12-31",
+   "etape": "depot",
+   "date": "07/09/2026",
+   "note": "'260907 Depot RCS (23124).pdf' dans MOTEX/Documents fin exercice/31 12 2025 - le code 23124 est celui de MOTEX. A VERIFIER : un depot d'actes du meme jour (A2026/002628) concerne LOGISER (code 11135)."
+  },
+  {
+   "societe": "DFM INVEST",
+   "exercice": "2024-09-30",
+   "etape": "depot",
+   "date": "30/09/2024",
+   "note": "'DFM INVEST - Recepisse depot comptes 2024.PDF' a la racine du dossier 09 2024. Date de depot exacte non lisible dans le nom du fichier."
+  },
+  {
+   "societe": "SMRC",
+   "exercice": "2025-06-30",
+   "etape": "bilan",
+   "date": "14/01/2026",
+   "note": "NOUVEAU 08/10/2026. 'EF S.M.R.C. MANTOVANI RISSO_14012026.pdf' dans Cloture Juin 2025/Definitifs. Nommage atypique (raison sociale longue). L'exercice 30/06/2025 est donc bien boucle ; seul l'exercice 30/06/2026 reste ouvert."
+  },
+  {
+   "societe": "SMRC",
+   "exercice": "2025-06-30",
+   "etape": "cac_remise",
+   "date": "30/06/2025",
+   "note": "NOUVEAU 08/10/2026. Les DEUX rapports de CAC sont presents dans Cloture Juin 2025/CAC/Rapport CAC (sous-dossier au SINGULIER) : '2025.06.30-RCA - SMRC.pdf' (comptes annuels) et '2025.06.30-RS CAC - SMRC.pdf' (rapport special, explicitement marque 'RS CAC')."
+  },
+  {
+   "societe": "TRITEX",
+   "exercice": "2025-06-30",
+   "etape": "bilan",
+   "date": "21/11/2025",
+   "note": "NOUVEAU 08/10/2026 - leve le doute de la passe precedente. 'EF TRITEX_21112025.pdf' dans 'TRITEX/06 2025/DEFINITIFS' (majuscules) : l'exercice 30/06/2025 EST boucle. Le fichier 'EF TRITEX_02122024.pdf' retrouve auparavant concernait l'exercice 30/06/2024. Le dossier contient aussi 'SARL TRITEX  Infos au 30.06.2025.pdf'."
+  },
+  {
+   "societe": "TRITEX",
+   "exercice": "2026-06-30",
+   "etape": "revision",
+   "date": "07/10/2026",
+   "note": "NOUVEAU 08/10/2026. Projet de bilan 'TRITEX - PROJET 300626 BILAN.pdf' depose le 07/10/2026 dans 06 2026/Projet, avec 'Estimation resultat TRITEX 30062026.xlsx'. Revision comptable en cours, AUCUN compte definitif a ce stade."
+  },
+  {
+   "societe": "SOCADIM",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "14/08/2026",
+   "note": "NOUVEAU 08/10/2026 - point ouvert resolu. PV des decisions de l'associee unique du 14/08/2026 a 14h au siege (associee unique EKEKO SAS representee par Mireille Mantovani, gerant non associe Jean-Marc Mantovani) : rapport de gestion et comptes de l'exercice clos le 31/03/2026 approuves, resultat beneficiaire 45 735 819 FCFP affecte en autres reserves. Le jeu SIGNE est 'Documents fin exercice 2026.pdf' dans DOCUMENTS FIN EXERCICE/03 2026/Signes (05/09/2026), PDF scanne illisible par le connecteur - A VERIFIER MANUELLEMENT ; la version lisible est 'SOCADIM - PV AGOA.pdf' dans le sous-dossier Projets. Attestation de conformite signee avec mandat de depot au Cabinet Commodore Juridique et Fiscal. L'etape 'depot' reste NON justifiee (aucun AR DSF, aucun certificat de depot)."
+  },
+  {
+   "societe": "SEFRACA",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "07/09/2026",
+   "note": "AJOUTE LE 08/10/2026 apres verification ciblee - manquait aux passes precedentes. 'Rapport de gestion + PV SEFRACA.pdf' (5 pages) dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SEFRACA/DOCUMENTS FIN EXERCICE/03 2026 - noter que SEFRACA nomme son exercice '03 2026' et non '31 03 2026'. PDF scanne SANS COUCHE TEXTE : la date de l'AGO n'est pas lisible. Date retenue = BORNE SUPERIEURE, celle du depot RCS du 07/09/2026 qui lui est posterieur ; l'AGO se situe entre le 03/08/2026 (edition des EF) et le 07/09/2026. A VERIFIER MANUELLEMENT."
+  },
+  {
+   "societe": "SEFRACA",
+   "exercice": "2026-03-31",
+   "etape": "depot",
+   "date": "07/09/2026",
+   "note": "AJOUTE LE 08/10/2026. '260907 Depot RCS (11134).pdf' (20 pages, scanne) dans DOCUMENTS FIN EXERCICE/03 2026. Code 11134 = SEFRACA chez le conseil (SELARL Vaiana Tang & Sophie Dubau). Depot groupe au greffe le 07/09/2026 avec SERLOG et MOTEX. MANQUENT par rapport a l'exercice 2025 : AR DSF (ar-pvag-is), attestation de conformite, certificat de depot greffe lisible, declaration DECLA-PVAG.C-2026."
+  },
+  {
+   "societe": "SERLOG",
+   "exercice": "2026-03-31",
+   "etape": "ago",
+   "date": "07/09/2026",
+   "note": "AJOUTE LE 08/10/2026 apres verification ciblee - manquait aux passes precedentes. Piece '31 03 2026.pdf' (6 pages) dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SERLOG/DOCUMENTS FIN EXERCICE/31 03 2026 : NOM DE FICHIER NON DESCRIPTIF, aucun mot-cle, PDF scanne SANS COUCHE TEXTE - c'est pourquoi aucune recherche plein texte ne pouvait l'atteindre. Impossible d'affirmer sur piece s'il s'agit du PV, du rapport de gestion, ou des deux. Date retenue = BORNE SUPERIEURE, celle du depot RCS du 07/09/2026. A VERIFIER MANUELLEMENT. SERLOG est au 1er niveau de 12-JURIDIQUE SOCIETES, pas sous TERANI."
+  },
+  {
+   "societe": "SERLOG",
+   "exercice": "2026-03-31",
+   "etape": "depot",
+   "date": "07/09/2026",
+   "note": "AJOUTE LE 08/10/2026. '260907 Depot RCS (13037).pdf' (20 pages, scanne) dans DOCUMENTS FIN EXERCICE/31 03 2026. Code 13037 = SERLOG chez le conseil. Depot groupe au greffe le 07/09/2026 avec SEFRACA et MOTEX. MANQUENT par rapport a l'exercice 2025 : feuille de presence, rapport de gestion identifie separement, certificat de depot lisible."
+  }
+ ]
 }
