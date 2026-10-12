@@ -1,5 +1,5 @@
 {
- "derniere_execution": "2026-10-11",
+ "derniere_execution": "2026-10-12",
  "societes": [
   {
    "nom": "SCI HEIVARUE",
@@ -44,7 +44,7 @@
    "cloture": "06-30",
    "cac": false,
    "confirme": true,
-   "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre - facture d'honoraires AUDIT PACIFIQUE du 01/09/2026 adressee a 'S.C.I. VIRANI, BP 3553, PAPEETE Tahiti 98713, Polynesie francaise', en XPF avec TVA a 13% (taux PF), courrier DICP, note 'passage a l'IT et degrevements', lettre de mission Audit Pacifique (OEC de Polynesie francaise). A FAIRE VALIDER PAR TONY. Cloture 30/06 confirmee (dossiers en annees civiles 2011 a 2026). Bilan 30/06/2026 : 'VIRANI EF 30.06.26.pdf' dans 2026/Definitifs. CODE DOSSIER IDENTIFIE LE 11/10/2026 : 11140 ; dossier juridique au PLURIEL ('DOCUMENTS FIN EXERCICES'). L'AGO de l'exercice 30/06/2025 a ete retrouvee le 11/10/2026 ('250929 PV AGO (11140).pdf' du 29/09/2025). RESTE OUVERT sur 30/06/2026 : aucune AGO, aucun depot ; la declaration IT au 30/06/2026 est rangee dans 'Projet' ('Virani_Declaration IT 30.06.26.pdf'), donc non definitive."
+   "note": "JURIDICTION PF VALIDEE PAR TONY LE 12/10/2026 (le registre la portait en NC) : POLYNESIE FRANCAISE, point ferme, ne plus le reposer - facture d'honoraires AUDIT PACIFIQUE du 01/09/2026 adressee a 'S.C.I. VIRANI, BP 3553, PAPEETE Tahiti 98713, Polynesie francaise', en XPF avec TVA a 13% (taux PF), courrier DICP, note 'passage a l'IT et degrevements', lettre de mission Audit Pacifique (OEC de Polynesie francaise).  Cloture 30/06 confirmee (dossiers en annees civiles 2011 a 2026). Bilan 30/06/2026 : 'VIRANI EF 30.06.26.pdf' dans 2026/Definitifs. CODE DOSSIER IDENTIFIE LE 11/10/2026 : 11140 ; dossier juridique au PLURIEL ('DOCUMENTS FIN EXERCICES'). L'AGO de l'exercice 30/06/2025 a ete retrouvee le 11/10/2026 ('250929 PV AGO (11140).pdf' du 29/09/2025). RESTE OUVERT sur 30/06/2026 : aucune AGO, aucun depot ; la declaration IT au 30/06/2026 est rangee dans 'Projet' ('Virani_Declaration IT 30.06.26.pdf'), donc non definitive."
   },
   {
    "nom": "ZANZIBAR",
@@ -54,15 +54,6 @@
    "cac": false,
    "confirme": true,
    "note": "Cloture 31/12 confirmee : tous les dossiers d'exercice sont nommes '31 12 AAAA' et l'EF 2025 vise l'exercice du 01/01/2025 au 31/12/2025. NC confirme par la liasse 1185556-DECLA-IS-LF-2025 (Code des impots NC) et le cabinet PGA Noumea. Forme a confirmer."
-  },
-  {
-   "nom": "DFM INVEST",
-   "forme": "?",
-   "juridiction": "NC",
-   "cloture": "09-30",
-   "cac": false,
-   "confirme": false,
-   "note": "ALERTE LARGEMENT LEVEE LE 11/10/2026 : l'exercice 30/09/2025 a bien ete approuve et depose, la seule absence est celle du dossier COMPTABLE SharePoint. Pieces (textes lus) dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/'DFM INVEST avec Robin Fargier'/DOCUMENTS FIN D EXERCICE/'cloture decembre 2025' : 'DFM INVEST - EXTRAIT PV AGOA 2025.pdf' ('AGO annuelle du 5 decembre 2025 ... approuve les comptes de l'exercice clos le 30 septembre 2025') et 'DFM INVEST - Certificat de depot des comptes annuels 2025.pdf' (depot arrive au greffe le 09/12/2025, constate et delivre le 10/12/2025, n. 2025/7928, documents comptables de l'exercice clos le 30/09/2025 + declaration de confidentialite). POINT NOUVEAU A TRANCHER - JURIDICTION : le greffe est celui de TARASCON (France metropolitaine, Bouches-du-Rhone), pas Noumea ni Papeete. DFM INVEST n'est donc vraisemblablement ni NC ni PF. Le registre ne propose que NC/PF/HK : juridiction laissee a NC par defaut, A ARBITRER PAR TONY. Statuts mis a jour par AGE du 16/06/2025, dossier 'CHANGEMENT ADRESSE SIEGE SOCIAL' au juridique. INCOHERENCE DE NOMMAGE : les dossiers juridiques s'appellent 'cloture decembre 2022/2023', 'cloture 2024', 'cloture decembre 2025' alors que les actes visent une cloture au 30 septembre - la date de cloture statutaire reelle reste a confirmer. RESTE OUVERT : aucun dossier comptable 30/09/2025 ni 30/09/2026 dans NC-006-COMPTABILITE."
   },
   {
    "nom": "SCI CAMERON 1",
@@ -134,26 +125,6 @@
    "cac": false,
    "confirme": true,
    "note": "Cloture 30/09 confirmee (dossiers 30 09 2013 a 30 09 2016, EF 'SCI LES TOURS 10-15 au 09-16'). NC confirme par la liasse 1190697-DECLA-IS-LFS-2016. ALERTE : societe ABSORBEE par SC LES LONNES (dossiers 'situation a la fusion' et 'Impot a la fusion'), dernier exercice 30/09/2016 - a archiver."
-  },
-  {
-   "nom": "SCI COLNETT 32",
-   "forme": "SCI",
-   "juridiction": "NC",
-   "cloture": "12-31",
-   "premier_exercice": "2026-12-31",
-   "cac": false,
-   "confirme": false,
-   "note": "A SUPPRIMER DU REGISTRE - CONFIRME LE 11/10/2026. 'SCI COLNETT 32' n'existe que comme NOM D'UN DOSSIER SharePoint (NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/SCI COLNETT 32, deux PDF scannes seulement : 'Delegation de pouvoir du gerant.pdf' et 'Notice descriptive signee.pdf'). Aucun numero RCS, aucun RIDET, aucun statut, aucun Kbis sous ce libelle, aucun dossier comptable. Le '32' des trois libelles renvoie a l'adresse du projet (32 rue James Colnett, Anse Vata) et non a une immatriculation. L'entite reelle du groupe est la SCI NETCALL 32 devenue SCI GALILEE 3 (RCS Noumea 1 658 715) - voir sa fiche. Ne pas suivre deux lignes."
-  },
-  {
-   "nom": "SCI NETCALL 32",
-   "forme": "SCI",
-   "juridiction": "NC",
-   "cloture": "12-31",
-   "premier_exercice": "2026-12-31",
-   "cac": false,
-   "confirme": true,
-   "note": "POINT TRANCHE LE 11/10/2026 SUR ACTE NOTARIE. 'CESSION PART.pdf' (Me Elisa MOUGEL, Noumea, 29/07/2026), dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/'SCI GALILLEE 3'/'Rachats 75% des parts', texte lu integralement : la SCI NETCALL 32 est immatriculee au RCS de NOUMEA le 07/01/2026 sous le numero 1 658 715, societe civile immobiliere constituee par acte Me Mougel des 04/05/09 decembre 2025, capital 100 000 XPF (100 parts), 'Exercice social : il commence le 1er janvier pour se terminer le 31 decembre de chaque annee', 'Commissaire aux comptes : neant'. CE MEME ACTE L'A RENOMMEE : 'De modifier la denomination sociale qui sera, a compter d'aujourd'hui la suivante : SCI GALILEE 3' - siege transfere au 25 avenue du Marechal Foch Noumea, Gregory Darmizin demissionnaire, nouveaux gerants Jean-Marc Mantovani et Mireille Risso ep. Mantovani, repartition finale SOCIETE CIVILE LES LONNES 98 parts / J-M Mantovani 1 / M. Mantovani 1. Actif et passif NEANT au 29/07/2026, non soumise a l'IS. IL EXISTE UNE AUTRE ENTITE, DISTINCTE : la SARL NETCALL 32 (avis RIDET, RID 1 637 461, immatriculee au Ridet le 04/04/2025, forme 'Societe a responsabilite limitee', APE 41.10A, gerant Gregory Darmizin), maitre d'ouvrage du centre commercial du 32 rue James Colnett - ce n'est PAS la SCI du groupe. A ARBITRER PAR TONY : renommer cette ligne 'SCI GALILEE 3' (1er exercice 31/12/2026) et supprimer la ligne SCI COLNETT 32."
   },
   {
    "nom": "BRICOPF1",
@@ -272,7 +243,7 @@
    "cloture": "06-30",
    "cac": false,
    "confirme": true,
-   "note": "JURIDICTION CORRIGEE le 08/10/2026 : POLYNESIE FRANCAISE, et non NC comme au registre - attestation de l'expert-comptable signee 'A Papeete, le 4 septembre 2026' par Marion Sola, montants en FCFP, annexe avec rubrique dediee 'Impot sur les transactions' (pages 20 a 26), lettre de mission Audit Pacifique (OEC de Polynesie francaise), note interne mentionnant l'IRVM, l'IRCDC et l'IT. A FAIRE VALIDER PAR TONY. Cloture 30/06 confirmee (dossiers en annees civiles 2009 a 2026). L'EF est pose a la racine du dossier d'exercice, sans sous-dossier de definitifs. CODE DOSSIER IDENTIFIE LE 11/10/2026 : 11141. L'AGO de l'exercice 30/06/2025 a ete retrouvee le 11/10/2026 par parcours de l'arborescence juridique ('250929 PV AGO (11141).pdf' du 29/09/2025). RESTE OUVERT sur l'exercice 30/06/2026 : aucune AGO, aucun depot ; la declaration IT au 30/06/2026 existe mais est rangee dans le sous-dossier 'Projet' ('Mirman_Declaration IT 30.06.26.pdf'), donc non definitive."
+   "note": "JURIDICTION PF VALIDEE PAR TONY LE 12/10/2026 (le registre la portait en NC) : POLYNESIE FRANCAISE, point ferme, ne plus le reposer - attestation de l'expert-comptable signee 'A Papeete, le 4 septembre 2026' par Marion Sola, montants en FCFP, annexe avec rubrique dediee 'Impot sur les transactions' (pages 20 a 26), lettre de mission Audit Pacifique (OEC de Polynesie francaise), note interne mentionnant l'IRVM, l'IRCDC et l'IT.  Cloture 30/06 confirmee (dossiers en annees civiles 2009 a 2026). L'EF est pose a la racine du dossier d'exercice, sans sous-dossier de definitifs. CODE DOSSIER IDENTIFIE LE 11/10/2026 : 11141. L'AGO de l'exercice 30/06/2025 a ete retrouvee le 11/10/2026 par parcours de l'arborescence juridique ('250929 PV AGO (11141).pdf' du 29/09/2025). RESTE OUVERT sur l'exercice 30/06/2026 : aucune AGO, aucun depot ; la declaration IT au 30/06/2026 existe mais est rangee dans le sous-dossier 'Projet' ('Mirman_Declaration IT 30.06.26.pdf'), donc non definitive."
   },
   {
    "nom": "GRAIN DE SEL",
@@ -300,15 +271,6 @@
    "cac": false,
    "confirme": true,
    "note": "MISE A JOUR 08/10/2026 : l'exercice 30/06/2025 EST BOUCLE, contrairement a ce qui etait note - l'EF definitif 'EF TRITEX_21112025.pdf' est bien dans 'TRITEX/06 2025/DEFINITIFS' (le fichier 'EF TRITEX_02122024.pdf' retrouvee precedemment concernait l'exercice 30/06/2024). ALERTE MAINTENUE sur l'exercice 30/06/2026 : le dossier '06 2026' ne contient aucun compte definitif, seulement un sous-dossier 'Projet' (avec 'TRITEX - PROJET 300626 BILAN.pdf' du 07/10/2026) et deux fichiers de travail. Aucun mandat de CAC constate. RCS Noumea 1 178 573."
-  },
-  {
-   "nom": "MARTRI",
-   "forme": "SARL",
-   "juridiction": "NC",
-   "cloture": "06-30",
-   "cac": false,
-   "confirme": true,
-   "note": "ALERTE LEVEE ET REQUALIFIEE LE 11/10/2026 : MARTRI EST EN LIQUIDATION CLOTUREE. La piece '1305973-DECLA-PVAG.A-2026.pdf' (NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/MARTRI/DOCUMENTS FIN EXERCICE/19 02 2026), texte lu, est une declaration DSF (RID 1136118, AR 282492270016) creee et transmise le 13/04/2026 par Mme Viviane Bouye (Commodore Juridique et Fiscal), type 'Autre AG', date de l'assemblee 19/02/2026, commentaire du declarant : 'vous trouverez en piece jointe le proces-verbal relatif a la CLOTURE DE LA LIQUIDATION'. L'absence de dossier d'exercice 30/06/2026 n'est donc PAS un retard : il n'y a pas d'exercice 30/06/2026. Dernier exercice comptable = 30/06/2025 ('SARL  MARTRI  E.F. au 30.06.2025.pdf', doubles espaces, pose a la racine de 'Juin 2025'), pour lequel AUCUN PV d'AGO n'est au dossier juridique. A ARBITRER PAR TONY : sortir MARTRI du registre des echeances ou la conserver en archive."
   },
   {
    "nom": "SOCADIM",
@@ -426,6 +388,16 @@
    "cac": false,
    "confirme": true,
    "note": "Cloture 30/09 confirmee. Exercice 30/09/2025 boucle ('SERCOPAC EF 30.09.25.pdf' dans SERCOPAC/SERCOPAC TAHITI/30 09 2025/Definitifs, en 2024 le dossier s'orthographiait 'definitif' en minuscules) ; pas de declaration fiscale au dossier. Exercice 30/09/2026 : le dossier '30 09 2026' ne contient toujours que deux pieces de cloture ('REGUL.PDF' et 'STOCK 30 09 26.PDF') au 11/10/2026, aucun sous-dossier de definitifs - definitifs attendus, pas encore un retard (clos depuis 11 jours). Sous-dossiers d'alerte a la racine : 'redressement patente' et 'Refacturation bureaux PAPEETE'. POINT TOUJOURS OUVERT : la 'Lettre de mission AUDIT PACIFIQUE SERCOPAC Tahiti.pdf' a la racine du dossier SERCOPAC TAHITI est un scan de 4 pages SANS couche texte - impossible de dire s'il s'agit d'une mission de CAC non classee ou d'une mission contractuelle echue ; A OUVRIR MANUELLEMENT. Element d'appreciation : aucun dossier CAC et aucun rapport RCA/RS n'existe chez SERCOPAC ni chez SERCOPAC TAHITI sur aucun exercice, ce qui n'etaie pas l'hypothese d'une mission de controle legal."
+  },
+  {
+   "nom": "SCI GALILEE 3",
+   "forme": "SCI",
+   "juridiction": "NC",
+   "cloture": "12-31",
+   "premier_exercice": "2026-12-31",
+   "cac": false,
+   "confirme": true,
+   "note": "NOUVELLE LIGNE CREEE LE 12/10/2026 SUR DECISION DE TONY, en remplacement de SCI NETCALL 32 et SCI COLNETT 32, toutes deux retirees du registre. Denomination issue de l'acte notarie 'CESSION PART.pdf' (Me Elisa MOUGEL, Noumea, 29/07/2026) : 'De modifier la denomination sociale qui sera, a compter d'aujourd'hui la suivante : SCI GALILEE 3' (l'acte l'orthographie GALILEE avec un seul L et un accent aigu ; le dossier SharePoint s'orthographie 'SCI GALILLEE 3' avec deux L). ANTERIEUREMENT : SCI NETCALL 32, immatriculee au RCS de NOUMEA le 07/01/2026 sous le numero 1 658 715, societe civile immobiliere constituee par acte Me Mougel des 04, 05 et 09 decembre 2025 (enregistre a Noumea le 11/12/2025, folio 126, numero 4225). Capital 100 000 XPF en 100 parts de 1 000 XPF. Article 22 des statuts : 'Il commence le 1er janvier pour se terminer le 31 decembre de chaque annee' - 1er exercice clos le 31/12/2026. 'Commissaire aux comptes : neant'. Siege transfere au 25 avenue du Marechal Foch, Noumea (98800). Gregory Darmizin demissionnaire de la gerance avec effet immediat ; nouveaux gerants pour une duree non limitee : Jean-Marc MANTOVANI et Mireille RISSO epouse MANTOVANI. Repartition finale du capital : SOCIETE CIVILE LES LONNES 98 parts, Jean-Marc Mantovani 1 part (n.99), Mireille Mantovani 1 part (n.100). Actif et passif NEANT au 29/07/2026, aucun personnel, aucun compte courant d'associe, non soumise au regime de l'impot sur les societes, 'ne detient aucun actif immobilier'. NE PAS CONFONDRE avec la SARL NETCALL 32 (avis RIDET, RID 1 637 461, immatriculee au Ridet le 04/04/2025, forme 'Societe a responsabilite limitee', code APE 41.10A, gerant Gregory Darmizin), ENTITE TIERCE hors groupe, maitre d'ouvrage du centre commercial du 32 rue James Colnett a l'Anse Vata (autorisation d'exploitation de 2 845 m2 par arrete du 11/12/2025) : elle ne doit pas etre suivie au registre. AUCUN dossier comptable ouvert au 12/10/2026 - 1re cloture le 31/12/2026, a ouvrir."
   }
  ],
  "etapes_constatees": [
@@ -617,13 +589,6 @@
    "etape": "bilan",
    "date": "28/05/2026",
    "note": "EF ZANZIBAR_28052026.pdf dans 31 12 2025/DEFINITIF. Liasse 1185556-DECLA-IS-LF-2025 classee au juridique. 'ZANZIBAR - PROJET 2025.pdf' reste a la racine de l'exercice (projet, ne compte pas)."
-  },
-  {
-   "societe": "DFM INVEST",
-   "exercice": "2024-09-30",
-   "etape": "bilan",
-   "date": "30/09/2024",
-   "note": "'DFM Invest -Bilan 30.09.2024.pdf' pose a la racine du dossier 09 2024 (pas de sous-dossier de definitifs)."
   },
   {
    "societe": "SCI YAHOUE",
@@ -1109,13 +1074,6 @@
    "note": "'260907 Depot RCS (23124).pdf' dans MOTEX/Documents fin exercice/31 12 2025 - le code 23124 est celui de MOTEX. A VERIFIER : un depot d'actes du meme jour (A2026/002628) concerne LOGISER (code 11135)."
   },
   {
-   "societe": "DFM INVEST",
-   "exercice": "2024-09-30",
-   "etape": "depot",
-   "date": "30/09/2024",
-   "note": "'DFM INVEST - Recepisse depot comptes 2024.PDF' a la racine du dossier 09 2024. Date de depot exacte non lisible dans le nom du fichier."
-  },
-  {
    "societe": "SMRC",
    "exercice": "2025-06-30",
    "etape": "bilan",
@@ -1177,34 +1135,6 @@
    "etape": "depot",
    "date": "07/09/2026",
    "note": "AJOUTE LE 08/10/2026. '260907 Depot RCS (13037).pdf' (20 pages, scanne) dans DOCUMENTS FIN EXERCICE/31 03 2026. Code 13037 = SERLOG chez le conseil. Depot groupe au greffe le 07/09/2026 avec SEFRACA et MOTEX. MANQUENT par rapport a l'exercice 2025 : feuille de presence, rapport de gestion identifie separement, certificat de depot lisible."
-  },
-  {
-   "societe": "DFM INVEST",
-   "exercice": "2025-09-30",
-   "etape": "bilan",
-   "date": "05/12/2025",
-   "note": "NOUVEAU 11/10/2026. Preuve INDIRECTE mais documentee : l'extrait de PV d'AGOA du 05/12/2025 'approuve les comptes de l'exercice clos le 30 septembre 2025' et le certificat de depot du 10/12/2025 porte sur les 'documents comptables relatifs a l'exercice clos le 30/09/2025'. Les etats financiers eux-memes ne figurent PAS dans le dossier comptable SharePoint (le dossier d'exercice 30/09/2025 n'existe pas dans NC-006-COMPTABILITE) : ils ont ete etablis hors SharePoint. Pieces dans NC-003-JURIDIQUE/12-JURIDIQUE SOCIETES/'DFM INVEST avec Robin Fargier'/DOCUMENTS FIN D EXERCICE/'cloture decembre 2025'."
-  },
-  {
-   "societe": "DFM INVEST",
-   "exercice": "2025-09-30",
-   "etape": "ago",
-   "date": "05/12/2025",
-   "note": "NOUVEAU 11/10/2026 - DATE CERTAINE, texte lu. 'DFM INVEST - EXTRAIT PV AGOA 2025.pdf' : 'AGO ANNUELLE DU 5 DECEMBRE 2025 ... approuve les comptes de l'exercice clos le 30 septembre 2025'. Egalement 'DFM INVEST - PV AGOA 2025.pdf' au meme endroit. ATTENTION : le dossier d'exercice est nomme 'cloture decembre 2025' alors que l'exercice est bien clos au 30/09/2025."
-  },
-  {
-   "societe": "DFM INVEST",
-   "exercice": "2025-09-30",
-   "etape": "depot",
-   "date": "10/12/2025",
-   "note": "NOUVEAU 11/10/2026 - DATE CERTAINE, texte lu. 'DFM INVEST - Certificat de depot des comptes annuels 2025.pdf' : recepisse du GREFFE DE TARASCON (France metropolitaine), depot arrive au greffe le 09/12/2025, constate et delivre le 10/12/2025 sous le n. 2025/7928, portant sur les documents comptables de l'exercice clos le 30/09/2025 et une declaration de confidentialite. CONSEQUENCE : la juridiction NC du registre est vraisemblablement erronee - a arbitrer."
-  },
-  {
-   "societe": "MARTRI",
-   "exercice": "2025-06-30",
-   "etape": "bilan",
-   "date": "30/06/2025",
-   "note": "AJOUTE LE 11/10/2026 - gap comble. 'SARL  MARTRI  E.F. au 30.06.2025.pdf' (doubles espaces dans le nom reel) pose a la racine du dossier d'exercice 'Juin 2025', accompagne de 'SARL MARTRI Infos au 30.06.2025.pdf'. MARTRI ne range pas ses EF dans un sous-dossier de definitifs. C'est le DERNIER exercice de la societe : la liquidation a ete cloturee par AG du 19/02/2026. Aucun PV d'AGO n'est au dossier juridique pour cet exercice."
   },
   {
    "societe": "SCI MIRMAN",
