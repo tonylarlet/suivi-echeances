@@ -173,6 +173,7 @@ header .syncLbl{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#A7
     <div class="toolbar">
       <button class="btn" id="btnAddSoc">+ Création société</button>
       <button class="btn danger" id="btnDelSel" disabled>Supprimer la sélection (0)</button>
+      <button class="btn ghost" id="btnLocks">Verrous &amp; exclusions</button>
       <button class="btn ghost" id="btnExport">Exporter JSON</button>
       <button class="btn ghost" id="btnImport">Importer JSON</button>
       <input type="file" id="fileImport" accept=".json" style="display:none">
@@ -442,6 +443,28 @@ async function saveState(){
   }catch(e){ console.error("Sauvegarde impossible", e); }
 }
 function scheduleSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(saveState, 400); }
+
+/* ===== VERROUS & EXCLUSIONS : protection des saisies manuelles =====
+   La synchro data.json est additive sur les societes, mais elle ecrasait la
+   cloture, la juridiction, la note et le drapeau CAC, et elle recreait toute
+   societe supprimee a la main. Deux garde-fous, tous deux persistes dans l'etat :
+   - state.supprimees : denominations (en MAJUSCULES) retirees du registre a la
+     main ; la synchro ne les recree plus jamais.
+   - c.verrou : champs edites a la main sur une societe ; la synchro ne les
+     ecrase plus et SIGNALE la divergence au lieu de l'appliquer.
+   Tout est reversible depuis le bouton "Verrous & exclusions" (onglet Societes). */
+const CHAMPS_SYNC = ["cloture","jur","note","cac"];
+const LIB_CHAMP = {cloture:"cloture", jur:"juridiction", note:"note", cac:"CAC"};
+function normNom(s){ return String(s||"").trim().toUpperCase(); }
+function estSupprimee(nom){ return (state.supprimees||[]).indexOf(normNom(nom))>=0; }
+function marquerSupprimees(noms){
+  if(!state.supprimees) state.supprimees = [];
+  for(const n of noms){ const k=normNom(n); if(k && state.supprimees.indexOf(k)<0) state.supprimees.push(k); }
+}
+function reintegrer(nom){ state.supprimees = (state.supprimees||[]).filter(x=>x!==normNom(nom)); }
+function verrouille(c,champ){ return !!(c.verrou && c.verrou[champ]); }
+function poserVerrou(c,champ){ if(!c.verrou) c.verrou={}; c.verrou[champ]=true; }
+function champsVerrouilles(c){ return CHAMPS_SYNC.filter(ch=>verrouille(c,ch)); }
 
 /* ================= DATES ================= */
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
@@ -856,7 +879,7 @@ function renderSocietes(){
     const clLbl = c.cloture ? c.cloture.split("-").reverse().join("/") : "—";
     tr.innerHTML =
       '<td><input type="checkbox" class="selRow" '+(selSoc.has(c.id)?"checked":"")+'></td>'+
-      '<td><b>'+esc(c.name)+'</b></td><td>'+esc(c.forme)+'</td>'+
+      '<td><b>'+esc(c.name)+'</b>'+(champsVerrouilles(c).length?' <span title="Champs protégés de la veille : '+champsVerrouilles(c).map(x=>LIB_CHAMP[x]).join(", ")+'" style="font-size:10px;color:var(--ink-soft);border:1px solid var(--ink-soft);border-radius:4px;padding:0 3px;vertical-align:middle">verrou</span>':'')+'</td><td>'+esc(c.forme)+'</td>'+
       '<td>'+jurBadge(c.jur)+'</td>'+
       '<td class="mono">'+clLbl+'</td>'+
       '<td>'+(c.cac?"Oui":"—")+'</td>'+
@@ -869,7 +892,8 @@ function renderSocietes(){
     });
     tr.querySelector(".bEdit").addEventListener("click",()=>editCompany(c));
     tr.querySelector(".bDel").addEventListener("click",()=>{
-      if(confirm("Supprimer "+c.name+" du registre ?")){
+      if(confirm("Supprimer "+c.name+" du registre ?\n\nElle sera ajoutee aux exclusions : la veille quotidienne ne la recreera plus.")){
+        marquerSupprimees([c.name]);
         state.companies = state.companies.filter(x=>x.id!==c.id); scheduleSave(); render();
       }
     });
@@ -976,10 +1000,12 @@ function editCompany(c){
     '<div class="row"><label>1er exercice clos le (jj/mm/aaaa, optionnel)</label><input id="mPremier" placeholder="ex : 30/09/2027" value="'+(c.premier?c.premier.split("-").reverse().join("/"):"")+'"></div>'+
     '<div class="row"><label>CAC en fonction</label><input type="checkbox" id="mCac" '+(c.cac?"checked":"")+'></div>'+
     '<div class="row"><label>Date fiable (vérifiée)</label><input type="checkbox" id="mConf" '+(c.conf?"checked":"")+'></div>'+
-    '<div class="row"><label>Notes</label><textarea id="mNote" rows="3">'+esc(c.note)+'</textarea></div>',
+    '<div class="row"><label>Notes</label><textarea id="mNote" rows="3">'+esc(c.note)+'</textarea></div>'+
+    '<div class="row"><label>Protéger de la veille<br><span style="font-size:11px;color:var(--ink-soft)">clôture, juridiction, note et CAC : mes valeurs priment</span></label><input type="checkbox" id="mVerrou" '+((isNew||champsVerrouilles(c).length)?"checked":"")+'></div>',
     host=>{
       const name=host.querySelector("#mName").value.trim();
       if(!name){ alert("La dénomination est obligatoire."); return false; }
+      const avant = {cloture:c.cloture, jur:c.jur, note:c.note, cac:c.cac};
       let cl=host.querySelector("#mCl").value.trim();
       if(cl){
         const m=cl.match(/^(\d{1,2})[\/\-](\d{1,2})$/);
@@ -995,7 +1021,19 @@ function editCompany(c){
       Object.assign(c,{name, forme:host.querySelector("#mForme").value.trim(), jur:host.querySelector("#mJur").value,
         cloture:cl, premier:prem||undefined, cac:host.querySelector("#mCac").checked, conf:host.querySelector("#mConf").checked,
         note:host.querySelector("#mNote").value.trim()});
-      if(isNew) state.companies.push(c);
+      /* Toute valeur modifiee a la main est verrouillee : la synchro data.json
+         ne l'ecrasera plus. Une societe creee a la main est verrouillee d'office. */
+      /* La case "Protéger de la veille" est souveraine : cochée, elle verrouille les
+         quatre champs synchronisés ; décochée, elle les libère tous, sauf ceux que
+         l'on vient justement de modifier à la main. */
+      const protege = host.querySelector("#mVerrou").checked;
+      if(!protege) delete c.verrou;
+      if(!isNew){
+        const apres = {cloture:c.cloture, jur:c.jur, note:c.note, cac:c.cac};
+        CHAMPS_SYNC.forEach(ch=>{ if(apres[ch]!==avant[ch]) poserVerrou(c,ch); });
+      }
+      if(protege) CHAMPS_SYNC.forEach(ch=>poserVerrou(c,ch));
+      if(isNew){ reintegrer(name); state.companies.push(c); }
     }
   );
   $("#modalHost #mJur").value=c.jur;
@@ -1055,10 +1093,44 @@ $("#selAll").addEventListener("change",e=>{
 $("#btnDelSel").addEventListener("click",()=>{
   if(!selSoc.size) return;
   const names = state.companies.filter(c=>selSoc.has(c.id)).map(c=>c.name).sort((a,b)=>a.localeCompare(b,"fr"));
-  if(!confirm("Supprimer définitivement "+names.length+" société(s) du registre ?\n\n– "+names.join("\n– "))) return;
+  if(!confirm("Supprimer définitivement "+names.length+" société(s) du registre ?\n\nElles seront ajoutées aux exclusions : la veille quotidienne ne les recréera plus.\n\n– "+names.join("\n– "))) return;
+  marquerSupprimees(names);
   state.companies = state.companies.filter(c=>!selSoc.has(c.id));
   selSoc = new Set(); scheduleSave(); render();
 });
+$("#btnLocks").addEventListener("click",panneauVerrous);
+function panneauVerrous(){
+  const exclues = (state.supprimees||[]).slice().sort((a,b)=>a.localeCompare(b,"fr"));
+  const verrouillees = state.companies.filter(c=>champsVerrouilles(c).length)
+    .sort((a,b)=>a.name.localeCompare(b.name,"fr"));
+  let html = '<h3>Verrous &amp; exclusions</h3>'+
+    '<p style="font-size:12px;color:var(--ink-soft);margin:0 0 12px">Ce que la veille quotidienne n\'a plus le droit de toucher. '+
+    'Les <b>exclusions</b> sont les sociétés supprimées à la main : elles ne seront pas recréées. '+
+    'Les <b>verrous</b> sont les champs que vous avez corrigés vous-même : la veille signale sa valeur mais ne l\'applique pas.</p>';
+  html += '<h4 style="margin:10px 0 4px;font-size:13px">Sociétés exclues ('+exclues.length+')</h4>';
+  html += exclues.length
+    ? '<div style="max-height:140px;overflow:auto">'+exclues.map(n=>
+        '<div style="display:flex;align-items:center;gap:8px;padding:2px 0"><span style="flex:1">'+esc(n)+'</span>'+
+        '<button class="btn sm ghost bReint" data-nom="'+esc(n)+'">Réintégrer</button></div>').join("")+'</div>'
+    : '<p style="font-size:12px;color:var(--ink-soft);margin:0">Aucune.</p>';
+  html += '<h4 style="margin:14px 0 4px;font-size:13px">Champs verrouillés ('+verrouillees.length+' société(s))</h4>';
+  html += verrouillees.length
+    ? '<div style="max-height:180px;overflow:auto">'+verrouillees.map(c=>
+        '<div style="display:flex;align-items:center;gap:8px;padding:2px 0"><span style="flex:1">'+esc(c.name)+
+        ' <span style="color:var(--ink-soft);font-size:12px">'+champsVerrouilles(c).map(x=>LIB_CHAMP[x]).join(", ")+'</span></span>'+
+        '<button class="btn sm ghost bDeverr" data-id="'+c.id+'">Déverrouiller</button></div>').join("")+'</div>'
+    : '<p style="font-size:12px;color:var(--ink-soft);margin:0">Aucun.</p>';
+  modal(html, ()=>true);
+  const host=$("#modalHost");
+  host.querySelectorAll(".bReint").forEach(b=>b.addEventListener("click",()=>{
+    reintegrer(b.dataset.nom); scheduleSave(); host.innerHTML=""; render(); panneauVerrous();
+  }));
+  host.querySelectorAll(".bDeverr").forEach(b=>b.addEventListener("click",()=>{
+    const c=state.companies.find(x=>x.id===b.dataset.id);
+    if(c){ delete c.verrou; scheduleSave(); }
+    host.innerHTML=""; render(); panneauVerrous();
+  }));
+}
 $("#btnAddRule").addEventListener("click",()=>editRule(null));
 ["fJur","fCl","fHideDone"].forEach(id=>$("#"+id).addEventListener("change",renderEcheancier));
 $("#fSort").addEventListener("change",()=>{ echSort=null; renderEcheancier(); });
@@ -1080,7 +1152,7 @@ $("#btnSync").addEventListener("click",()=>syncFromData(true));
    Au chargement (et sur clic du bouton Actualiser), on le lit et on applique
    uniquement ce qui a changé : clôtures, juridictions, sociétés nouvelles,
    étapes constatées. Le pointage manuel de l'utilisateur n'est jamais écrasé. */
-let syncInfo = {etat:"", date:"", changements:[]};
+let syncInfo = {etat:"", date:"", changements:[], divergences:[], ignorees:[]};
 /* Les clés internes de pointage sont produites par iso(), qui passe par
    toISOString() : en UTC+11 (Nouméa) une clôture au 30/06 est stockée "2026-06-29".
    C'est cohérent pour toute l'appli, mais le data.json porte les vraies dates.
@@ -1099,9 +1171,12 @@ async function syncFromData(manuel){
     if(!r.ok) throw new Error("HTTP "+r.status);
     const d = await r.json();
     const chg = [];
+    const divg = [];      // valeurs de la veille ecartees au profit d'une saisie manuelle
+    const ignorees = [];  // societes exclues du registre, non recreees
     for(const src of (d.societes||[])){
       if(!src.nom) continue;
       const key = src.nom.trim().toUpperCase();
+      if(estSupprimee(key)){ ignorees.push(src.nom); continue; }   // exclue a la main : on ne la recree pas
       let c = state.companies.find(x=>x.name.trim().toUpperCase()===key);
       if(!c){
         c = {id:"c"+Date.now()+Math.random().toString(36).slice(2,6), name:src.nom,
@@ -1112,15 +1187,21 @@ async function syncFromData(manuel){
         continue;
       }
       if(src.cloture && src.cloture!==c.cloture){
-        chg.push(c.name+" : clôture "+(c.cloture||"inconnue")+" → "+src.cloture);
-        c.cloture = src.cloture; c.conf = true;
+        if(verrouille(c,"cloture")) divg.push(c.name+" : clôture "+src.cloture+" dans la veille, "+(c.cloture||"inconnue")+" conservée (saisie manuelle)");
+        else { chg.push(c.name+" : clôture "+(c.cloture||"inconnue")+" → "+src.cloture); c.cloture = src.cloture; c.conf = true; }
       }
       if(src.juridiction && src.juridiction!=="?" && src.juridiction!==c.jur){
-        chg.push(c.name+" : juridiction → "+src.juridiction);
-        c.jur = src.juridiction;
+        if(verrouille(c,"jur")) divg.push(c.name+" : juridiction "+src.juridiction+" dans la veille, "+c.jur+" conservée (saisie manuelle)");
+        else { chg.push(c.name+" : juridiction → "+src.juridiction); c.jur = src.juridiction; }
       }
-      if(src.note && src.note!==c.note) c.note = src.note;
-      if(typeof src.cac==="boolean") c.cac = src.cac;
+      if(src.note && src.note!==c.note){
+        if(verrouille(c,"note")) divg.push(c.name+" : note de la veille écartée (note saisie manuellement)");
+        else c.note = src.note;
+      }
+      if(typeof src.cac==="boolean" && src.cac!==c.cac){
+        if(verrouille(c,"cac")) divg.push(c.name+" : CAC "+(src.cac?"Oui":"non")+" dans la veille, "+(c.cac?"Oui":"non")+" conservé (saisie manuelle)");
+        else c.cac = src.cac;
+      }
     }
     // étapes constatées : on ne coche que ce qui ne l'est pas déjà
     for(const e of (d.etapes_constatees||[])){
@@ -1135,14 +1216,18 @@ async function syncFromData(manuel){
         if(n) chg.push(c.name+" : "+n+" étape(s) amont validée(s) en cascade");
       }
     }
-    syncInfo = {etat:"ok", date:d.derniere_execution||"", changements:chg};
+    syncInfo = {etat:"ok", date:d.derniere_execution||"", changements:chg, divergences:divg, ignorees:ignorees};
     await saveState();
     render();
-    if(el) el.textContent = "Données du "+(d.derniere_execution||"?")+(chg.length?" · "+chg.length+" mise(s) à jour":" · rien de neuf");
-    if(manuel && chg.length) alert("Mises à jour appliquées :\n\n– "+chg.join("\n– "));
-    else if(manuel) alert("Aucune nouveauté depuis la dernière veille.");
+    if(el) el.textContent = "Données du "+(d.derniere_execution||"?")+(chg.length?" · "+chg.length+" mise(s) à jour":" · rien de neuf")+(divg.length?" · "+divg.length+" divergence(s)":"");
+    if(manuel){
+      let msg = chg.length ? "Mises à jour appliquées :\n\n– "+chg.join("\n– ") : "Aucune nouveauté depuis la dernière veille.";
+      if(ignorees.length) msg += "\n\nSociétés exclues du registre, non recréées :\n– "+ignorees.join("\n– ");
+      if(divg.length) msg += "\n\nVos saisies manuelles ont été conservées, la veille disait autre chose :\n– "+divg.join("\n– ");
+      alert(msg);
+    }
   }catch(err){
-    syncInfo = {etat:"ko", date:"", changements:[]};
+    syncInfo = {etat:"ko", date:"", changements:[], divergences:[], ignorees:[]};
     if(el) el.textContent = "Pas de données de veille disponibles";
     if(manuel) alert("Impossible de lire data.json : "+err.message+"\n\nLa veille quotidienne n'a peut-être pas encore déposé de fichier.");
   }
